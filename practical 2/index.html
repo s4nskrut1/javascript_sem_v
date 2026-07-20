@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Invoice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="app-shell">
+            <header class="topbar">
+                <div class="brand-block">
+                    <div class="brand-mark">N</div>
+                    <div>
+                        <p class="brand-name">NovaCart</p>
+                        <p class="brand-sub">order details</p>
+                    </div>
+                </div>
+                <div class="topbar-badge">GST 18% � cart discount available</div>
+            </header>
+
+            <main class="layout">
+                <section class="entry-panel">
+                    <div class="panel-card">
+                        <div class="section-head">
+                            <div>
+                                <p class="mini-label">Customer</p>
+                                <h1>Invoice Builder</h1>
+                            </div>
+                        </div>
+
+                        <div class="field-grid two-col">
+                            <div class="field">
+                                <label for="name">Customer Name</label>
+                                <input type="text" id="name" placeholder="Enter customer name">
+                            </div>
+                            <div class="field">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="Enter city">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="section-head compact">
+                            <div>
+                                <p class="mini-label">Add Item</p>
+                                <h2>Enter product</h2>
+                            </div>
+                            <button type="button" class="ghost-btn" onclick="addItem()">Add Item</button>
+                        </div>
+
+                        <div class="field-grid three-col">
+                            <div class="field">
+                                <label for="product">Product</label>
+                                <input type="text" id="product" placeholder="Enter product name">
+                            </div>
+                            <div class="field">
+                                <label for="price">Price (Rs)</label>
+                                <input type="number" id="price" placeholder="Enter price">
+                            </div>
+                            <div class="field">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" id="quantity" placeholder="Enter quantity">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-card cart-preview">
+                        <div class="section-head compact">
+                            <div>
+                                <p class="mini-label">Cart</p>
+                                <h2>Selected items</h2>
+                            </div>
+                            <button type="button" class="ghost-btn" onclick="clearCart()">Clear Cart</button>
+                        </div>
+                        <div id="cartItems" class="cart-items"></div>
+                    </div>
+                </section>
+
+                <aside class="invoice-panel">
+                    <div class="panel-card invoice-card" id="output">
+                        <div class="empty-state">
+                            <h2>Invoice preview</h2>
+                            <p>Add items and generate the final bill.</p>
+                        </div>
+                    </div>
+                    <button class="main-btn" onclick="calculateBill()">Generate Invoice</button>
+                </aside>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+    
+    <footer class="footer">
+    <p>© 2026 | Online Shopping Store</p>
+    <p class="credits">Developed by Sanskruti Gorle • PRN: 24070521025</p>
+</footer>
+</html>

@@ -1,0 +1,389 @@
+:root {
+    --bg: #f1f3f6;
+    --card: #ffffff;
+    --line: #e3e7ee;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --blue: #2874f0;
+    --blue-dark: #1859c9;
+    --green: #1f8f4d;
+    --shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.page-wrap {
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+
+.app-shell {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 18px 22px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--blue), #4ea1ff);
+    color: #fff;
+    font-weight: 800;
+}
+
+.brand-name,
+.brand-sub,
+.mini-label {
+    margin: 0;
+}
+
+.brand-name,
+h1,
+h2,
+.amount-total {
+    font-weight: 800;
+}
+
+.brand-sub,
+.mini-label,
+.field label,
+.cart-line p,
+.meta-row p,
+.invoice-row span,
+.empty-state p,
+.topbar-badge {
+    color: var(--muted);
+}
+
+.brand-sub,
+.mini-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.topbar-badge {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #eef4ff;
+    font-weight: 700;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.entry-panel,
+.invoice-panel {
+    display: grid;
+    gap: 18px;
+}
+
+.panel-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 22px;
+}
+
+.section-head,
+.cart-line,
+.invoice-head,
+.invoice-row,
+.invoice-total,
+.meta-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.section-head,
+.invoice-head,
+.invoice-total {
+    align-items: center;
+}
+
+.section-head.compact {
+    margin-bottom: 16px;
+}
+
+h1 {
+    margin: 4px 0 0;
+    font-size: 1.6rem;
+}
+
+h2 {
+    margin: 4px 0 0;
+    font-size: 1.15rem;
+}
+
+.field-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-col {
+    grid-template-columns: 1.5fr 1fr 1fr;
+}
+
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+.field label {
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fbfcfe;
+    color: var(--text);
+}
+
+input:focus {
+    outline: 2px solid rgba(40, 116, 240, 0.18);
+    border-color: rgba(40, 116, 240, 0.45);
+}
+
+.ghost-btn,
+.main-btn,
+.action-btn {
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.ghost-btn,
+.action-btn {
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+.ghost-btn {
+    background: #f2f4f8;
+    color: var(--text);
+}
+
+.main-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--blue), #4c97ff);
+    color: #fff;
+    box-shadow: 0 14px 28px rgba(40, 116, 240, 0.2);
+}
+
+.cart-items {
+    display: grid;
+    gap: 12px;
+}
+
+.cart-line {
+    align-items: center;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fafbfd;
+}
+
+.cart-line p,
+.meta-row p {
+    margin: 4px 0 0;
+}
+
+.line-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    background: #fff1f2;
+    color: #c7374c;
+}
+
+.invoice-card {
+    min-height: 420px;
+}
+
+.empty-state {
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.invoice-head {
+    margin-bottom: 18px;
+}
+
+.invoice-badge {
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: #eefbf3;
+    color: var(--green);
+    font-weight: 700;
+}
+
+.meta-grid {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 14px;
+    background: #f8fafc;
+}
+
+.meta-row p {
+    color: var(--muted);
+}
+
+.meta-row strong,
+.invoice-row strong,
+.invoice-total span,
+.amount-total,
+.cart-line strong {
+    color: var(--text);
+}
+
+.invoice-items,
+.invoice-summary {
+    display: grid;
+    gap: 12px;
+}
+
+.invoice-items {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+    margin: 18px 0;
+}
+
+.invoice-row {
+    align-items: center;
+}
+
+.invoice-total {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed #cdd5df;
+}
+
+.amount-total {
+    font-size: 1.6rem;
+    color: var(--blue-dark);
+}
+
+.invoice-note {
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 14px;
+    background: #f5f9ff;
+    color: var(--muted);
+}
+
+.bill-error,
+.empty-cart {
+    padding: 16px;
+    border-radius: 14px;
+    background: #fff7ed;
+    color: #9a5a18;
+}
+
+@media (max-width: 920px) {
+    .layout,
+    .two-col,
+    .three-col,
+    .meta-grid {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+}
+
+@media (max-width: 700px) {
+    .topbar,
+    .section-head,
+    .cart-line,
+    .invoice-head,
+    .invoice-row,
+    .invoice-total {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .panel-card {
+        padding: 18px;
+    }
+}
+
+.footer{
+    width: 500px;
+    margin: 20px auto 40px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    text-align: center;
+    border-top: 4px solid #1e88e5;
+}
+
+.footer p{
+    margin: 0;
+    font-size: 16px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.footer span{
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
