@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Information</title>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Segoe UI,sans-serif;
+
+}
+
+body{
+
+background:#eef4ff;
+
+}
+
+.container{
+
+width:800px;
+
+margin:40px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#003366;
+
+}
+
+form{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+}
+
+input,select{
+
+padding:12px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:15px;
+
+}
+
+.full{
+
+grid-column:1/3;
+
+}
+
+button{
+
+grid-column:1/3;
+
+padding:14px;
+
+background:#003366;
+
+color:white;
+
+border:none;
+
+font-size:17px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#0056b3;
+
+}
+
+#result{
+
+margin-top:35px;
+
+display:none;
+
+padding:25px;
+
+background:#f5f8fc;
+
+border-radius:10px;
+
+line-height:35px;
+
+}
+
+.back{
+
+display:inline-block;
+
+margin-top:20px;
+
+text-decoration:none;
+
+color:white;
+
+background:#003366;
+
+padding:12px 20px;
+
+border-radius:8px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Information Form</h1>
+
+<form id="studentForm">
+
+<input type="text" id="name" placeholder="Student Name" required>
+
+<input type="number" id="age" placeholder="Age" required>
+
+<input type="text" id="roll" placeholder="Roll Number" required>
+
+<input type="text" id="dept" placeholder="Department" required>
+
+<input type="text" id="year" placeholder="Year" required>
+
+<select id="gender">
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+<input type="email" id="email" placeholder="Email" class="full">
+
+<input type="text" id="phone" placeholder="Phone Number" class="full">
+
+<input type="text" id="address" placeholder="Address" class="full">
+
+<button type="submit">Submit</button>
+
+</form>
+
+<div id="result">
+
+<h2>Student Details</h2>
+
+<p><b>Name:</b> <span id="rname"></span></p>
+
+<p><b>Age:</b> <span id="rage"></span></p>
+
+<p><b>Roll No:</b> <span id="rroll"></span></p>
+
+<p><b>Department:</b> <span id="rdept"></span></p>
+
+<p><b>Year:</b> <span id="ryear"></span></p>
+
+<p><b>Gender:</b> <span id="rgender"></span></p>
+
+<p><b>Email:</b> <span id="remail"></span></p>
+
+<p><b>Phone:</b> <span id="rphone"></span></p>
+
+<p><b>Address:</b> <span id="raddress"></span></p>
+
+</div>
+
+<a href="index.html" class="back">← Back to Home</a>
+
+</div>
+
+<script>
+
+document.getElementById("studentForm").addEventListener("submit",function(e){
+
+e.preventDefault(); 
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("rname").innerHTML=document.getElementById("name").value;
+
+document.getElementById("rage").innerHTML=document.getElementById("age").value;
+
+document.getElementById("rroll").innerHTML=document.getElementById("roll").value;
+
+document.getElementById("rdept").innerHTML=document.getElementById("dept").value;
+
+document.getElementById("ryear").innerHTML=document.getElementById("year").value;
+
+document.getElementById("rgender").innerHTML=document.getElementById("gender").value;
+
+document.getElementById("remail").innerHTML=document.getElementById("email").value;
+
+document.getElementById("rphone").innerHTML=document.getElementById("phone").value;
+
+document.getElementById("raddress").innerHTML=document.getElementById("address").value;
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIT Nagpur</title> 
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:#f5f8fc;
+}
+
+header{
+background:#003366;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{
+font-size:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("./infra2.webp");
+
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero h2{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.hero p{
+width:70%;
+font-size:18px;
+line-height:30px;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 35px;
+background:#ffb400;
+color:#003366;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+background:white;
+}
+
+.about{
+
+padding:60px;
+
+text-align:center;
+
+}
+
+.cards{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin-top:35px;
+
+}
+
+.card{
+
+background:white;
+
+width:280px;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+footer{
+
+background:#003366;
+
+color:white;
+
+padding:20px;
+
+text-align:center;
+
+margin-top:60px;
+
+}
+
+</style>
+
+<script>
+
+window.onload=function(){
+
+alert("Welcome to SIT Nagpur");
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>SIT Nagpur</h1>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#">Department</a>
+
+<a href="#">Faculty</a>
+
+<a href="student.html">Student Information</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2>Department of Computer Science & Engineering</h2>
+
+<p>
+
+Providing quality education through innovation, practical learning,
+
+research and industry-oriented curriculum.
+
+</p>
+
+<a href="student.html" class="btn">Student Information</a>
+
+</section>
+
+<section class="about">
+
+<h2>Why Choose Our Department?</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>💻 Modern Labs</h3>
+
+<p>Advanced laboratories with latest software and hardware.</p>
+
+</div>
+
+<div class="card">
+
+<h3>📚 Quality Education</h3>
+
+<p>Experienced faculty and industry-focused curriculum.</p>
+
+</div>
+
+<div class="card">
+
+<h3>🏆 Placements</h3>
+
+<p>Excellent placement opportunities with leading companies.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 SIT Nagpur | Department of Computer Science & Engineering
+
+</footer>
+
+</body>
+
+</html>
