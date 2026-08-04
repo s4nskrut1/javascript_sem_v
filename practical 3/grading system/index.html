@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Grading System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+body{
+    background:#f6f8fc;
+    color:#1f2937;
+}
+
+.page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.card{ 
+    width:900px;
+    max-width:100%;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.sidebar{
+    background:#111827;
+    color:#fff;
+    padding:48px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.sidebar h1{
+    font-size:34px;
+    line-height:1.15;
+    margin:18px 0;
+}
+
+.sidebar p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.main{
+    padding:48px;
+}
+
+h2{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.sub{
+    color:#6b7280;
+    margin-bottom:32px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:1.5px solid #d8dee8;
+    border-radius:12px;
+    margin-bottom:22px;
+    font-size:15px;
+    transition:.25s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.08);
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#111827;
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    background:#2563eb;
+}
+
+#reportPage{
+    display:none;
+}
+
+.report{
+    width:760px;
+    max-width:100%;
+    background:#fff;
+    border-radius:22px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+.reportTop{
+    height:8px;
+    background:#2563eb;
+}
+
+.reportBody{
+    padding:45px;
+}
+
+.grade{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto;
+    font-size:38px;
+    font-weight:700;
+    color:#fff;
+}
+
+.title{
+    text-align:center;
+    font-size:30px;
+    margin-top:20px;
+}
+
+.msg{
+    text-align:center;
+    color:#6b7280;
+    margin-top:8px;
+    margin-bottom:35px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #eceff4;
+}
+
+td:first-child{
+    font-weight:600;
+    color:#4b5563;
+    width:35%;
+}
+
+.back{
+    margin-top:35px;
+    background:#111827;
+}
+
+/* Footer */
+
+.footer{
+    width:100%;
+    text-align:center;
+    padding:18px;
+    color:#6b7280;
+    font-size:14px;
+    letter-spacing:.3px;
+}
+
+.footer strong{
+    color:#111827;
+    font-weight:600;
+}
+
+@media(max-width:780px){
+    .card{
+        grid-template-columns:1fr;
+    }
+    .sidebar{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<div id="formPage" class="page">
+<div>
+
+<div class="card">
+
+<div class="sidebar">
+<div>
+<div style="font-size:42px">◈</div>
+
+<h1>Student<br>Grading System</h1>
+
+<p>Academic Performance Evaluation Portal</p>
+</div>
+
+<div style="color:#94a3b8;font-size:13px">
+Department of Computer Science
+</div>
+</div>
+
+<div class="main">
+
+<h2>Evaluate Performance</h2>
+
+<p class="sub">
+Enter student information to generate the report.
+</p>
+
+<label>Student Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter student name">
+
+<label>Marks (0-100)</label>
+
+<input
+type="number"
+id="marks"
+placeholder="Enter marks">
+
+<button onclick="gradeSystem()">
+Generate Report
+</button>
+
+</div>
+
+</div>
+
+<div class="footer">
+Developed by <strong>Sanskruti Gorle</strong> | 24070521025
+</div>
+
+</div>
+</div>
+
+
+<div id="reportPage" class="page">
+<div>
+
+<div class="report">
+
+<div id="bar" class="reportTop"></div>
+
+<div class="reportBody">
+
+<div id="gradeCircle" class="grade"></div>
+
+<h2 class="title">
+Student Grade Report
+</h2>
+
+<p id="performance" class="msg"></p>
+
+<table>
+
+<tr>
+<td>Student Name</td>
+<td id="rName"></td>
+</tr>
+
+<tr>
+<td>Marks</td>
+<td id="rMarks"></td>
+</tr>
+
+<tr>
+<td>Grade</td>
+<td id="rGrade"></td>
+</tr>
+
+<tr>
+<td>Result</td>
+<td id="rResult"></td>
+</tr>
+
+</table>
+
+<button class="back" onclick="goBack()">
+← Back
+</button>
+
+</div>
+
+</div>
+
+<div class="footer">
+Developed by <strong>Sanskruti Gorle</strong> | 24070521025
+</div>
+
+</div>
+</div>
+
+<script>
+
+function gradeSystem(){
+
+var name=document.getElementById("name").value.trim();
+var marks=document.getElementById("marks").value;
+
+if(name==""){
+alert("Please enter student name.");
+return;
+}
+
+if(marks==""){
+alert("Please enter marks.");
+return;
+}
+
+marks=Number(marks);
+
+if(marks<0||marks>100){
+alert("Marks should be between 0 and 100.");
+return;
+}
+
+var grade,result,msg,color;
+
+if(marks>=90){
+grade="A+";
+result="PASS";
+msg="Outstanding Performance";
+color="#16a34a";
+}
+else if(marks>=80){
+grade="A";
+result="PASS";
+msg="Excellent Performance";
+color="#16a34a";
+}
+else if(marks>=70){
+grade="B";
+result="PASS";
+msg="Very Good";
+color="#2563eb";
+}
+else if(marks>=60){
+grade="C";
+result="PASS";
+msg="Good Performance";
+color="#f59e0b";
+}
+else if(marks>=50){
+grade="D";
+result="PASS";
+msg="Satisfactory";
+color="#f59e0b";
+}
+else if(marks>=40){
+grade="E";
+result="PASS";
+msg="Needs Improvement";
+color="#ea580c";
+}
+else{
+grade="F";
+result="FAIL";
+msg="Better Luck Next Time";
+color="#dc2626";
+}
+
+document.getElementById("formPage").style.display="none";
+document.getElementById("reportPage").style.display="flex";
+
+document.getElementById("gradeCircle").style.background=color;
+document.getElementById("bar").style.background=color;
+
+document.getElementById("gradeCircle").innerHTML=grade;
+document.getElementById("performance").innerHTML=msg;
+document.getElementById("rName").innerHTML=name;
+document.getElementById("rMarks").innerHTML=marks+"/100";
+document.getElementById("rGrade").innerHTML=grade;
+document.getElementById("rResult").innerHTML="<b style='color:"+color+"'>"+result+"</b>";
+
+}
+
+function goBack(){
+
+document.getElementById("reportPage").style.display="none";
+document.getElementById("formPage").style.display="flex";
+
+}
+
+</script>
+
+</body>
+</html>
