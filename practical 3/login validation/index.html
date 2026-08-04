@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="login-card">
+
+        <div class="logo">◆</div>
+
+        <h1>Welcome back</h1>
+        <p>Sign in to continue</p>
+
+        <form id="loginForm">
+
+            <label>Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="name@example.com"
+                required
+            >
+
+            <div class="password-header">
+                <label>Password</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    id="togglePassword">
+                    Show
+                </button>
+
+            </div>
+
+            <small id="error"></small>
+
+            <button
+                class="login-btn"
+                type="submit">
+                Continue
+            </button>
+
+        </form>
+
+        <div class="bottom">
+            Don't have an account?
+            <a href="#">Sign up</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
