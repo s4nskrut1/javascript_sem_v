@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="top-section">
+            <div class="icon">⌘</div>
+            <div>
+                <h2>Array Analyzer</h2>
+                <p>Find maximum and minimum values</p>
+            </div>
+        </div>
+
+        <div class="input-section">
+
+            <label for="numbers">Enter Array</label>
+
+            <input
+                type="text"
+                id="numbers"
+                placeholder="12, 45, 89, 6, 34"
+            >
+
+            <button onclick="findValues()">
+                Analyze Array
+                <span>→</span>
+            </button>
+
+        </div>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
