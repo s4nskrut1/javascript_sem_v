@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StringLab | JavaScript Practical</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <nav>
+            <div class="brand">
+                <div class="brand-icon">JS</div>
+                <span>StringLab</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#input">Playground</a>
+                <a href="#case-studies">Case Studies</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+
+            <div class="badge">
+                JavaScript Practical
+            </div>
+
+            <h1>
+                Master the art of
+                <span>strings.</span>
+            </h1>
+
+            <p>
+                Perform string manipulation using JavaScript
+                through two practical case studies.
+            </p>
+
+            <a href="#input" class="hero-button">
+                Start Practical ↓
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="section" id="input">
+
+            <div class="section-label">
+                START HERE
+            </div>
+
+            <div class="input-header">
+
+                <div>
+                    <h2>Enter your string</h2>
+
+                    <p>
+                        Enter a string or paragraph. The same input
+                        will be used for both case studies.
+                    </p>
+                </div>
+
+                <div class="input-badge">
+                    ONE INPUT
+                </div>
+
+            </div>
+
+            <div class="input-card">
+
+                <textarea
+                    id="mainInput"
+                    placeholder="Example: JavaScript is a powerful programming language."
+                ></textarea>
+
+                <div class="input-footer">
+
+                    <span>
+                        Enter your text and click Analyze
+                    </span>
+
+                    <button onclick="processString()">
+                        Analyze String →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="dark-section" id="case-studies">
+
+            <div class="section dark-inner">
+
+                <div class="section-title dark-title">
+
+                    <div class="number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CASE STUDIES
+                        </span>
+
+                        <h2>
+                            String Operations
+                        </h2>
+
+                        <p>
+                            Reverse a string and count the number
+                            of vowels in a paragraph.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="analysis-grid">
+
+                    <div class="analysis-card">
+
+                        <div class="analysis-icon">
+                            ↔
+                        </div>
+
+                        <span class="analysis-label">
+                            CASE STUDY 01
+                        </span>
+
+                        <h3>
+                            Reverse a String
+                        </h3>
+
+                        <p>
+                            Reverse every character of the
+                            entered string using JavaScript.
+                        </p>
+
+                        <div class="analysis-output">
+
+                            <span>
+                                REVERSED STRING
+                            </span>
+
+                            <div id="reverseOutput">
+                                —
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="analysis-card">
+
+                        <div class="analysis-icon">
+                            Aa
+                        </div>
+
+                        <span class="analysis-label">
+                            CASE STUDY 02
+                        </span>
+
+                        <h3>
+                            Count Vowels
+                        </h3>
+
+                        <p>
+                            Count the number of vowels present
+                            in the entered paragraph.
+                        </p>
+
+                        <div class="vowel-stats">
+
+                            <div class="stat">
+
+                                <span>
+                                    VOWELS
+                                </span>
+
+                                <strong id="vowelOutput">
+                                    0
+                                </strong>
+
+                            </div>
+
+                            <div class="stat">
+
+                                <span>
+                                    CHARACTERS
+                                </span>
+
+                                <strong id="totalOutput">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary">
+
+                    <div>
+                        <span>
+                            OPERATIONS COMPLETED
+                        </span>
+
+                        <strong id="operationCount">
+                            0 / 2
+                        </strong>
+                    </div>
+
+                    <div class="summary-line"></div>
+
+                    <p>
+                        Both case studies use the same input string.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <div class="brand-icon">
+                    JS
+                </div>
+
+                <div>
+                    <strong>
+                        StringLab
+                    </strong>
+
+                    <p>
+                        JavaScript Practical
+                    </p>
+                </div>
+
+            </div>
+
+            <span>
+                HTML • CSS • JavaScript
+            </span>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
