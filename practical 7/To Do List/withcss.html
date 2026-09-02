@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            background:
+                radial-gradient(circle at top left, #f9d6e6, transparent 35%),
+                radial-gradient(circle at bottom right, #d9d3ff, transparent 40%),
+                linear-gradient(135deg, #fff8fc, #f3f0ff);
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+
+            padding: 35px;
+
+            border-radius: 28px;
+
+            background: rgba(255, 255, 255, 0.88);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 20px 60px rgba(105, 82, 140, 0.18);
+        }
+
+
+        /* Header */
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .icon {
+            width: 58px;
+            height: 58px;
+
+            margin: 0 auto 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            font-size: 25px;
+
+            background:
+                linear-gradient(135deg, #c7b8ff, #f4b8d5);
+
+            box-shadow:
+                0 8px 20px rgba(170, 140, 200, 0.25);
+        }
+
+
+        .header h2 {
+            color: #4d4261;
+            font-size: 30px;
+            margin-bottom: 7px;
+        }
+
+
+        .header p {
+            color: #91869e;
+            font-size: 14px;
+        }
+
+
+        /* Input Area */
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        #taskInput {
+            flex: 1;
+
+            padding: 14px 16px;
+
+            border: 1.5px solid #e6dff0;
+
+            border-radius: 14px;
+
+            background: #fcfaff;
+
+            outline: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        #taskInput:focus {
+            border-color: #ae9bea;
+
+            box-shadow:
+                0 0 0 4px rgba(174, 155, 234, 0.15);
+        }
+
+
+        #addBtn {
+            padding: 12px 20px;
+
+            border: none;
+            border-radius: 14px;
+
+            cursor: pointer;
+
+            color: white;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            background:
+                linear-gradient(135deg, #9b8bd7, #d98eb5);
+
+            box-shadow:
+                0 8px 18px rgba(180, 130, 180, 0.25);
+
+            transition: 0.3s;
+        }
+
+
+        #addBtn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 22px rgba(180, 130, 180, 0.3);
+        }
+
+
+        /* Tasks Heading */
+
+        .task-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 28px 0 15px;
+        }
+
+
+        .task-title h3 {
+            color: #5c526b;
+            font-size: 16px;
+        }
+
+
+        .task-title span {
+            padding: 5px 11px;
+
+            border-radius: 20px;
+
+            background: #f2edff;
+
+            color: #927fca;
+
+            font-size: 12px;
+        }
+
+
+        /* Task List */
+
+        ul {
+            list-style: none;
+        }
+
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 12px;
+
+            padding: 14px 15px;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(135deg, #ffffff, #faf7ff);
+
+            border: 1px solid #eee8f5;
+
+            box-shadow:
+                0 5px 15px rgba(80, 60, 110, 0.06);
+
+            animation: appear 0.35s ease;
+        }
+
+
+        li span {
+            flex: 1;
+
+            color: #5b5265;
+
+            font-size: 14px;
+
+            word-break: break-word;
+
+            padding-right: 10px;
+        }
+
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            gap: 7px;
+        }
+
+
+        .buttons button {
+            border: none;
+
+            padding: 7px 11px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            color: white;
+
+            font-size: 12px;
+
+            transition: 0.25s;
+        }
+
+
+        .edit {
+            background:
+                linear-gradient(135deg, #f0ae72, #e990a7);
+        }
+
+
+        .delete {
+            background:
+                linear-gradient(135deg, #dc7c91, #c96078);
+        }
+
+
+        .buttons button:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* Footer */
+
+        .designer {
+            margin-top: 28px;
+            padding-top: 18px;
+
+            border-top: 1px solid #eee8f2;
+
+            text-align: center;
+
+            color: #aaa0b0;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+        }
+
+
+        .designer strong {
+            color: #8d78b9;
+        }
+
+
+        /* Animation */
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 28px 20px;
+            }
+
+            .input-area {
+                flex-direction: column;
+            }
+
+            #addBtn {
+                width: 100%;
+            }
+
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .buttons {
+                margin-top: 5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <div class="header">
+
+            <div class="icon">
+                ✓
+            </div>
+
+            <h2>My To-Do List</h2>
+
+            <p>
+                Little tasks. Big progress. ✦
+            </p>
+
+        </div>
+
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What would you like to do?"
+            >
+
+            <button id="addBtn">
+                + Add
+            </button>
+
+        </div>
+
+
+        <div class="task-title">
+
+            <h3>
+                Today's Tasks
+            </h3>
+
+            <span>
+                Stay productive ✦
+            </span>
+
+        </div>
+
+
+        <ul id="taskList"></ul>
+
+
+        <div class="designer">
+
+            Designed by
+            <strong>Sanskruti Gorle</strong>
+
+            <br>
+
+            PRN:
+            <strong>24070521025</strong>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- YOUR ORIGINAL JAVASCRIPT -->
+
+    <script>
+
+        const taskInput = document.getElementById('taskInput');
+        const addBtn = document.getElementById('addBtn');
+        const taskList = document.getElementById('taskList');
+
+        addBtn.addEventListener('click', function() {
+            let task = taskInput.value.trim();
+
+            if (task === ""){
+                alert("Please enter a task!");
+                return;
+            }
+
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.textContent = task;
+
+            const buttons = document.createElement('div');
+            buttons.className = 'buttons';
+
+            const editBtn = document.createElement('button');
+            editBtn.textContent = 'Edit';
+            editBtn.className = 'edit';
+
+            editBtn.addEventListener('click', function() {
+                let newTask = prompt("Edit your task:", span.textContent);
+                if (newTask !== null && newTask.trim() !== "") {
+                    span.textContent = newTask;
+                }
+            });
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.className = 'delete';
+
+            deleteBtn.addEventListener('click', function() {
+                taskList.removeChild(li);
+            });
+
+            buttons.appendChild(editBtn);
+            buttons.appendChild(deleteBtn);
+
+            li.appendChild(span);
+            li.appendChild(buttons);
+            taskList.appendChild(li);
+
+            taskInput.value = "";
+        });
+
+    </script>
+
+
+</body>
+
+</html>
