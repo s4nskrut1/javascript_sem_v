@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(circle at 10% 15%, #dceefd 0, transparent 28%),
+                radial-gradient(circle at 90% 85%, #f8d8cf 0, transparent 30%),
+                linear-gradient(135deg, #eef6fc, #fff9f2);
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1050px;
+            min-height: 690px;
+            display: grid;
+            grid-template-columns: 0.9fr 1.3fr;
+            border-radius: 32px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 30px 80px rgba(24, 49, 83, 0.18);
+        }
+
+        .side {
+            position: relative;
+            padding: 55px 45px;
+            overflow: hidden;
+            color: white;
+            background: linear-gradient(160deg, #183153, #23466f);
+        }
+
+        .side::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: rgba(184, 216, 243, 0.12);
+            top: -100px;
+            right: -90px;
+        }
+
+        .side::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            border: 35px solid rgba(184, 216, 243, 0.1);
+            bottom: -110px;
+            left: -100px;
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 45px;
+            border-radius: 17px;
+            color: #183153;
+            background: #fff9f2;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .side-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .side h1 {
+            font-size: 38px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .side p {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 290px;
+        }
+
+        .illustration {
+            position: relative;
+            z-index: 2;
+            height: 235px;
+            margin-top: 35px;
+        }
+
+        .desk {
+            position: absolute;
+            width: 250px;
+            height: 14px;
+            left: 50%;
+            bottom: 25px;
+            transform: translateX(-50%);
+            border-radius: 20px;
+            background: #b8d8f3;
+        }
+
+        .desk-leg-left {
+            position: absolute;
+            width: 10px;
+            height: 55px;
+            left: 65px;
+            bottom: -25px;
+            border-radius: 10px;
+            background: #b8d8f3;
+        }
+
+        .desk-leg-right {
+            position: absolute;
+            width: 10px;
+            height: 55px;
+            right: 65px;
+            bottom: -25px;
+            border-radius: 10px;
+            background: #b8d8f3;
+        }
+
+        .laptop {
+            position: absolute;
+            width: 120px;
+            height: 78px;
+            left: 50%;
+            bottom: 39px;
+            transform: translateX(-50%);
+            border-radius: 9px 9px 4px 4px;
+            background: #fff9f2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .laptop::after {
+            content: "";
+            position: absolute;
+            width: 145px;
+            height: 9px;
+            left: 50%;
+            bottom: -8px;
+            transform: translateX(-50%);
+            border-radius: 10px;
+            background: #d9eaf7;
+        }
+
+        .screen {
+            position: absolute;
+            width: 95px;
+            height: 52px;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            background: linear-gradient(135deg, #f28c7a, #f7b4a7);
+        }
+
+        .person {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            left: 50px;
+            bottom: 39px;
+        }
+
+        .head {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            top: 0;
+            left: 25px;
+            border-radius: 50%;
+            background: #f6c4a8;
+        }
+
+        .hair {
+            position: absolute;
+            width: 52px;
+            height: 28px;
+            top: -2px;
+            left: 23px;
+            border-radius: 50px 50px 20px 20px;
+            background: #392d2b;
+        }
+
+        .body {
+            position: absolute;
+            width: 72px;
+            height: 80px;
+            left: 13px;
+            top: 45px;
+            border-radius: 35px 35px 15px 15px;
+            background: #f28c7a;
+        }
+
+        .arm {
+            position: absolute;
+            width: 18px;
+            height: 75px;
+            right: 2px;
+            top: 55px;
+            border-radius: 20px;
+            background: #f6c4a8;
+            transform: rotate(-30deg);
+        }
+
+        .plant {
+            position: absolute;
+            right: 20px;
+            bottom: 38px;
+            width: 55px;
+            height: 100px;
+        }
+
+        .pot {
+            position: absolute;
+            width: 45px;
+            height: 35px;
+            bottom: 0;
+            left: 5px;
+            border-radius: 6px 6px 15px 15px;
+            background: #f28c7a;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 28px;
+            height: 50px;
+            border-radius: 50px 0 50px 0;
+            background: #8fc7a8;
+        }
+
+        .leaf1 {
+            left: 7px;
+            bottom: 27px;
+            transform: rotate(-30deg);
+        }
+
+        .leaf2 {
+            right: 5px;
+            bottom: 32px;
+            transform: rotate(35deg);
+        }
+
+        .leaf3 {
+            left: 15px;
+            bottom: 48px;
+            transform: rotate(5deg);
+        }
+
+        .floating-star {
+            position: absolute;
+            z-index: 2;
+            color: #f8c96a;
+            font-size: 25px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .star1 {
+            top: 130px;
+            right: 50px;
+        }
+
+        .star2 {
+            bottom: 145px;
+            left: 30px;
+            font-size: 18px;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+        .form-side {
+            padding: 48px 55px;
+            background: #ffffff;
+        }
+
+        .form-header {
+            margin-bottom: 28px;
+        }
+
+        .form-header h2 {
+            color: #183153;
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: #7d8791;
+            font-size: 14px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #55708b;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin: 23px 0 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: #e6edf2;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group {
+            margin-bottom: 3px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #34485b;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .required {
+            color: #e57568;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8aa1b5;
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 46px;
+            border: 1.5px solid #e2eaf0;
+            border-radius: 11px;
+            padding: 0 13px 0 38px;
+            background: #fbfcfd;
+            color: #24384b;
+            font-size: 13px;
+            transition: 0.25s ease;
+        }
+
+        select {
+            padding-left: 12px;
+        }
+
+        input::placeholder {
+            color: #b0bbc4;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #719dc4;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(113, 157, 196, 0.12);
+        }
+
+        .birthday {
+            display: grid;
+            grid-template-columns: 0.9fr 1.4fr 1fr;
+            gap: 9px;
+        }
+
+        .input-error {
+            border-color: #d85c62 !important;
+            background: #fff7f7 !important;
+        }
+
+        .input-success {
+            border-color: #3a9364 !important;
+        }
+
+        .error-text {
+            min-height: 16px;
+            margin-top: 5px;
+            color: #d85c62;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 13px 15px;
+            border-radius: 11px;
+            background: #f5f9fc;
+            border: 1px solid #e7eef4;
+        }
+
+        .terms input {
+            width: 17px;
+            height: 17px;
+            padding: 0;
+            accent-color: #23466f;
+            cursor: pointer;
+        }
+
+        .terms label {
+            margin: 0;
+            color: #647382;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .terms-error {
+            border-color: #d85c62 !important;
+            background: #fff7f7 !important;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #183153, #28537e);
+            box-shadow: 0 12px 25px rgba(24, 49, 83, 0.25);
+            transition: 0.25s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px rgba(24, 49, 83, 0.32);
+        }
+
+        .designer {
+            text-align: center;
+            margin-top: 20px;
+            color: #9aa7b3;
+            font-size: 11px;
+        }
+
+        .designer strong {
+            color: #55708b;
+            font-weight: 600;
+        }
+
+        .designer span {
+            margin: 0 6px;
+            color: #f28c7a;
+        }
+
+        @media (max-width: 850px) {
+
+            .wrapper {
+                grid-template-columns: 1fr;
+                max-width: 650px;
+            }
+
+            .side {
+                padding: 40px 35px;
+            }
+
+            .illustration {
+                display: none;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .form-side {
+                padding: 35px 22px;
+            }
+
+            .side {
+                padding: 35px 25px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            .birthday {
+                grid-template-columns: 1fr;
+            }
+
+            .side h1 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="side">
+
+            <div class="logo">✦</div>
+
+            <div class="side-content">
+
+                <h1>
+                    Begin something<br>
+                    new today.
+                </h1>
+
+                <p>
+                    Create your account and take the first step toward a better digital experience.
+                </p>
+
+            </div>
+
+            <span class="floating-star star1">✦</span>
+            <span class="floating-star star2">✦</span>
+
+
+            <div class="illustration">
+
+                <div class="person">
+                    <div class="head"></div>
+                    <div class="hair"></div>
+                    <div class="body"></div>
+                    <div class="arm"></div>
+                </div>
+
+                <div class="laptop">
+                    <div class="screen"></div>
+                </div>
+
+                <div class="desk"></div>
+                <div class="desk-leg-left"></div>
+                <div class="desk-leg-right"></div>
+
+                <div class="plant">
+
+                    <div class="leaf leaf1"></div>
+                    <div class="leaf leaf2"></div>
+                    <div class="leaf leaf3"></div>
+
+                    <div class="pot"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-side">
+
+            <div class="form-header">
+
+                <h2>Create Account</h2>
+
+                <p>Fill in your information below</p>
+
+            </div>
+
+
+            <form id="registrationForm">
+
+
+                <div class="section-title">
+                    Personal Information
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            First Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">◉</span>
+
+                            <input
+                                type="text"
+                                id="firstname"
+                                placeholder="First name"
+                            >
+
+                        </div>
+
+                        <p class="error-text" id="firstnameError"></p>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Last Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">◉</span>
+
+                            <input
+                                type="text"
+                                id="lastname"
+                                placeholder="Last name"
+                            >
+
+                        </div>
+
+                        <p class="error-text" id="lastnameError"></p>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Birthday
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="birthday">
+
+                            <select id="day">
+                                <option value="">Day</option>
+                            </select>
+
+                            <select id="month">
+                                <option value="">Month</option>
+                            </select>
+
+                            <select id="year">
+                                <option value="">Year</option>
+                            </select>
+
+                        </div>
+
+                        <p class="error-text" id="birthdayError"></p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="section-title">
+                    Account Details
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Username
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">@</span>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Username"
+                            >
+
+                        </div>
+
+                        <p class="error-text" id="usernameError"></p>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            E-mail
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">✉</span>
+
+                            <input
+                                type="text"
+                                id="email"
+                                placeholder="name@email.com"
+                            >
+
+                        </div>
+
+                        <p class="error-text" id="emailError"></p>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Website
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">⌘</span>
+
+                            <input
+                                type="text"
+                                id="website"
+                                placeholder="https://example.com"
+                            >
+
+                        </div>
+
+                        <p class="error-text" id="websiteError"></p>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Password
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">●</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Password"
+                            >
+
+                        </div>
+
+                        <p class="error-text" id="passwordError"></p>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Re-password
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-icon">●</span>
+
+                            <input
+                                type="password"
+                                id="repassword"
+                                placeholder="Confirm password"
+                            >
+
+                        </div>
+
+                        <p class="error-text" id="repasswordError"></p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="terms" id="termsBox">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                    >
+
+                    <label for="terms">
+                        I agree to the terms & conditions
+                    </label>
+
+                </div>
+
+                <p class="error-text" id="termsError"></p>
+
+
+                <button type="submit">
+                    Create My Account ✦
+                </button>
+
+
+            </form>
+
+
+            <div class="designer">
+
+                Designed by
+                <strong>Sanskruti Gorle</strong>
+
+                <span>•</span>
+
+                PRN:
+                <strong>24070521025</strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        const form = document.getElementById("registrationForm");
+
+        const firstname = document.getElementById("firstname");
+        const lastname = document.getElementById("lastname");
+        const username = document.getElementById("username");
+
+        const email = document.getElementById("email");
+        const website = document.getElementById("website");
+
+        const password = document.getElementById("password");
+        const repassword = document.getElementById("repassword");
+
+        const terms = document.getElementById("terms");
+        const termsBox = document.getElementById("termsBox");
+
+        const day = document.getElementById("day");
+        const month = document.getElementById("month");
+        const year = document.getElementById("year");
+
+
+        for (let i = 1; i <= 31; i++) {
+
+            let option = document.createElement("option");
+
+            option.value = i;
+            option.textContent = i;
+
+            day.appendChild(option);
+
+        }
+
+
+        const months = [
+
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+
+        ];
+
+
+        for (let i = 0; i < months.length; i++) {
+
+            let option = document.createElement("option");
+
+            option.value = months[i];
+            option.textContent = months[i];
+
+            month.appendChild(option);
+
+        }
+
+
+        for (let i = 2026; i >= 1950; i--) {
+
+            let option = document.createElement("option");
+
+            option.value = i;
+            option.textContent = i;
+
+            year.appendChild(option);
+
+        }
+
+
+        function showError(input, message) {
+
+            input.classList.add("input-error");
+            input.classList.remove("input-success");
+
+            let errorElement =
+                document.getElementById(input.id + "Error");
+
+            if (errorElement) {
+
+                errorElement.textContent = message;
+
+            }
+
+        }
+
+
+        function showSuccess(input) {
+
+            input.classList.remove("input-error");
+            input.classList.add("input-success");
+
+            let errorElement =
+                document.getElementById(input.id + "Error");
+
+            if (errorElement) {
+
+                errorElement.textContent = "";
+
+            }
+
+        }
+
+
+        function validatePassword() {
+
+            let value = password.value;
+
+
+            if (value === "") {
+
+                showError(
+                    password,
+                    "Password is required."
+                );
+
+                return false;
+
+            }
+
+
+            if (value.length < 8) {
+
+                showError(
+                    password,
+                    "Password must contain at least 8 characters."
+                );
+
+                return false;
+
+            }
+
+
+            if (!/[A-Z]/.test(value)) {
+
+                showError(
+                    password,
+                    "Add at least one uppercase letter."
+                );
+
+                return false;
+
+            }
+
+
+            if (!/[a-z]/.test(value)) {
+
+                showError(
+                    password,
+                    "Add at least one lowercase letter."
+                );
+
+                return false;
+
+            }
+
+
+            if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+
+                showError(
+                    password,
+                    "Add at least one special symbol."
+                );
+
+                return false;
+
+            }
+
+
+            showSuccess(password);
+
+            return true;
+
+        }
+
+
+        function validateRepassword() {
+
+            if (repassword.value === "") {
+
+                showError(
+                    repassword,
+                    "Please confirm your password."
+                );
+
+                return false;
+
+            }
+
+
+            if (password.value !== repassword.value) {
+
+                showError(
+                    repassword,
+                    "Passwords do not match."
+                );
+
+                return false;
+
+            }
+
+
+            showSuccess(repassword);
+
+            return true;
+
+        }
+
+
+        firstname.addEventListener("input", function () {
+
+            if (firstname.value.trim() === "") {
+
+                showError(
+                    firstname,
+                    "First name is required."
+                );
+
+            }
+
+            else {
+
+                showSuccess(firstname);
+
+            }
+
+        });
+
+
+        lastname.addEventListener("input", function () {
+
+            if (lastname.value.trim() === "") {
+
+                showError(
+                    lastname,
+                    "Last name is required."
+                ); 
+
+            }
+
+            else {
+
+                showSuccess(lastname);
+
+            }
+
+        });
+
+
+        username.addEventListener("input", function () {
+
+            if (username.value.trim() === "") {
+
+                showError(
+                    username,
+                    "Username is required."
+                );
+
+            }
+
+            else if (
+                username.value.trim().length < 4
+            ) {
+
+                showError(
+                    username,
+                    "Username must contain at least 4 characters."
+                );
+
+            }
+
+            else {
+
+                showSuccess(username);
+
+            }
+
+        });
+
+
+        email.addEventListener("input", function () {
+
+            let emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (email.value.trim() === "") {
+
+                showError( 
+                    email,
+                    "Email address is required."
+                );
+
+            }
+
+            else if (
+                !emailPattern.test(
+                    email.value.trim()
+                )
+            ) {
+
+                showError(
+                    email,
+                    "Enter a valid email address."
+                );
+
+            }
+
+            else {
+
+                showSuccess(email);
+
+            }
+
+        });
+
+
+        website.addEventListener("input", function () {
+
+            let websitePattern =
+                /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/.*)?$/; 
+
+
+            if (website.value.trim() === "") {
+
+                showError(
+                    website, 
+                    "Website is required."
+                ); 
+
+            }
+
+            else if ( 
+                !websitePattern.test(
+                    website.value.trim()
+                )
+            ) {
+
+                showError(
+                    website,
+                    "Enter a valid website address."
+                );
+
+            }
+
+            else {
+
+                showSuccess(website);
+
+            }
+
+        });
+
+
+        password.addEventListener(
+            "input",
+            function () {
+
+                validatePassword();
+
+                if (
+                    repassword.value !== ""
+                ) {
+
+                    validateRepassword();
+
+                }
+
+            }
+        );
+
+
+        repassword.addEventListener(
+            "input",
+            validateRepassword
+        );
+
+
+        day.addEventListener("change", validateBirthday);
+        month.addEventListener("change", validateBirthday);
+        year.addEventListener("change", validateBirthday);
+
+
+        function validateBirthday() {
+
+            let birthdayError =
+                document.getElementById(
+                    "birthdayError"
+                );
+
+
+            if (
+                day.value === "" ||
+                month.value === "" ||
+                year.value === ""
+            ) {
+
+                day.classList.add("input-error");
+                month.classList.add("input-error");
+                year.classList.add("input-error");
+
+                birthdayError.textContent =
+                    "Please select your complete birthday.";
+
+                return false;
+
+            }
+
+
+            day.classList.remove("input-error");
+            month.classList.remove("input-error");
+            year.classList.remove("input-error");
+
+            birthdayError.textContent = "";
+
+            return true;
+
+        }
+
+
+        terms.addEventListener("change", function () {
+
+            let termsError =
+                document.getElementById(
+                    "termsError"
+                );
+
+
+            if (!terms.checked) {
+
+                termsBox.classList.add(
+                    "terms-error"
+                );
+
+                termsError.textContent =
+                    "Please agree to the terms and conditions."; 
+
+            }
+
+            else {
+
+                termsBox.classList.remove(
+                    "terms-error"
+                );
+
+                termsError.textContent = "";
+
+            }  
+
+        });
+
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                let valid = true;
+
+
+                if (
+                    firstname.value.trim() === ""
+                ) {
+
+                    showError(
+                        firstname,
+                        "First name is required."
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    showSuccess(firstname);
+
+                }
+
+
+                if (
+                    lastname.value.trim() === ""
+                ) {
+
+                    showError(
+                        lastname,
+                        "Last name is required."
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    showSuccess(lastname);
+
+                }
+
+
+                if (!validateBirthday()) {
+
+                    valid = false;
+
+                }
+
+
+                if (
+                    username.value.trim() === ""
+                ) {
+
+                    showError(
+                        username,
+                        "Username is required."
+                    );
+
+                    valid = false;
+
+                }
+
+                else if (
+                    username.value.trim().length < 4
+                ) {
+
+                    showError(
+                        username,
+                        "Username must contain at least 4 characters."
+                    ); 
+
+                    valid = false;
+
+                } 
+
+                else {
+
+                    showSuccess(username);
+
+                }
+
+
+                let emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (
+                    email.value.trim() === ""
+                ) {
+
+                    showError(
+                        email,
+                        "Email address is required."
+                    );
+
+                    valid = false;
+
+                }
+
+                else if (
+                    !emailPattern.test(
+                        email.value.trim()
+                    )
+                ) {
+
+                    showError(
+                        email,
+                        "Enter a valid email address."
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    showSuccess(email);
+
+                }
+
+
+                let websitePattern =
+                    /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/.*)?$/;
+
+
+                if (
+                    website.value.trim() === ""
+                ) {
+
+                    showError(
+                        website,
+                        "Website is required."
+                    );
+
+                    valid = false;
+
+                }
+
+                else if (
+                    !websitePattern.test(
+                        website.value.trim()
+                    )
+                ) {
+
+                    showError(
+                        website,
+                        "Enter a valid website address."
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    showSuccess(website);
+
+                }
+
+
+                if (!validatePassword()) {
+
+                    valid = false;
+
+                }
+
+
+                if (!validateRepassword()) {
+
+                    valid = false;
+
+                }
+
+
+                if (!terms.checked) {
+
+                    termsBox.classList.add(
+                        "terms-error"
+                    );
+
+                    document.getElementById(
+                        "termsError"
+                    ).textContent =
+                        "Please agree to the terms and conditions.";
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    termsBox.classList.remove(
+                        "terms-error"
+                    );
+
+                    document.getElementById(
+                        "termsError"
+                    ).textContent = "";
+
+                }
+
+
+                if (valid) {
+
+                    alert(
+                        "Account created successfully! 🎉"
+                    );
+
+                    form.reset();
+
+
+                    const inputs =
+                        form.querySelectorAll(
+                            "input, select"
+                        );
+
+
+                    inputs.forEach(
+                        function (input) {
+
+                            input.classList.remove(
+                                "input-success"
+                            );
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html> 
