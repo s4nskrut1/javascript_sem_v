@@ -2,7 +2,7 @@
 
 # JavaScript — Semester V
 
-A collection of practical implementations exploring **JavaScript fundamentals, browser interaction, validation, data handling, and small web applications**.
+A collection of practical implementations covering **JavaScript fundamentals, browser interaction, validation, data handling, and small web applications**.
 
 <br>
 
@@ -10,87 +10,185 @@ A collection of practical implementations exploring **JavaScript fundamentals, b
 
 <br><br>
 
-`01` Foundations &nbsp;·&nbsp; `02` Interfaces &nbsp;·&nbsp; `03` Validation &nbsp;·&nbsp; `04` Problem Solving &nbsp;·&nbsp; `05` Mini Applications
+`01` Web Foundations &nbsp;·&nbsp; `02` Interfaces &nbsp;·&nbsp; `03` Validation &nbsp;·&nbsp; `04` Problem Solving &nbsp;·&nbsp; `05` Data Handling &nbsp;·&nbsp; `06` Strings &nbsp;·&nbsp; `07` Mini Applications
 
 </div>
 
 ---
 
-## What this repository contains
+## Practical 01 — Department Website
 
-This repository documents the JavaScript practical work completed during **Semester V**. The exercises progress from core language concepts to interactive browser-based applications.
+A responsive **SIT Nagpur / Computer Science & Engineering department website** built with HTML, CSS, and JavaScript. The practical includes a hero section, navigation, department information, feature cards, and a student-information page.
 
-### Core areas
+**Focus:** page structure · navigation · responsive layout · UI styling · basic JavaScript interaction
 
-`JavaScript fundamentals` · `DOM interaction` · `form validation` · `arrays` · `strings` · `regular expressions` · `event handling` · `interactive UI`
+**Built with:** HTML · CSS · JavaScript
+
+### Preview
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%201/Screenshot%20(374).png" alt="Practical 01 — Department website" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%201/Screenshot%20(375).png" alt="Practical 01 — Department website preview" width="82%">
+</p>
+
+**→ [`Open Practical 01`](./practical%201/)**
 
 ---
 
 ## Practical 02 — Invoice Builder
 
-A browser-based **shopping invoice builder** with customer details, product entry, cart management, and dynamic invoice generation.
+A browser-based **shopping invoice builder** with customer details, product entry, cart management, price calculations, and invoice generation.
 
-**Highlights**
-
-- Customer and product input handling
-- Dynamic cart updates
-- Quantity and price calculations
-- Invoice generation
-- Responsive interface styling
+**Focus:** DOM interaction · dynamic content · calculations · form handling · UI updates
 
 **Built with:** HTML · CSS · JavaScript
 
-→ [`Open Practical 02`](./practical%202/)
+### Preview
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%202/Screenshot%20(376).png" alt="Practical 02 — Invoice Builder" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%202/Screenshot%20(377).png" alt="Practical 02 — Invoice Builder output" width="82%">
+</p>
+
+**→ [`Open Practical 02`](./practical%202/)**
 
 ---
 
 ## Practical 03 — Validation & Grading
 
-A set of JavaScript exercises focused on **input validation and application logic**.
+A set of browser-based exercises focused on **input validation and application logic**, including a login validation interface and a grading system.
 
-`login validation` · `grading system`
+### Grading System
 
-→ [`Open Practical 03`](./practical%203/)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%203/grading%20system/Screenshot%20(405).png" alt="Practical 03 — Grading system" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%203/grading%20system/Screenshot%20(406).png" alt="Practical 03 — Grading system result" width="82%">
+</p>
+
+### Login Validation
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%203/login%20validation/Screenshot%20(411).png" alt="Practical 03 — Login validation" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%203/login%20validation/Screenshot%20(413).png" alt="Practical 03 — Login validation state" width="82%">
+</p>
+
+**→ [`Open Practical 03`](./practical%203/)**
 
 ---
 
 ## Practical 04 — Logic & Validation
 
-Problem-solving exercises covering string logic and form-oriented validation.
+Problem-solving exercises covering **string logic and form-oriented validation**.
 
-`palindrome checker` · `vehicle registration`
+### Palindrome Checker
 
-→ [`Open Practical 04`](./practical%204/)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%204/palindrome%20checker/Screenshot%20(418).png" alt="Practical 04 — Palindrome checker" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%204/palindrome%20checker/Screenshot%20(420).png" alt="Practical 04 — Palindrome checker result" width="82%">
+</p>
+
+### Vehicle Registration
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%204/vehicle%20registration/Screenshot%20(421).png" alt="Practical 04 — Vehicle registration" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%204/vehicle%20registration/Screenshot%20(422).png" alt="Practical 04 — Vehicle registration result" width="82%">
+</p>
+
+**→ [`Open Practical 04`](./practical%204/)**
 
 ---
 
 ## Practical 05 — Arrays & Calculations
 
-Exercises built around JavaScript arrays and practical data-processing logic.
+Exercises built around **JavaScript arrays, data processing, and practical calculations**.
 
-`array analyzer` · `shopping cart calculator`
+### Array Analyzer
 
-→ [`Open Practical 05`](./practical%205/)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%205/array%20analyzer/Screenshot%20(613).png" alt="Practical 05 — Array analyzer" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%205/array%20analyzer/Screenshot%20(614).png" alt="Practical 05 — Array analyzer result" width="82%">
+</p>
+
+### Shopping Cart Calculator
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%205/shopping%20cart%20calculator/Screenshot%20(607).png" alt="Practical 05 — Shopping cart calculator" width="82%">
+</p>
+
+**→ [`Open Practical 05`](./practical%205/)**
 
 ---
 
 ## Practical 06 — Strings & Regular Expressions
 
-String-processing exercises covering built-in string methods, pattern matching, and a small case study.
+Exercises covering **built-in string methods, regular expressions, string manipulation, and a case study**.
 
-`string methods` · `regular expressions` · `reverse string` · `vowel counting`
+### String Methods & Regular Expressions
 
-→ [`Open Practical 06`](./practical%206/)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%206/String%20Methods%20and%20Regular%20Expressions/Screenshot%20(609).png" alt="Practical 06 — String methods and regular expressions" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%206/String%20Methods%20and%20Regular%20Expressions/Screenshot%20(610).png" alt="Practical 06 — Regular expressions" width="82%">
+</p>
+
+### Reverse String & Count Vowels
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%206/reverse%20string%20and%20count%20vowel%20-case%20study/Screenshot%20(611).png" alt="Practical 06 — Reverse string and count vowels" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%206/reverse%20string%20and%20count%20vowel%20-case%20study/Screenshot%20(612).png" alt="Practical 06 — Reverse string and count vowels result" width="82%">
+</p>
+
+**→ [`Open Practical 06`](./practical%206/)**
 
 ---
 
 ## Practical 07 — Mini Web Applications
 
-A collection of small browser-based applications combining JavaScript logic with user interaction.
+A collection of browser-based applications combining **JavaScript logic with user interaction**.
 
-`registration page` · `to-do list`
+### Registration Page
 
-→ [`Open Practical 07`](./practical%207/)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%207/Registration%20Page/Screenshot%20(616).png" alt="Practical 07 — Registration page" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%207/Registration%20Page/Screenshot%20(618).png" alt="Practical 07 — Registration page state" width="82%">
+</p>
+
+### To-Do List
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%207/To%20Do%20List/Screenshot%20(615).png" alt="Practical 07 — To-do list" width="82%">
+</p>
+
+**→ [`Open Practical 07`](./practical%207/)**
 
 ---
 
@@ -99,18 +197,15 @@ A collection of small browser-based applications combining JavaScript logic with
 ```text
 JAVASCRIPT
     │
-    ├── fundamentals
-    │
-    ├── DOM & browser interaction
-    │
+    ├── web foundations
+    ├── interfaces & DOM interaction
     ├── validation & application logic
-    │
-    ├── arrays & string processing
-    │
+    ├── arrays & calculations
+    ├── strings & regular expressions
     └── interactive mini applications
 ```
 
-The repository reflects a progression from individual JavaScript concepts toward practical, browser-based implementations.
+The repository documents the progression from foundational JavaScript concepts to practical, browser-based implementations.
 
 ---
 
