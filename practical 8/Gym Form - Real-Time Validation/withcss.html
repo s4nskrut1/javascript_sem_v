@@ -547,7 +547,6 @@
 
 <script>
 
-// Name Validation (input event)
 document.getElementById("name").addEventListener("input", function(){
     let name=this.value;
     if(/^[A-Za-z ]+$/.test(name)){
@@ -557,7 +556,6 @@ document.getElementById("name").addEventListener("input", function(){
     }
 });
 
-// Age Validation (blur event)
 document.getElementById("age").addEventListener("blur", function(){
     let age=this.value;
     if(age>=16 && age<=60){
@@ -567,7 +565,6 @@ document.getElementById("age").addEventListener("blur", function(){
     }
 });
 
-// Email Validation (input event)
 document.getElementById("email").addEventListener("input", function(){
     let email=this.value;
     let pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -579,7 +576,6 @@ document.getElementById("email").addEventListener("input", function(){
     }
 });
 
-// Mobile Validation (input event)
 document.getElementById("mobile").addEventListener("input", function(){
     let mobile=this.value;
 
@@ -590,7 +586,6 @@ document.getElementById("mobile").addEventListener("input", function(){
     }
 });
 
-// Membership Validation (change event)
 document.getElementById("plan").addEventListener("change", function(){
     if(this.value==""){
         document.getElementById("planError").innerHTML="Please select a plan.";
@@ -599,7 +594,6 @@ document.getElementById("plan").addEventListener("change", function(){
     }
 });
 
-// Form Submission (submit event)
 document.getElementById("gymForm").addEventListener("submit", function(e){
 
     e.preventDefault();
