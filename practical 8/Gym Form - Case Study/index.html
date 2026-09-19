@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Admission Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --red: #b51f2f;
+            --red-dark: #861522;
+            --red-light: #fff0f1;
+            --cream: #f7f2ed;
+            --white: #ffffff;
+            --black: #171416;
+            --text: #292427;
+            --muted: #8c8588;
+            --border: #ded8d5;
+            --error: #c52d3d;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #e5e1dd;
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 42% 58%;
+        }
+
+        .left-panel {
+            position: relative;
+            min-height: 100vh;
+            padding: 46px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 8% 85%,
+                    rgba(181, 31, 47, 0.28),
+                    transparent 34%
+                ),
+                linear-gradient(145deg, #2b2023, #100e0f);
+            color: white;
+        }
+
+        .left-panel::before {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            border: 1px solid rgba(190, 78, 101, 0.16);
+            border-radius: 50%;
+            left: -290px;
+            bottom: -140px;
+        }
+
+        .left-panel::after {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border: 55px solid rgba(255, 255, 255, 0.025);
+            border-radius: 50%;
+            right: -240px;
+            top: -190px;
+        }
+
+        .brand {
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        .brand span {
+            color: #d9576b;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tag {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #d9576b;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .tag::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--red);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 5vw, 74px);
+            line-height: 0.88;
+            letter-spacing: -4px;
+            text-transform: uppercase;
+            margin-bottom: 23px;
+        }
+
+        .hero h1 span {
+            color: #c94357;
+        }
+
+        .hero p {
+            max-width: 390px;
+            color: #a99fa2;
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        .stats {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            gap: 38px;
+        }
+
+        .stat {
+            padding-left: 12px;
+            border-left: 2px solid var(--red);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 21px;
+            margin-bottom: 3px;
+        }
+
+        .stat span {
+            color: #777073;
+            font-size: 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .right-panel {
+            min-height: 100vh;
+            background: var(--cream);
+            padding: 35px 6vw;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .form-wrapper {
+            width: 100%;
+            max-width: 790px;
+            margin: auto;
+        }
+
+        .form-heading {
+            margin-bottom: 22px;
+        }
+
+        .form-heading small {
+            display: block;
+            color: var(--red);
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        .form-heading h2 {
+            font-size: 34px;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .form-heading h2 span {
+            color: var(--red);
+        }
+
+        .section {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            padding: 15px 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 11px;
+        }
+
+        .section-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--red-light);
+            color: var(--red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        .section-title strong {
+            color: #514a4d;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            margin-left: auto;
+            color: #aaa3a6;
+            font-size: 8px;
+        }
+
+        .field-label {
+            display: block;
+            color: #514a4d;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            background: #fdfcfa;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 12px;
+            transition: 0.2s ease;
+        }
+
+        input[type="text"],
+        select {
+            height: 43px;
+            padding: 0 13px;
+        }
+
+        textarea {
+            height: 70px;
+            padding: 10px 13px;
+            resize: none;
+            line-height: 1.5;
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            background: white;
+            border-color: var(--red);
+            box-shadow: 0 0 0 3px rgba(181, 31, 47, 0.08);
+        }
+
+        .input-error {
+            border-color: var(--error) !important;
+            box-shadow: 0 0 0 3px rgba(197, 45, 61, 0.08) !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #b2abad;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .sex-options {
+            display: flex;
+            gap: 9px;
+        }
+
+        .sex-option {
+            position: relative;
+            flex: 1;
+        }
+
+        .sex-option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .sex-option span {
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fdfcfa;
+            color: #686165;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .sex-option span::before {
+            content: "";
+            width: 9px;
+            height: 9px;
+            border: 1px solid #aaa1a5;
+            border-radius: 50%;
+            margin-right: 7px;
+        }
+
+        .sex-option input:checked + span {
+            background: var(--red-light);
+            border-color: #bd8390;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .sex-option input:checked + span::before {
+            background: var(--red);
+            border-color: var(--red);
+            box-shadow: inset 0 0 0 2px var(--red-light);
+        }
+
+        .sex-options.sex-error .sex-option span {
+            border-color: var(--error);
+        }
+
+        .checks {
+            display: flex;
+            gap: 10px;
+        }
+
+        .check-option {
+            position: relative;
+            flex: 1;
+        }
+
+        .check-option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .check-option span {
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fdfcfa;
+            color: #686165;
+            font-size: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .check-option span::before {
+            content: "✓";
+            width: 17px;
+            height: 17px;
+            border: 1px solid #c6bec1;
+            border-radius: 4px;
+            margin-right: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: transparent;
+            font-size: 9px;
+        }
+
+        .check-option input:checked + span {
+            background: var(--red-light);
+            border-color: #bd8390;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .check-option input:checked + span::before {
+            background: var(--red);
+            border-color: var(--red);
+            color: white;
+        }
+
+        .error {
+            display: block;
+            min-height: 13px;
+            padding-top: 3px;
+            color: var(--error);
+            font-size: 9px;
+        }
+
+        button {
+            width: 100%;
+            height: 46px;
+            border: none;
+            border-radius: 8px;
+            background: var(--red);
+            color: white;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1.7px;
+            cursor: pointer;
+            transition: 0.25s;
+            box-shadow: 0 8px 20px rgba(181, 31, 47, 0.16);
+        }
+
+        button:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .credit {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+            margin-top: 12px;
+            border-top: 1px solid var(--border);
+            color: #9b9597;
+            font-size: 8px;
+        }
+
+        .credit strong {
+            color: #50494c;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                overflow: auto;
+            }
+
+            .page {
+                height: auto;
+                min-height: 100vh;
+                grid-template-columns: 1fr;
+            }
+
+            .left-panel {
+                min-height: 390px;
+                padding: 35px 45px;
+            }
+
+            .right-panel {
+                min-height: auto;
+                padding: 40px 8vw;
+                overflow: visible;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .left-panel {
+                padding: 30px 25px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .right-panel {
+                padding: 30px 22px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .checks {
+                flex-direction: column;
+            }
+
+            .credit {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="left-panel">
+
+        <div class="brand">
+            FIT<span>FORM</span>
+        </div>
+
+        <div class="hero">
+
+            <div class="tag">
+                Gym Membership
+            </div>
+
+            <h1>
+                GYM<br>
+                <span>ADMISSION</span>
+            </h1>
+
+            <p>
+                Enter your personal information and fitness
+                details to complete your gym admission.
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>24/7</strong>
+                <span>Access</span>
+            </div>
+
+            <div class="stat">
+                <strong>50+</strong>
+                <span>Equipment</span>
+            </div>
+
+            <div class="stat">
+                <strong>10K+</strong>
+                <span>Members</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="right-panel">
+
+        <div class="form-wrapper">
+
+            <div class="form-heading">
+
+                <small>
+                    Registration Form
+                </small>
+
+                <h2>
+                    Member <span>Information.</span>
+                </h2>
+
+            </div>
+
+            <form id="gymForm">
+
+                <div class="section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            ♙
+                        </div>
+
+                        <strong>
+                            Personal Details
+                        </strong>
+
+                        <span>
+                            01
+                        </span>
+
+                    </div>
+
+                    <label class="field-label">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                    >
+
+                    <span
+                        id="nameError"
+                        class="error"
+                    ></span>
+
+                </div>
+
+                <div class="two-column">
+
+                    <div class="section">
+
+                        <div class="section-title">
+
+                            <div class="section-icon">
+                                ○
+                            </div>
+
+                            <strong>
+                                Sex
+                            </strong>
+
+                            <span>
+                                02
+                            </span>
+
+                        </div>
+
+                        <div class="sex-options" id="sexOptions">
+
+                            <label class="sex-option">
+
+                                <input
+                                    type="radio"
+                                    name="sex"
+                                    value="Male"
+                                >
+
+                                <span>
+                                    Male
+                                </span>
+
+                            </label>
+
+                            <label class="sex-option">
+
+                                <input
+                                    type="radio"
+                                    name="sex"
+                                    value="Female"
+                                >
+
+                                <span>
+                                    Female
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                        <span
+                            id="sexError"
+                            class="error"
+                        ></span>
+
+                    </div>
+
+                    <div class="section">
+
+                        <div class="section-title">
+
+                            <div class="section-icon">
+                                ◉
+                            </div>
+
+                            <strong>
+                                Eye Color
+                            </strong>
+
+                            <span>
+                                03
+                            </span>
+
+                        </div>
+
+                        <select id="eyeColor">
+
+                            <option value="">
+                                Select eye color
+                            </option>
+
+                            <option value="Green">
+                                Green
+                            </option>
+
+                            <option value="Blue">
+                                Blue
+                            </option>
+
+                            <option value="Brown">
+                                Brown
+                            </option>
+
+                            <option value="Black">
+                                Black
+                            </option>
+
+                            <option value="Hazel">
+                                Hazel
+                            </option>
+
+                        </select>
+
+                        <span
+                            id="eyeError"
+                            class="error"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+                <div class="section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            ✓
+                        </div>
+
+                        <strong>
+                            Check All That Apply
+                        </strong>
+
+                        <span>
+                            04
+                        </span>
+
+                    </div>
+
+                    <div class="checks">
+
+                        <label class="check-option">
+
+                            <input
+                                type="checkbox"
+                                name="physical"
+                                value="Over 6 feet tall"
+                            >
+
+                            <span>
+                                Over 6 feet tall
+                            </span>
+
+                        </label>
+
+                        <label class="check-option">
+
+                            <input
+                                type="checkbox"
+                                name="physical"
+                                value="Over 200 pounds"
+                            >
+
+                            <span>
+                                Over 200 pounds
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            ✎
+                        </div>
+
+                        <strong>
+                            Athletic Ability
+                        </strong>
+
+                        <span>
+                            05
+                        </span>
+
+                    </div>
+
+                    <textarea
+                        id="ability"
+                        placeholder="Describe your athletic ability..."
+                    ></textarea>
+
+                    <span
+                        id="abilityError"
+                        class="error"
+                    ></span>
+
+                </div>
+
+                <button type="submit">
+                    ENTER MY INFORMATION&nbsp;&nbsp; →
+                </button>
+
+            </form>
+
+            <div class="credit">
+
+                <div>
+                    Designed by
+                    <strong>Sanskruti Gorle</strong>
+                </div>
+
+                <div>
+                    PRN:
+                    <strong>24070521025</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("name").addEventListener("input", function() {
+
+    let name = this.value.trim();
+
+    if (name === "") {
+
+        document.getElementById("nameError").innerHTML =
+        "Name is required.";
+
+        this.classList.add("input-error");
+
+    } else if (!/^[A-Za-z ]+$/.test(name)) {
+
+        document.getElementById("nameError").innerHTML =
+        "Only letters and spaces are allowed.";
+
+        this.classList.add("input-error");
+
+    } else {
+
+        document.getElementById("nameError").innerHTML = "";
+
+        this.classList.remove("input-error");
+
+    }
+
+});
+
+
+document.querySelectorAll('input[name="sex"]').forEach(function(radio) {
+
+    radio.addEventListener("change", function() {
+
+        document.getElementById("sexError").innerHTML = "";
+
+        document.getElementById("sexOptions")
+            .classList.remove("sex-error");
+
+    });
+
+});
+
+
+document.getElementById("eyeColor").addEventListener("change", function() {
+
+    if (this.value === "") {
+
+        document.getElementById("eyeError").innerHTML =
+        "Please select your eye color.";
+
+        this.classList.add("input-error");
+
+    } else {
+
+        document.getElementById("eyeError").innerHTML = "";
+
+        this.classList.remove("input-error");
+
+    }
+
+});
+
+
+document.getElementById("ability").addEventListener("input", function() {
+
+    let ability = this.value.trim();
+
+    if (ability === "") {
+
+        document.getElementById("abilityError").innerHTML =
+        "Athletic ability is required.";
+
+        this.classList.add("input-error");
+
+    } else {
+
+        document.getElementById("abilityError").innerHTML = "";
+
+        this.classList.remove("input-error");
+
+    }
+
+});
+
+
+document.getElementById("gymForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let name = document.getElementById("name");
+    let sex = document.querySelector('input[name="sex"]:checked');
+    let eyeColor = document.getElementById("eyeColor");
+    let ability = document.getElementById("ability");
+
+    let valid = true;
+
+
+    if (name.value.trim() === "") {
+
+        document.getElementById("nameError").innerHTML =
+        "Name is required.";
+
+        name.classList.add("input-error");
+
+        valid = false;
+
+    } else if (!/^[A-Za-z ]+$/.test(name.value.trim())) {
+
+        document.getElementById("nameError").innerHTML =
+        "Only letters and spaces are allowed.";
+
+        name.classList.add("input-error");
+
+        valid = false;
+
+    } else {
+
+        document.getElementById("nameError").innerHTML = "";
+
+        name.classList.remove("input-error");
+
+    }
+
+
+    if (!sex) {
+
+        document.getElementById("sexError").innerHTML =
+        "Please select your sex.";
+
+        document.getElementById("sexOptions")
+            .classList.add("sex-error");
+
+        valid = false;
+
+    } else {
+
+        document.getElementById("sexError").innerHTML = "";
+
+        document.getElementById("sexOptions")
+            .classList.remove("sex-error");
+
+    }
+
+
+    if (eyeColor.value === "") {
+
+        document.getElementById("eyeError").innerHTML =
+        "Please select your eye color.";
+
+        eyeColor.classList.add("input-error");
+
+        valid = false;
+
+    } else {
+
+        document.getElementById("eyeError").innerHTML = "";
+
+        eyeColor.classList.remove("input-error");
+
+    }
+
+
+    if (ability.value.trim() === "") {
+
+        document.getElementById("abilityError").innerHTML =
+        "Athletic ability is required.";
+
+        ability.classList.add("input-error");
+
+        valid = false;
+
+    } else {
+
+        document.getElementById("abilityError").innerHTML = "";
+
+        ability.classList.remove("input-error");
+
+    }
+
+
+    if (valid) {
+
+        alert("Gym Admission Successful!");
+
+        document.getElementById("gymForm").reset();
+
+    } else {
+
+        alert("Please correct the errors before submitting.");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
