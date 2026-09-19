@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theme Preferences</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+
+      background:
+        radial-gradient(circle at 15% 20%, #c7d2fe 0%, transparent 30%),
+        radial-gradient(circle at 85% 80%, #fbcfe8 0%, transparent 30%),
+        linear-gradient(135deg, #eef2ff, #f8fafc);
+
+      color: #1e293b;
+      transition: all 0.5s ease;
+      overflow: hidden;
+    }
+
+    /* Decorative circles */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(2px);
+      z-index: -1;
+    }
+
+    body::before {
+      width: 220px;
+      height: 220px;
+      background: rgba(129, 140, 248, 0.25);
+      top: -70px;
+      left: -70px;
+    }
+
+    body::after {
+      width: 260px;
+      height: 260px;
+      background: rgba(244, 114, 182, 0.2);
+      bottom: -100px;
+      right: -80px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 570px;
+      padding: 50px 45px;
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 28px;
+
+      box-shadow:
+        0 25px 60px rgba(30, 41, 59, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+      transition: 0.5s ease;
+    }
+
+    .icon {
+      width: 82px;
+      height: 82px;
+
+      margin: 0 auto 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 38px;
+
+      border-radius: 24px;
+
+      background: linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+      );
+
+      box-shadow:
+        0 12px 30px rgba(99, 102, 241, 0.35);
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    h1 {
+      margin: 0;
+
+      font-size: 32px;
+      font-weight: 700;
+
+      background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed,
+        #db2777
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      margin: 14px auto 34px;
+
+      max-width: 430px;
+
+      color: #64748b;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px 20px;
+
+      border: none;
+      border-radius: 14px;
+
+      font-size: 15px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      transition: all 0.25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .light-btn {
+      color: #3730a3;
+
+      background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #e0e7ff
+      );
+
+      border: 1px solid #c7d2fe;
+    }
+
+    .light-btn:hover {
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.18);
+    }
+
+    .dark-btn {
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        #1e293b,
+        #334155
+      );
+
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+    }
+
+    .dark-btn:hover {
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.28);
+    }
+
+    .clear-btn {
+      color: #be123c;
+
+      background: rgba(255, 228, 230, 0.7);
+
+      border: 1px solid #fecdd3;
+    }
+
+    .clear-btn:hover {
+      background: #ffe4e6;
+      box-shadow: 0 8px 20px rgba(244, 63, 94, 0.15);
+    }
+
+    .storage-info {
+      margin-top: 28px;
+
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .storage-info span {
+      font-weight: bold;
+      color: #6366f1;
+    }
+
+
+    /* ================= DARK MODE ================= */
+
+    body.dark {
+      background:
+        radial-gradient(circle at 15% 20%, #312e81 0%, transparent 30%),
+        radial-gradient(circle at 85% 80%, #701a75 0%, transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a);
+
+      color: white;
+    }
+
+    body.dark .container {
+      background: rgba(15, 23, 42, 0.72);
+
+      border: 1px solid rgba(148, 163, 184, 0.15);
+
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark h1 {
+      background: linear-gradient(
+        90deg,
+        #818cf8,
+        #a78bfa,
+        #f472b6
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body.dark .subtitle {
+      color: #cbd5e1;
+    }
+
+    body.dark .light-btn {
+      color: #e0e7ff;
+
+      background: rgba(79, 70, 229, 0.15);
+
+      border: 1px solid rgba(129, 140, 248, 0.3);
+    }
+
+    body.dark .dark-btn {
+      background: linear-gradient(
+        135deg,
+        #f8fafc,
+        #e2e8f0
+      );
+
+      color: #0f172a;
+    }
+
+    body.dark .clear-btn {
+      color: #fda4af;
+
+      background: rgba(159, 18, 57, 0.18);
+
+      border: 1px solid rgba(244, 63, 94, 0.25);
+    }
+
+    body.dark .storage-info {
+      color: #64748b;
+    }
+
+    body.dark .storage-info span {
+      color: #818cf8;
+    }
+
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 500px) {
+
+      .container {
+        padding: 38px 25px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="icon">
+      🎨
+    </div>
+
+    <h1>Theme Preferences</h1>
+
+    <p class="subtitle">
+      Personalize your experience by choosing a theme.
+      Your preference will be remembered automatically.
+    </p>
+
+    <div class="options">
+
+      <button class="light-btn" onclick="setTheme('light')">
+        ☀️
+        <span>Light Theme</span>
+      </button>
+
+      <button class="dark-btn" onclick="setTheme('dark')">
+        🌙
+        <span>Dark Theme</span>
+      </button>
+
+      <button class="clear-btn" onclick="clearPreference()">
+        ↺
+        <span>Clear Preference</span>
+      </button>
+
+    </div>
+
+    <div class="storage-info">
+      Preference saved using
+      <span>localStorage</span> &
+      <span>sessionStorage</span>
+    </div>
+
+  </div>
+
+
+  <script>
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+
+      localStorage.setItem('theme', theme);
+
+      sessionStorage.setItem('sessionTheme', theme);
+    }
+
+    function clearPreference() {
+      localStorage.removeItem('theme');
+      sessionStorage.removeItem('sessionTheme');
+
+      document.body.classList.remove('dark');
+    }
+
+    window.onload = function () {
+      var saved = localStorage.getItem('theme');
+
+      if (saved === 'dark') {
+        document.body.classList.add('dark');
+      }
+    };
+  </script>
+
+</body>
+</html>
