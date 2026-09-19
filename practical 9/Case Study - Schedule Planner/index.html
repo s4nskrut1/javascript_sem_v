@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule Planner</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f3f1ed;
+            color: #252333;
+            padding: 35px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .top {
+            display: grid;
+            grid-template-columns: 1.05fr 2fr;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .brand {
+            background: #29263d;
+            border-radius: 24px;
+            padding: 30px;
+            color: white;
+            min-height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ffffff20;
+            border-radius: 50%;
+            right: -50px;
+            bottom: -50px;
+        }
+
+        .brand::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ffffff18;
+            border-radius: 50%;
+            right: 5px;
+            bottom: 5px;
+        }
+
+        .brand small {
+            color: #b9b3dc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .brand h1 {
+            font-size: 32px;
+            line-height: 1.05;
+            margin: 8px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand p {
+            color: #c9c6d5;
+            margin: 0;
+            font-size: 13px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .add-panel {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 27px 30px;
+            border: 1px solid #e5e1da;
+        }
+
+        .add-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .add-heading h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .add-heading span {
+            color: #928d9f;
+            font-size: 11px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1.4fr;
+            gap: 11px;
+        }
+
+        .field label {
+            display: block;
+            color: #817d89;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            height: 43px;
+            border: 1px solid #dedbe3;
+            background: #faf9fb;
+            border-radius: 10px;
+            padding: 0 12px;
+            font-size: 13px;
+            color: #302d3c;
+            outline: none;
+        }
+
+        input:focus {
+            background: white;
+            border-color: #7668d8;
+            box-shadow: 0 0 0 3px #7668d815;
+        }
+
+        .add-btn {
+            height: 42px;
+            margin-top: 15px;
+            padding: 0 21px;
+            border: 0;
+            border-radius: 10px;
+            background: #7668d8;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .add-btn:hover {
+            background: #6557c5;
+        }
+
+        .schedule {
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            border: 1px solid #e5e1da;
+        }
+
+        .schedule-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 20px;
+        }
+
+        .schedule-top h2 {
+            margin: 0;
+            font-size: 21px;
+        }
+
+        .schedule-top p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: #918d99;
+        }
+
+        .storage-badge {
+            display: flex;
+            gap: 7px;
+        }
+
+        .badge {
+            padding: 6px 9px;
+            border-radius: 7px;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .local {
+            background: #eeeaff;
+            color: #6255b9;
+        }
+
+        .session {
+            background: #e8f5ef;
+            color: #31805c;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 11px 14px;
+            color: #9995a0;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ece9ee;
+        }
+
+        th:last-child {
+            text-align: center;
+        }
+
+        td {
+            padding: 15px 14px;
+            border-bottom: 1px solid #f0edf1;
+            font-size: 13px;
+            cursor: pointer;
+            transition: .15s;
+        }
+
+        tbody tr:hover td {
+            background: #fbfaff;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .day {
+            font-weight: 750;
+            color: #302d3d;
+        }
+
+        .day span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            background: #7668d8;
+            border-radius: 50%;
+        }
+
+        .time {
+            color: #656170;
+            font-weight: 600;
+        }
+
+        .topic {
+            color: #6558c4;
+            font-weight: 700;
+        }
+
+        .missing {
+            color: #cf6872;
+            font-style: italic;
+        }
+
+        .actions {
+            text-align: center;
+            cursor: default;
+        }
+
+        .action {
+            width: 32px;
+            height: 32px;
+            border: 0;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 13px;
+            margin: 0 2px;
+        }
+
+        .edit {
+            background: #eeeaff;
+            color: #6255b9;
+        }
+
+        .delete {
+            background: #fff0f1;
+            color: #c75b66;
+        }
+
+        .edit:hover {
+            background: #dfdaff;
+        }
+
+        .delete:hover {
+            background: #ffe0e3;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #aaa6b1;
+            font-size: 13px;
+        }
+
+        .edit-box {
+            display: none;
+            margin-top: 20px;
+            background: #f7f5ff;
+            border: 1px solid #e2def9;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .edit-box h3 {
+            margin: 0 0 16px;
+            font-size: 15px;
+            color: #50479b;
+        }
+
+        .edit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1.4fr;
+            gap: 11px;
+        }
+
+        .save,
+        .cancel {
+            margin-top: 14px;
+            height: 38px;
+            border: 0;
+            border-radius: 9px;
+            padding: 0 17px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .save {
+            background: #3d9568;
+            color: white;
+        }
+
+        .cancel {
+            background: #e4e1e9;
+            color: #55515e;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 800px) {
+            .top {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid,
+            .edit-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .form-grid,
+            .edit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brand {
+                min-height: 160px;
+            }
+
+            .schedule {
+                padding: 18px;
+            }
+
+            table {
+                min-width: 700px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top">
+
+        <div class="brand">
+            <div>
+                <small>Seminar · 2026</small>
+                <h1>Schedule<br>Planner</h1>
+            </div>
+
+            <p>Build your timetable one session at a time.</p>
+        </div>
+
+        <div class="add-panel">
+
+            <div class="add-heading">
+                <h2>Add a session</h2>
+                <span>Enter all four details</span>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label>Day</label>
+                    <input id="day" placeholder="Monday">
+                </div>
+
+                <div class="field">
+                    <label>Begin</label>
+                    <input id="begin" placeholder="8:00 a.m.">
+                </div>
+
+                <div class="field">
+                    <label>End</label>
+                    <input id="end" placeholder="5:00 p.m.">
+                </div>
+
+                <div class="field">
+                    <label>Topic</label>
+                    <input id="topic" placeholder="Introduction to XML">
+                </div>
+
+            </div>
+
+            <button class="add-btn" onclick="addSchedule()">
+                + Add session
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="schedule">
+
+        <div class="schedule-top">
+
+            <div>
+                <h2>Your timetable</h2>
+                <p>Click a day, time or topic to view session details.</p>
+            </div>
+
+            <div class="storage-badge">
+                <span class="badge local">LOCAL STORAGE</span>
+                <span class="badge session">SESSION STORAGE</span>
+            </div>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Begin</th>
+                        <th>End</th>
+                        <th>Topic</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="scheduleBody"></tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="edit-box" id="editBox">
+
+            <h3>✦ Edit session</h3>
+
+            <div class="edit-grid">
+
+                <div class="field">
+                    <label>Day</label>
+                    <input id="editDay">
+                </div>
+
+                <div class="field">
+                    <label>Begin</label>
+                    <input id="editBegin">
+                </div>
+
+                <div class="field">
+                    <label>End</label>
+                    <input id="editEnd">
+                </div>
+
+                <div class="field">
+                    <label>Topic</label>
+                    <input id="editTopic">
+                </div>
+
+            </div>
+
+            <button class="save" onclick="saveEdit()">
+                Save changes
+            </button>
+
+            <button class="cancel" onclick="cancelEdit()">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let editIndex = -1;
+
+window.onload = function() {
+    displaySchedules();
+};
+
+function addSchedule() {
+
+    let day = document.getElementById("day").value.trim();
+    let begin = document.getElementById("begin").value.trim();
+    let end = document.getElementById("end").value.trim();
+    let topic = document.getElementById("topic").value.trim();
+
+    if (day === "" || begin === "" || end === "" || topic === "") {
+        alert("Please enter all details.");
+        return;
+    }
+
+    let schedules =
+        JSON.parse(localStorage.getItem("scheduleData")) || [];
+
+    schedules.push({
+        day: day,
+        begin: begin,
+        end: end
+    });
+
+    localStorage.setItem(
+        "scheduleData",
+        JSON.stringify(schedules)
+    );
+
+    let topics =
+        JSON.parse(sessionStorage.getItem("topicData")) || [];
+
+    topics.push(topic);
+
+    sessionStorage.setItem(
+        "topicData",
+        JSON.stringify(topics)
+    );
+
+    document.getElementById("day").value = "";
+    document.getElementById("begin").value = "";
+    document.getElementById("end").value = "";
+    document.getElementById("topic").value = "";
+
+    displaySchedules();
+
+    alert("Session added successfully!");
+}
+
+function displaySchedules() {
+
+    let schedules =
+        JSON.parse(localStorage.getItem("scheduleData")) || [];
+
+    let topics =
+        JSON.parse(sessionStorage.getItem("topicData")) || [];
+
+    let body =
+        document.getElementById("scheduleBody");
+
+    body.innerHTML = "";
+
+    if (schedules.length === 0) {
+
+        body.innerHTML = `
+            <tr>
+                <td colspan="5" class="empty">
+                    No sessions yet. Add your first session above.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    schedules.forEach(function(schedule, index) {
+
+        let row = document.createElement("tr");
+
+        let day = document.createElement("td");
+        day.className = "day clickable";
+        day.innerHTML =
+            `<span><i class="dot"></i>${schedule.day}</span>`;
+
+        let begin = document.createElement("td");
+        begin.className = "time";
+        begin.innerText = schedule.begin;
+
+        let end = document.createElement("td");
+        end.className = "time";
+        end.innerText = schedule.end;
+
+        let topic = document.createElement("td");
+
+        if (topics[index]) {
+            topic.className = "topic";
+            topic.innerText = topics[index];
+        } else {
+            topic.className = "missing";
+            topic.innerText = "Topic unavailable";
+        }
+
+        let actions = document.createElement("td");
+        actions.className = "actions";
+
+        let edit = document.createElement("button");
+        edit.className = "action edit";
+        edit.innerText = "✎";
+        edit.title = "Edit";
+
+        edit.onclick = function(event) {
+            event.stopPropagation();
+            editSchedule(index);
+        };
+
+        let del = document.createElement("button");
+        del.className = "action delete";
+        del.innerText = "×";
+        del.title = "Delete";
+
+        del.onclick = function(event) {
+            event.stopPropagation();
+            deleteSchedule(index);
+        };
+
+        actions.appendChild(edit);
+        actions.appendChild(del);
+
+        row.appendChild(day);
+        row.appendChild(begin);
+        row.appendChild(end);
+        row.appendChild(topic);
+        row.appendChild(actions);
+
+        [day, begin, end, topic].forEach(function(cell) {
+
+            cell.onclick = function() {
+
+                alert(
+                    "SEMINAR DETAILS\n\n" +
+                    "Day: " + schedule.day + "\n" +
+                    "Begin: " + schedule.begin + "\n" +
+                    "End: " + schedule.end + "\n" +
+                    "Topic: " + (topics[index] || "Topic unavailable")
+                );
+
+            };
+
+        });
+
+        body.appendChild(row);
+    });
+}
+
+function editSchedule(index) {
+
+    let schedules =
+        JSON.parse(localStorage.getItem("scheduleData")) || [];
+
+    let topics =
+        JSON.parse(sessionStorage.getItem("topicData")) || [];
+
+    editIndex = index;
+
+    document.getElementById("editDay").value =
+        schedules[index].day;
+
+    document.getElementById("editBegin").value =
+        schedules[index].begin;
+
+    document.getElementById("editEnd").value =
+        schedules[index].end;
+
+    document.getElementById("editTopic").value =
+        topics[index] || "";
+
+    document.getElementById("editBox").style.display =
+        "block";
+}
+
+function saveEdit() {
+
+    if (editIndex === -1) {
+        return;
+    }
+
+    let day =
+        document.getElementById("editDay").value.trim();
+
+    let begin =
+        document.getElementById("editBegin").value.trim();
+
+    let end =
+        document.getElementById("editEnd").value.trim();
+
+    let topic =
+        document.getElementById("editTopic").value.trim();
+
+    if (day === "" || begin === "" || end === "" || topic === "") {
+        alert("Please enter all details.");
+        return;
+    }
+
+    let schedules =
+        JSON.parse(localStorage.getItem("scheduleData")) || [];
+
+    schedules[editIndex] = {
+        day: day,
+        begin: begin,
+        end: end
+    };
+
+    localStorage.setItem(
+        "scheduleData",
+        JSON.stringify(schedules)
+    );
+
+    let topics =
+        JSON.parse(sessionStorage.getItem("topicData")) || [];
+
+    topics[editIndex] = topic;
+
+    sessionStorage.setItem(
+        "topicData",
+        JSON.stringify(topics)
+    );
+
+    editIndex = -1;
+
+    document.getElementById("editBox").style.display =
+        "none";
+
+    displaySchedules();
+
+    alert("Session updated successfully!");
+}
+
+function cancelEdit() {
+
+    editIndex = -1;
+
+    document.getElementById("editBox").style.display =
+        "none";
+}
+
+function deleteSchedule(index) {
+
+    if (!confirm("Delete this session?")) {
+        return;
+    }
+
+    let schedules =
+        JSON.parse(localStorage.getItem("scheduleData")) || [];
+
+    schedules.splice(index, 1);
+
+    localStorage.setItem(
+        "scheduleData",
+        JSON.stringify(schedules)
+    );
+
+    let topics =
+        JSON.parse(sessionStorage.getItem("topicData")) || [];
+
+    topics.splice(index, 1);
+
+    sessionStorage.setItem(
+        "topicData",
+        JSON.stringify(topics)
+    );
+
+    displaySchedules();
+
+    alert("Session deleted successfully!");
+}
+
+</script>
+
+</body>
+</html>
