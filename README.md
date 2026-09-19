@@ -190,6 +190,79 @@ A collection of browser-based applications combining **JavaScript logic with use
 
 **→ [`Open Practical 07`](./practical%207/)**
 
+
+---
+
+## Practical 08 — Advanced Forms & Real-Time Validation
+
+A pair of browser-based form exercises focused on **form design, real-time validation, input handling, and case-study implementation**.
+
+### Gym Form — Case Study
+
+A structured gym registration form implemented as a practical case study, combining form layout with JavaScript-driven interaction and validation.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%208/Gym%20Form%20-%20Case%20Study/Screenshot%20(728).png" alt="Practical 08 — Gym Form Case Study" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%208/Gym%20Form%20-%20Case%20Study/Screenshot%20(729).png" alt="Practical 08 — Gym Form Case Study result" width="82%">
+</p>
+
+### Gym Form — Real-Time Validation
+
+A validation-focused gym form demonstrating **real-time feedback and client-side input validation**.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%208/Gym%20Form%20-%20Real-Time%20Validation/Screenshot%20(724).png" alt="Practical 08 — Real-time validation" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%208/Gym%20Form%20-%20Real-Time%20Validation/Screenshot%20(725).png" alt="Practical 08 — Real-time validation result" width="82%">
+</p>
+
+**Focus:** forms · DOM interaction · validation · real-time feedback · user input handling
+
+**→ [Open Practical 08](./practical%208/)**
+
+---
+
+## Practical 09 — Schedule Planner & Theme Preference
+
+A set of interactive browser exercises focused on **planning interfaces, dynamic UI behaviour, and user interface preferences**.
+
+### Schedule Planner — Case Study
+
+A browser-based schedule planning interface designed to organize activities and demonstrate interactive JavaScript-driven UI behaviour.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%209/Case%20Study%20-%20Schedule%20Planner/Screenshot%20(750).png" alt="Practical 09 — Schedule Planner" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%209/Case%20Study%20-%20Schedule%20Planner/Screenshot%20(751).png" alt="Practical 09 — Schedule Planner view" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%209/Case%20Study%20-%20Schedule%20Planner/Screenshot%20(754).png" alt="Practical 09 — Schedule Planner result" width="82%">
+</p>
+
+### Theme Preference
+
+An interactive theme-preference implementation demonstrating **UI state changes and user-controlled visual preferences**.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%209/Theme%20Preference/Screenshot%20(752).png" alt="Practical 09 — Theme Preference" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%209/Theme%20Preference/Screenshot%20(753).png" alt="Practical 09 — Theme Preference alternate state" width="82%">
+</p>
+
+**Focus:** dynamic interfaces · DOM manipulation · state changes · user preferences · interactive UI
+
+**→ [Open Practical 09](./practical%209/)**
+
 ---
 
 ## The progression
@@ -202,10 +275,12 @@ JAVASCRIPT
     ├── validation & application logic
     ├── arrays & calculations
     ├── strings & regular expressions
-    └── interactive mini applications
+    ├── interactive mini applications
+    ├── forms & real-time validation
+    └── planning interfaces & user preferences
 ```
 
-The repository documents the progression from foundational JavaScript concepts to practical, browser-based implementations.
+The repository documents the progression from foundational JavaScript concepts to practical, browser-based implementations — now extending through advanced form validation, interactive planning interfaces, and user preference handling.
 
 ---
 
