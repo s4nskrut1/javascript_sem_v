@@ -10,7 +10,7 @@ A collection of practical implementations covering **JavaScript fundamentals, br
 
 <br><br>
 
-`01` Web Foundations &nbsp;·&nbsp; `02` Interfaces &nbsp;·&nbsp; `03` Validation &nbsp;·&nbsp; `04` Problem Solving &nbsp;·&nbsp; `05` Data Handling &nbsp;·&nbsp; `06` Strings &nbsp;·&nbsp; `07` Mini Applications
+`01` Web Foundations &nbsp;·&nbsp; `02` Interfaces &nbsp;·&nbsp; `03` Validation &nbsp;·&nbsp; `04` Problem Solving &nbsp;·&nbsp; `05` Data Handling &nbsp;·&nbsp; `06` Strings &nbsp;·&nbsp; `07` Mini Applications &nbsp;·&nbsp; `Portfolio` Capstone
 
 </div>
 
@@ -262,6 +262,24 @@ An interactive theme-preference implementation demonstrating **UI state changes 
 **Focus:** dynamic interfaces · DOM manipulation · state changes · user preferences · interactive UI
 
 **→ [Open Practical 09](./practical%209/)**
+
+---
+
+## Capstone Project — Interactive Developer Portfolio
+
+A comprehensive, production-grade **Mac Safari-themed interactive developer portfolio** engineered using vanilla semantic HTML5, modern responsive CSS bento grid, and modular ES6+ JavaScript.
+
+**Focus:** modular architecture · ES6 classes & OOP · closures & IIFE · DOM manipulation & event delegation · Web Storage APIs (`localStorage` & `sessionStorage`) · asynchronous fetch · regex validation · accessible modals
+
+**Built with:** HTML5 · CSS3 · Modern JavaScript (ES6+)
+
+### Preview
+
+<p align="center">
+  <img src="./portfolio/assets/screenshots/01-hero-about.png" alt="Capstone Project — Interactive Developer Portfolio" width="82%">
+</p>
+
+**→ [`Open Portfolio`](./portfolio/)**
 
 ---
 

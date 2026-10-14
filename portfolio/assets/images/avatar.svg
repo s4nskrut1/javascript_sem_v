@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="portalBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ec4899" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#27272a"/>
+    </linearGradient>
+    <linearGradient id="sweaterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Arched Portal Backdrop (From References) -->
+  <path d="M 120 440 L 120 220 A 130 130 0 0 1 380 220 L 380 440 Z" fill="url(#portalBg)" stroke="#6366f1" stroke-width="2.5" stroke-dasharray="6 6"/>
+
+  <!-- Starburst Sparkles (From Marsaltarin & Papercut references) -->
+  <g fill="#f59e0b" filter="url(#softGlow)">
+    <!-- Top-left sparkle -->
+    <path d="M 90 140 Q 90 155 105 155 Q 90 155 90 170 Q 90 155 75 155 Q 90 155 90 140 Z"/>
+    <!-- Top-right large sparkle -->
+    <path d="M 400 120 Q 400 138 418 138 Q 400 138 400 156 Q 400 138 382 138 Q 400 138 400 120 Z"/>
+    <!-- Mid-right sparkle -->
+    <path d="M 430 250 Q 430 262 442 262 Q 430 262 430 274 Q 430 262 418 262 Q 430 262 430 250 Z"/>
+    <!-- Floating tiny stars & dots -->
+    <circle cx="130" cy="110" r="4" fill="#ec4899"/>
+    <circle cx="370" cy="90" r="5" fill="#10b981"/>
+    <circle cx="70" cy="270" r="4.5" fill="#6366f1"/>
+    <circle cx="430" cy="360" r="4" fill="#f43f5e"/>
+  </g>
+
+  <!-- Speed/Sparkle Ray Accents (Marsaltarin reference) -->
+  <path d="M 110 200 L 80 185" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 390 190 L 420 175" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 100 230 L 70 235" stroke="#ec4899" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Character Shoulders & Knit Sweater -->
+  <path d="M 140 440 C 150 350, 190 330, 250 330 C 310 330, 350 350, 360 440 Z" fill="url(#sweaterGrad)"/>
+  
+  <!-- Striped sweater details (Marsaltarin reference) -->
+  <path d="M 160 370 Q 250 385 340 370" stroke="#a5b4fc" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 152 400 Q 250 415 348 400" stroke="#a5b4fc" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 148 430 Q 250 445 352 430" stroke="#a5b4fc" stroke-width="3" fill="none" opacity="0.6"/>
+
+  <!-- Shirt Collar -->
+  <path d="M 230 330 L 250 360 L 270 330 Z" fill="#ffffff"/>
+  <polygon points="215,330 235,355 245,330" fill="#e0e7ff"/>
+  <polygon points="285,330 265,355 255,330" fill="#e0e7ff"/>
+
+  <!-- Neck -->
+  <rect x="232" y="290" width="36" height="45" rx="8" fill="#fed7aa"/>
+
+  <!-- Head / Cute Face -->
+  <ellipse cx="250" cy="245" rx="66" ry="72" fill="#ffedd5"/>
+
+  <!-- Rosy Anime Cheeks & Star Blushes -->
+  <ellipse cx="206" cy="262" rx="14" ry="8" fill="#fca5a5" opacity="0.7"/>
+  <ellipse cx="294" cy="262" rx="14" ry="8" fill="#fca5a5" opacity="0.7"/>
+  <text x="198" y="267" font-size="10" fill="#f43f5e" font-weight="bold">★</text>
+  <text x="286" y="267" font-size="10" fill="#f43f5e" font-weight="bold">★</text>
+
+  <!-- Big Anime Eyes with Highlights -->
+  <g>
+    <!-- Left Eye -->
+    <ellipse cx="216" cy="238" rx="14" ry="17" fill="#1e1b4b"/>
+    <circle cx="211" cy="232" r="6" fill="#ffffff"/>
+    <circle cx="221" cy="245" r="3" fill="#ffffff"/>
+    <!-- Eyelash / Eyebrow -->
+    <path d="M 200 220 Q 216 215 232 222" stroke="#18181b" stroke-width="4" fill="none" stroke-linecap="round"/>
+    
+    <!-- Right Eye -->
+    <ellipse cx="284" cy="238" rx="14" ry="17" fill="#1e1b4b"/>
+    <circle cx="279" cy="232" r="6" fill="#ffffff"/>
+    <circle cx="289" cy="245" r="3" fill="#ffffff"/>
+    <!-- Eyelash / Eyebrow -->
+    <path d="M 268 222 Q 284 215 300 220" stroke="#18181b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Cute Open Smile (Marsaltarin reference: happy excited face :D) -->
+  <path d="M 242 272 Q 250 286 258 272 Z" fill="#e11d48"/>
+  <path d="M 242 272 Q 250 286 258 272" stroke="#be123c" stroke-width="2" fill="none"/>
+
+  <!-- Hair with Cute Bangs and Bob Curls -->
+  <g fill="url(#hairGrad)">
+    <!-- Back Hair Fluff -->
+    <path d="M 182 220 C 170 160, 210 130, 250 130 C 290 130, 330 160, 318 220 C 342 245, 342 300, 310 310 C 302 290, 308 250, 305 230 C 295 170, 205 170, 195 230 C 190 250, 196 290, 188 310 C 158 300, 158 245, 182 220 Z"/>
+    <!-- Front Bangs -->
+    <path d="M 185 210 Q 215 240 225 215 Q 240 250 250 210 Q 265 245 275 215 Q 290 235 315 210 C 305 165, 280 155, 250 155 C 220 155, 195 165, 185 210 Z"/>
+    <!-- Cat-Ear Style Fluffs / Hair tufts (from Reference 6 & 1) -->
+    <path d="M 215 150 Q 225 118 240 135 Z"/>
+    <path d="M 285 150 Q 275 118 260 135 Z"/>
+  </g>
+
+  <!-- Cute Floating "HELLO" Chat Bubble (Luong Thu Ha reference) -->
+  <g transform="translate(325, 180)">
+    <path d="M 10 0 L 70 0 A 18 18 0 0 1 88 18 L 88 28 A 18 18 0 0 1 70 46 L 25 46 L 5 56 L 10 46 A 18 18 0 0 1 -8 28 L -8 18 A 18 18 0 0 1 10 0 Z" fill="#ec4899"/>
+    <text x="40" y="28" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" text-anchor="middle" letter-spacing="1">HELLO!</text>
+  </g>
+
+  <!-- Laptop In Front with Typing Hands (Marsaltarin reference) -->
+  <g>
+    <!-- Laptop Base & Screen -->
+    <path d="M 180 375 L 320 375 L 340 435 L 160 435 Z" fill="#1e293b" stroke="#6366f1" stroke-width="2.5"/>
+    <path d="M 195 385 L 305 385 L 320 425 L 180 425 Z" fill="#0f172a"/>
+    <!-- Glowing Code Lines on Laptop Screen -->
+    <line x1="205" y1="395" x2="250" y2="395" stroke="#ec4899" stroke-width="3" stroke-linecap="round"/>
+    <line x1="205" y1="405" x2="285" y2="405" stroke="#6366f1" stroke-width="3" stroke-linecap="round"/>
+    <line x1="215" y1="415" x2="270" y2="415" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Happy Typing Hands / Paws -->
+    <ellipse cx="205" cy="420" rx="14" ry="10" fill="#ffedd5" stroke="#1e1b4b" stroke-width="2"/>
+    <ellipse cx="295" cy="420" rx="14" ry="10" fill="#ffedd5" stroke="#1e1b4b" stroke-width="2"/>
+  </g>
+</svg>

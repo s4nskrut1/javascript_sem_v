@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanskruti S. | Portfolio</title>
+  <meta name="description" content="Portfolio of Sanskruti S. - B.Tech CSE Student @ SIT Nagpur. Modern JavaScript, Full-Stack Engineering, UI/UX.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Fraunces (Editorial Headings) + Hanken Grotesk + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ambient Backdrop Glow -->
+  <div class="canvas-ambient-backdrop" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       MAC SAFARI BROWSER WINDOW CONTAINER (Matches Reference Layout Exactly)
+       ========================================================================= -->
+  <div class="mac-safari-window">
+
+    <!-- 1. Safari Browser Navigation Bar -->
+    <div class="safari-header-bar">
+      <!-- Left: Window Dots & Navigation Controls -->
+      <div class="safari-left-controls">
+        <span class="window-dot dot-red" title="Close"></span>
+        <span class="window-dot dot-yellow" title="Minimize"></span>
+        <span class="window-dot dot-green" title="Expand"></span>
+        <div class="safari-nav-icons" aria-hidden="true">
+          <span class="safari-icon-btn">⊞</span>
+          <span class="safari-icon-btn">‹</span>
+          <span class="safari-icon-btn">›</span>
+          <span class="safari-icon-btn">🛡️</span>
+        </div>
+      </div>
+
+      <!-- Center: Address Bar Pill -->
+      <div class="safari-address-pill">
+        <span class="address-lock-icon">🔒</span>
+        <span class="address-url-text">sanskruti.com</span>
+        <button id="btn-refresh-data" class="address-refresh-btn" title="Refresh Portfolio Data">⟳</button>
+      </div>
+
+      <!-- Right: Safari Toolbar Actions & Viva Inspector -->
+      <div class="safari-right-controls">
+        <button id="btn-open-inspector" class="btn-viva-pill" title="Open JavaScript Concepts Inspector (Viva Cheat Code)" aria-label="Open JavaScript Inspector">
+          <span class="pulse-icon">⚡</span>
+          <span>JS Inspector</span>
+        </button>
+        <span class="safari-icon-btn" aria-hidden="true">⇮</span>
+        <span class="safari-icon-btn" aria-hidden="true">＋</span>
+        <span class="safari-icon-btn" aria-hidden="true">❐</span>
+      </div>
+    </div>
+
+    <!-- 2. Inside Page Content Area -->
+    <div class="portfolio-page-canvas">
+
+      <!-- Webpage Navigation Bar -->
+      <nav class="webpage-nav-bar">
+        <!-- Brand Script Logo -->
+        <a href="#hero" class="nav-brand-script">Sanskruti</a>
+
+        <!-- Center Nav Links -->
+        <div class="nav-links-menu">
+          <a href="#about" class="nav-menu-link">About</a>
+          <a href="#education" class="nav-menu-link">Education</a>
+          <a href="#skills" class="nav-menu-link">Skills</a>
+          <a href="#achievements" class="nav-menu-link">Achievements</a>
+          <a href="#projects" class="nav-menu-link">Projects</a>
+          <a href="#contact" class="nav-menu-link">Contact</a>
+        </div>
+
+        <!-- Right: Dark Mode Toggle Switch Pill -->
+        <div class="nav-theme-switch-wrapper">
+          <button id="theme-toggle" class="nav-toggle-pill" title="Toggle Theme" aria-label="Toggle Theme">
+            <span class="toggle-slider-circle"></span>
+          </button>
+        </div>
+      </nav>
+
+
+
+      <!-- =====================================================================
+           1. HERO & PERSONAL INTRODUCTION / ABOUT ME
+           ===================================================================== -->
+      <section class="portfolio-section" id="about">
+        <header class="top-hero-id-card" id="hero">
+          <!-- Floating Sparkle Stars -->
+          <span class="sparkle-star sparkle-tr" aria-hidden="true">✦</span>
+          <span class="sparkle-star sparkle-bl" aria-hidden="true">✧</span>
+
+          <div class="id-card-inner-grid">
+            <!-- Left: Flippable Avatar Card + Barcode Below -->
+            <div class="id-avatar-box-col">
+              <div class="pfp-flip-container" id="pfp-flip-card" role="button" tabindex="0" title="Click or tap to flip photo!">
+                <div class="pfp-flip-inner">
+                  <!-- Front: Illustrated Pink Avatar -->
+                  <div class="pfp-flip-face pfp-flip-front">
+                    <img src="assets/images/girl-avatar.jpg" alt="Sanskruti - Illustrated Pink Avatar" class="avatar-portrait-img">
+                    <span class="pfp-flip-badge">Tap to flip ↺</span>
+                  </div>
+                  <!-- Back: Real Portrait Photo -->
+                  <div class="pfp-flip-face pfp-flip-back">
+                    <img src="assets/images/sanskruti-real.jpg" alt="Sanskruti Gorle - Real Portrait" class="avatar-portrait-img">
+                    <span class="pfp-flip-badge">Tap to flip ↻</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Barcode strip below avatar -->
+              <div class="id-barcode-strip" title="Digital Identity Token">
+                <img src="assets/images/barcode.svg" alt="Student Barcode" class="barcode-vector-img">
+              </div>
+            </div>
+
+            <!-- Right: Student Profile Details -->
+            <div class="id-details-col">
+              <div class="section-tag-pill">ABOUT ME 👤</div>
+              <h1 class="student-name-title" id="student-name">Sanskruti Gorle</h1>
+              <p class="student-subtitle" id="student-role">B.Tech CSE Student @ SIT Nagpur</p>
+
+              <!-- Skill Tags Row -->
+              <div class="student-tags-row" id="id-tags-container">
+                <span class="tag-pill tag-pill-highlight">2x Patent Inventor ⚖️</span>
+                <span class="tag-dot">•</span>
+                <span class="tag-pill">Full-Stack Dev</span>
+                <span class="tag-dot">•</span>
+                <span class="tag-pill">Python &amp; C</span>
+                <span class="tag-dot">•</span>
+                <span class="tag-pill">Data Science</span>
+                <span class="tag-dot">•</span>
+                <span class="tag-pill">UI/UX Design</span>
+                <span class="tag-dot">•</span>
+                <span class="tag-pill">Problem Solving</span>
+              </div>
+
+              <p class="student-bio-paragraph" id="student-bio">
+                Passionate Computer Science undergraduate at SIT Nagpur specializing in Agentic AI &amp; Autonomous Systems, Predictive Data Mining, and Modern Web Engineering. Published co-inventor on 2 Government of India patents in 6G Digital Twin telecommunications and IoT building automation, driven by algorithmic problem-solving to engineer high-impact digital experiences.
+              </p>
+
+              <!-- Bottom Contact & Action Buttons Row -->
+              <div class="id-card-footer-row">
+                <div class="id-contact-meta">
+                  <span class="meta-item">
+                    <span class="meta-icon">✉</span>
+                    <a href="mailto:sanskrutigorle1@gmail.com" id="id-email-link">sanskrutigorle1@gmail.com</a>
+                  </span>
+                  <span class="meta-item">
+                    <span class="meta-icon">📍</span>
+                    <span id="id-location-text">Nagpur, Maharashtra, India</span>
+                  </span>
+                </div>
+
+                <div class="id-action-buttons">
+                  <a href="#contact" class="btn-pill-action btn-connect">
+                    <span>Let's Connect</span>
+                    <span class="btn-icon">🤝</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <!-- =====================================================================
+           2. EDUCATIONAL DETAILS & ACADEMIC PERFORMANCE (INFOGRAPHIC CHEVRON TIMELINE)
+           ===================================================================== -->
+      <section class="portfolio-section" id="education">
+        <div class="section-heading-header">
+          <div class="section-tag-pill">ACADEMIC JOURNEY 🎓</div>
+          <h2 class="section-main-title">EDUCATION &amp; ACADEMIC PERFORMANCE</h2>
+          <p class="section-subtitle-text">Chronological milestone roadmap, verified scores &amp; institutional training</p>
+        </div>
+
+        <div class="bento-box-card card-education-full">
+          <!-- Decorative Floating Sparkle -->
+          <span class="sparkle-star sparkle-edu-corner" aria-hidden="true">✦</span>
+
+          <!-- Alternating Infographic Horizontal Timeline -->
+          <div class="infographic-timeline-container">
+            <!-- Top Row: Step 1 (Left) & Step 3 (Right) -->
+            <div class="info-timeline-row info-row-top">
+              <!-- Step 1: 10th CBSE (Top Left) -->
+              <div class="info-milestone-item pos-top col-1">
+                <div class="milestone-content-block">
+                  <div class="milestone-header">
+                    <span class="m-badge badge-rose-light">10th CBSE Board • 96.00%</span>
+                    <h3 class="m-title">Sanjuba High School CBSE</h3>
+                    <p class="m-subtitle">Secondary School Certificate (Class 10th)</p>
+                  </div>
+                  <p class="m-desc">Top 96% percentile standing with academic honors across mathematical and scientific disciplines.</p>
+                  <div class="m-tags">
+                    <span class="sub-tag">Mathematics (100)</span>
+                    <span class="sub-tag">Science &amp; Tech</span>
+                    <span class="sub-tag">Merit Honors</span>
+                  </div>
+                </div>
+                <div class="milestone-connector-stem stem-pink-soft"></div>
+                <div class="milestone-icon-bubble bubble-pink-soft" title="Class 10th CBSE">
+                  <span>🎒</span>
+                </div>
+              </div>
+
+              <!-- Empty Spacer for Column 2 (Step 2 is on bottom) -->
+              <div class="info-milestone-spacer col-2"></div>
+
+              <!-- Step 3: SIT Nagpur (Top Right - Current Active) -->
+              <div class="info-milestone-item pos-top col-3 is-active">
+                <div class="milestone-content-block block-active">
+                  <div class="milestone-header">
+                    <span class="m-badge badge-rose-deep">Current Undergraduate • 8.7 CGPA</span>
+                    <h3 class="m-title">SIT Nagpur</h3>
+                    <p class="m-subtitle">B.Tech in Computer Science &amp; Engineering</p>
+                  </div>
+                  <p class="m-desc">Symbiosis Institute of Technology • Consistent academic distinction with deep focus on algorithmic problem solving &amp; systems.</p>
+                  <div class="m-tags">
+                    <span class="sub-tag">Data Structures</span>
+                    <span class="sub-tag">Python &amp; C</span>
+                    <span class="sub-tag">Agentic AI</span>
+                    <span class="sub-tag">DBMS</span>
+                  </div>
+                </div>
+                <div class="milestone-connector-stem stem-pink-deep"></div>
+                <div class="milestone-icon-bubble bubble-pink-deep active-bubble" title="B.Tech CSE SIT Nagpur">
+                  <span>🏛️</span>
+                  <span class="bubble-pulse-ring"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Middle Horizontal Chevron Arrow Strip -->
+            <div class="info-chevron-strip">
+              <div class="chevron-step ch-step-1">
+                <div class="ch-content">
+                  <span class="ch-year">2020 – 2022</span>
+                  <span class="ch-label">Secondary (10th)</span>
+                </div>
+              </div>
+              <div class="chevron-step ch-step-2">
+                <div class="ch-content">
+                  <span class="ch-year">2022 – 2024</span>
+                  <span class="ch-label">Higher Secondary (12th)</span>
+                </div>
+              </div>
+              <div class="chevron-step ch-step-3 is-active-ch">
+                <div class="ch-content">
+                  <span class="ch-year">2024 – 2028</span>
+                  <span class="ch-label">B.Tech CSE (Current)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Row: Step 2 (Center) -->
+            <div class="info-timeline-row info-row-bottom">
+              <!-- Empty Spacer for Column 1 -->
+              <div class="info-milestone-spacer col-1"></div>
+
+              <!-- Step 2: 12th HSC (Bottom Middle) -->
+              <div class="info-milestone-item pos-bottom col-2">
+                <div class="milestone-icon-bubble bubble-pink-mid" title="Class 12th HSC">
+                  <span>🏫</span>
+                </div>
+                <div class="milestone-connector-stem stem-pink-mid"></div>
+                <div class="milestone-content-block">
+                  <div class="milestone-header">
+                    <span class="m-badge badge-rose-mid">12th HSC Board • 79.00%</span>
+                    <h3 class="m-title">St. Paul Jr High School</h3>
+                    <p class="m-subtitle">Higher Secondary Certificate (Class 12th)</p>
+                  </div>
+                  <p class="m-desc">Rigorous coursework in higher mathematics, analytical reasoning, and foundational computational sciences.</p>
+                  <div class="m-tags">
+                    <span class="sub-tag">Physics</span>
+                    <span class="sub-tag">Chemistry</span>
+                    <span class="sub-tag">Higher Math</span>
+                    <span class="sub-tag">CS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Empty Spacer for Column 3 -->
+              <div class="info-milestone-spacer col-3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           3. TECHNICAL SKILLS & ENGINEERING TOOLKIT (CIRCULAR BADGES)
+           ===================================================================== -->
+      <section class="portfolio-section" id="skills">
+        <div class="section-heading-header">
+          <div class="section-tag-pill">ENGINEERING TOOLKIT 💻</div>
+          <h2 class="section-main-title">TECHNICAL SKILLS &amp; PROFICIENCY</h2>
+          <p class="section-subtitle-text">Languages, frameworks, developer tooling &amp; core engineering foundations</p>
+        </div>
+
+        <div class="bento-box-card card-skills-single">
+          <div class="bento-card-header">
+            <div>
+              <h3 class="bento-heading-caps">CORE ENGINEERING PROFICIENCIES 💻</h3>
+              <p class="sub-heading-gray">Languages, frameworks &amp; developer tooling</p>
+            </div>
+            <span class="badge-pill-counter">8 Core Stacks</span>
+          </div>
+
+          <div class="skills-circles-cluster" id="technical-skills-cluster">
+            <div class="skill-circle-badge badge-python" title="Python: Data Science, ML Pipelines, Automation (90%)">
+              <img src="assets/icons/python.svg" alt="Python logo" class="skill-logo-icon">
+              <span class="skill-text-bold">Python</span>
+              <span class="skill-level-pill">90%</span>
+            </div>
+            <div class="skill-circle-badge badge-ai" title="Agentic AI: Multi-Agent Workflows, LLM Orchestration, Prompt Engineering (92%)">
+              <img src="assets/icons/gemini-ai.svg" alt="Agentic AI Gemini logo" class="skill-logo-icon">
+              <span class="skill-text-bold">Agentic AI</span>
+              <span class="skill-level-pill">92%</span>
+            </div>
+            <div class="skill-circle-badge badge-cpp" title="C / C++: Systems, Memory Architecture, Low-level (88%)">
+              <img src="assets/icons/cpp.svg" alt="C++ logo" class="skill-logo-icon">
+              <span class="skill-text-bold">C / C++</span>
+              <span class="skill-level-pill">88%</span>
+            </div>
+            <div class="skill-circle-badge badge-js" title="JavaScript: Modern ES6+, DOM, Async APIs (92%)">
+              <img src="assets/icons/javascript.svg" alt="JavaScript logo" class="skill-logo-icon">
+              <span class="skill-text-bold">JS ES6+</span>
+              <span class="skill-level-pill">92%</span>
+            </div>
+            <div class="skill-circle-badge badge-html" title="HTML5 & CSS3: Semantic markup, Grid, Flexbox, UI/UX (95%)">
+              <img src="assets/icons/html5.svg" alt="HTML5 logo" class="skill-logo-icon">
+              <span class="skill-text-bold">HTML/CSS</span>
+              <span class="skill-level-pill">95%</span>
+            </div>
+            <div class="skill-circle-badge badge-sql" title="SQL: Relational Database Design, Queries, Joins (86%)">
+              <img src="assets/icons/sql.svg" alt="SQL logo" class="skill-logo-icon">
+              <span class="skill-text-bold">SQL</span>
+              <span class="skill-level-pill">86%</span>
+            </div>
+            <div class="skill-circle-badge badge-git" title="Git & GitHub: Version Control, CI/CD, Collaborative repos (90%)">
+              <img src="assets/icons/git.svg" alt="Git logo" class="skill-logo-icon">
+              <span class="skill-text-bold">Git/Hub</span>
+              <span class="skill-level-pill">90%</span>
+            </div>
+            <div class="skill-circle-badge badge-data" title="Data Mining: Scikit-learn, EDA, Predictive Modeling (89%)">
+              <img src="assets/icons/scikit-learn.svg" alt="Scikit-Learn logo" class="skill-logo-icon">
+              <span class="skill-text-bold">Data Mining</span>
+              <span class="skill-level-pill">89%</span>
+            </div>
+          </div>
+
+          <!-- Visual Skills Progress Bars Mini Summary -->
+          <div class="skills-meter-list">
+            <div class="skill-bar-item">
+              <div class="bar-info-row">
+                <span>Agentic AI &amp; Python Machine Learning</span>
+                <strong>92%</strong>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill fill-rose" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="bar-info-row">
+                <span>Front-End Engineering (HTML5, Modern CSS, ES6+)</span>
+                <strong>95%</strong>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill fill-green" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="bar-info-row">
+                <span>Low-Level Systems &amp; Database Architecture (C/C++, SQL)</span>
+                <strong>88%</strong>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill fill-purple" style="width: 88%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           4. ACHIEVEMENTS, PATENTS & CERTIFICATES (Single Unified Visual Gallery)
+           ===================================================================== -->
+      <section class="portfolio-section" id="achievements">
+        <div class="section-heading-header">
+          <div class="section-tag-pill">RESEARCH IP, HACKATHONS &amp; CREDENTIALS ⚖️🏆</div>
+          <h2 class="section-main-title">PATENTS &amp; CERTIFICATIONS</h2>
+          <p class="section-subtitle-text">Official Government of India patent publications, national hackathons &amp; verified credentials</p>
+        </div>
+
+        <div class="bento-box-card card-certificates-unified">
+          <!-- Government of India Patent Publications IP Spotlight -->
+          <div class="patents-spotlight-block">
+            <div class="patents-block-header">
+              <span class="patent-spotlight-tag">GOVERNMENT OF INDIA PATENT PUBLICATIONS 🇮🇳</span>
+              <h3 class="patents-spotlight-title">Intellectual Property &amp; Research Innovations</h3>
+              <p class="patents-spotlight-subtitle">2 Official Patent Applications Published in The Patent Office Journal (IPO)</p>
+            </div>
+
+            <div class="patents-deck-grid">
+              <!-- Patent 1: DT-RIS 6G System -->
+              <div class="patent-card btn-open-patent" data-patent-id="pat-1" role="button" tabindex="0" title="Click to inspect official patent gazette & architectural details">
+                <div class="patent-meta-row">
+                  <span class="patent-app-badge">App No. 202621048010 A</span>
+                  <span class="patent-date-pill">Published: 12/06/2026</span>
+                </div>
+                <h4 class="patent-title">Digital Twin-Synchronized Reconfigurable Intelligent Surface Communication System for Smart Factory Environments</h4>
+                <p class="patent-inventors"><strong>Inventors:</strong> Dr. Akhil Gupta, Riddhi Thakkar, <u>Sanskruti Gorle</u>, Janhavi Donadkar</p>
+                <p class="patent-abstract">
+                  DT-RIS 6G architecture for Industry 4.0 smart manufacturing. Synchronizes digital twin physical telemetry with sub-wavelength electromagnetic phase shifts, delivering 41% throughput boost, 33% latency reduction, and 2.5x reliability increase.
+                </p>
+                <div class="patent-footer-row">
+                  <span class="patent-badge-jurisdiction">🏛️ Patent Office Journal No. 24/2026</span>
+                  <button type="button" class="btn-patent-view">
+                    <span>Inspect Patent Gazette</span> ↗
+                  </button>
+                </div>
+              </div>
+
+              <!-- Patent 2: Automated Window Control -->
+              <div class="patent-card btn-open-patent" data-patent-id="pat-2" role="button" tabindex="0" title="Click to inspect official patent gazette & architectural details">
+                <div class="patent-meta-row">
+                  <span class="patent-app-badge">App No. 202521125527 A</span>
+                  <span class="patent-date-pill">Published: 02/01/2026</span>
+                </div>
+                <h4 class="patent-title">System and Method for Automated Window Control Based on Environmental and Security Parameters</h4>
+                <p class="patent-inventors"><strong>Inventors:</strong> Dr. Akhil Gupta, Riddhi Thakkar, <u>Sanskruti Gorle</u>, Janhavi Donadkar</p>
+                <p class="patent-abstract">
+                  Intelligent computer-implemented IoT building automation system. Integrates environmental sensing, vibration frequency analysis, and prioritized decision algorithms with sub-second response latency for smart building protection.
+                </p>
+                <div class="patent-footer-row">
+                  <span class="patent-badge-jurisdiction">🏛️ Patent Office Journal No. 1/2026</span>
+                  <button type="button" class="btn-patent-view">
+                    <span>Inspect Patent Gazette</span> ↗
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificates-deck-grid" id="unified-certificates-grid">
+            <!-- Certificate 1: IIITN Abhyudaya -->
+            <div class="cert-interactive-card btn-open-cert" data-title="IIITN Abhyudaya Hackathon Certificate" data-issuer="IIIT Nagpur" data-desc="Certificate of Participation in Abhyudaya national technical hackathon sprint at Indian Institute of Information Technology, Nagpur." data-doc="assets/images/cert-iiitn.jpeg">
+              <div class="cert-preview-window">
+                <img src="assets/images/cert-iiitn.jpeg" alt="IIITN Abhyudaya Hackathon Certificate">
+                <span class="cert-preview-overlay-tag">Hackathon</span>
+              </div>
+              <div class="cert-card-info">
+                <div class="cert-title-row">
+                  <h4>IIITN Abhyudaya Hackathon</h4>
+                  <span class="cert-status-badge">Verified</span>
+                </div>
+                <p>National Hackathon Sprint • IIIT Nagpur</p>
+                <span class="cert-view-hint">Inspect Official Certificate ↗</span>
+              </div>
+            </div>
+
+            <!-- Certificate 2: Bhartiya Antariksh Hackathon -->
+            <div class="cert-interactive-card btn-open-cert" data-title="Bhartiya Antariksh Hackathon Certificate" data-issuer="ISRO / Space Applications" data-desc="National space & satellite application hackathon certificate recognized for space tech innovation." data-doc="assets/images/cert-bhartiya-antariksh.jpg">
+              <div class="cert-preview-window">
+                <img src="assets/images/cert-bhartiya-antariksh.jpg" alt="Bhartiya Antariksh Hackathon Certificate">
+                <span class="cert-preview-overlay-tag">ISRO Space</span>
+              </div>
+              <div class="cert-card-info">
+                <div class="cert-title-row">
+                  <h4>Bhartiya Antariksh Hackathon</h4>
+                  <span class="cert-status-badge">National</span>
+                </div>
+                <p>Space &amp; Tech Innovation • ISRO</p>
+                <span class="cert-view-hint">Inspect Official Certificate ↗</span>
+              </div>
+            </div>
+
+            <!-- Certificate 3: Google Cloud Generative AI -->
+            <div class="cert-interactive-card btn-open-cert" data-title="Google Cloud Generative AI Certification" data-issuer="Google Cloud Skills Boost" data-desc="Official Google Cloud credential in Generative AI architectures, prompt engineering, and foundational LLMs." data-doc="assets/images/cert-google-cloud.jpg">
+              <div class="cert-preview-window">
+                <img src="assets/images/cert-google-cloud.jpg" alt="Google Cloud Gen AI Certificate">
+                <span class="cert-preview-overlay-tag">Google Cloud</span>
+              </div>
+              <div class="cert-card-info">
+                <div class="cert-title-row">
+                  <h4>Google Cloud Gen AI</h4>
+                  <span class="cert-status-badge">Certified</span>
+                </div>
+                <p>Generative AI &amp; LLM Deployment</p>
+                <span class="cert-view-hint">Inspect Official Certificate ↗</span>
+              </div>
+            </div>
+
+            <!-- Certificate 4: Cyber Security Hackathon -->
+            <div class="cert-interactive-card btn-open-cert" data-title="Cyber Security Hackathon Certificate" data-issuer="Cyber Security Hackathon" data-desc="Certificate of Participation in National Cyber Security Hackathon for defense-in-depth vulnerability testing." data-doc="assets/images/cert-cybersec.jpeg">
+              <div class="cert-preview-window">
+                <img src="assets/images/cert-cybersec.jpeg" alt="Cyber Security Hackathon Certificate">
+                <span class="cert-preview-overlay-tag">Security</span>
+              </div>
+              <div class="cert-card-info">
+                <div class="cert-title-row">
+                  <h4>Cyber Security Hackathon</h4>
+                  <span class="cert-status-badge">Completed</span>
+                </div>
+                <p>Network Defense &amp; Security Auditing</p>
+                <span class="cert-view-hint">Inspect Official Certificate ↗</span>
+              </div>
+            </div>
+
+            <!-- Certificate 5: Data Forge Hackathon -->
+            <div class="cert-interactive-card btn-open-cert" data-title="Data Forge Technical Hackathon" data-issuer="Data Forge Technical Sprint" data-desc="Certificate of Participation in Data Forge technical hackathon for algorithmic data engineering and rapid predictive prototyping." data-doc="assets/images/cert-data-forge.jpg">
+              <div class="cert-preview-window">
+                <img src="assets/images/cert-data-forge.jpg" alt="Data Forge Hackathon Certificate">
+                <span class="cert-preview-overlay-tag">Hackathon</span>
+              </div>
+              <div class="cert-card-info">
+                <div class="cert-title-row">
+                  <h4>Data Forge Hackathon</h4>
+                  <span class="cert-status-badge">National</span>
+                </div>
+                <p>Data Engineering &amp; ML Prototyping</p>
+                <span class="cert-view-hint">Inspect Official Certificate ↗</span>
+              </div>
+            </div>
+
+            <!-- Certificate 6: Sans C++ prog with Ai (Unstop) -->
+            <div class="cert-interactive-card btn-open-cert" data-title="C++ Programming Specialization (with AI)" data-issuer="Unstop" data-desc="Certificate of Completion presented to Sanskruti Gorle for successfully completing the C++ Programming course provided by Unstop." data-doc="assets/images/cert-cpp-prog-ai.png">
+              <div class="cert-preview-window">
+                <img src="assets/images/cert-cpp-prog-ai.png" alt="C++ Programming Unstop Certificate">
+                <span class="cert-preview-overlay-tag">Unstop • C++</span>
+              </div>
+              <div class="cert-card-info">
+                <div class="cert-title-row">
+                  <h4>C++ Programming</h4>
+                  <span class="cert-status-badge">Unstop</span>
+                </div>
+                <p>C++ Programming Certification • Unstop</p>
+                <span class="cert-view-hint">Inspect Official Certificate ↗</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           5. FEATURED PROJECTS (INTERACTIVE SHOWCASE + MODAL INSPECTOR)
+           ===================================================================== -->
+      <section class="portfolio-section" id="projects">
+        <div class="section-heading-header section-header-with-filter">
+          <div>
+            <div class="section-tag-pill">SOFTWARE &amp; CODE 🚀</div>
+            <h2 class="section-main-title">FEATURED PROJECTS</h2>
+            <p class="section-subtitle-text">Production web apps, agentic AI frameworks &amp; predictive machine learning pipelines • Click any card for in-depth README case study</p>
+          </div>
+
+          <!-- Creative Filter Pills -->
+          <div class="project-filters-pills" id="project-filters">
+            <button class="filter-pill active" data-filter="all">All (4)</button>
+            <button class="filter-pill" data-filter="Frontend">Frontend</button>
+            <button class="filter-pill" data-filter="AI">Agentic AI</button>
+            <button class="filter-pill" data-filter="Data">Data Mining</button>
+          </div>
+        </div>
+
+        <div class="projects-showcase-list" id="featured-projects-grid">
+          <!-- Project 1: AETHER Luxury Landing Page -->
+          <article class="project-showcase-row" data-proj-id="proj-1" data-category="Frontend">
+            <div class="proj-row-visual-col">
+              <div class="proj-browser-window-frame">
+                <div class="browser-dots-strip">
+                  <span class="b-dot b-red"></span>
+                  <span class="b-dot b-yellow"></span>
+                  <span class="b-dot b-green"></span>
+                  <span class="browser-url-pill">aether-luxury.live</span>
+                </div>
+                <div class="browser-visual-canvas">
+                  <img src="assets/images/aether-hero.png" alt="AETHER Luxury Landing Page Showcase" class="showcase-cover-img">
+                </div>
+              </div>
+            </div>
+            <div class="proj-row-content-col">
+              <div class="proj-meta-badge-line">
+                <span class="proj-number-badge">01</span>
+                <span class="proj-domain-pill">Frontend / Creative Tech</span>
+              </div>
+              <h3 class="proj-row-title">AETHER — Luxury Landing Page</h3>
+              <p class="proj-row-desc">
+                High-fashion street editorial landing page built with custom kinetic typography, zero-delay CSS reveal states, and interactive sneaker lookbooks. Designed to push creative frontend standards without bloated framework overhead.
+              </p>
+              <div class="proj-tags-cluster">
+                <span class="tech-pill">HTML5 &amp; CSS3</span>
+                <span class="tech-pill">JavaScript ES6+</span>
+                <span class="tech-pill">Editorial UI/UX</span>
+                <span class="tech-pill">Responsive Design</span>
+              </div>
+              <div class="proj-buttons-footer">
+                <button class="btn-case-study-hero btn-project-details" data-project-id="proj-1">
+                  <span>Explore Case Study</span>
+                  <span class="btn-arrow">↗</span>
+                </button>
+                <a href="https://github.com/s4nskrut1/frontend-projects/tree/main/Responsive%20Landing%20Page" target="_blank" rel="noopener noreferrer" class="btn-github-pill" onclick="event.stopPropagation()">
+                  <span>🐙</span> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: GoalMate Agentic AI Tracker (Alternating) -->
+          <article class="project-showcase-row row-reversed" data-proj-id="proj-3" data-category="AI">
+            <div class="proj-row-visual-col">
+              <div class="proj-browser-window-frame">
+                <div class="browser-dots-strip">
+                  <span class="b-dot b-red"></span>
+                  <span class="b-dot b-yellow"></span>
+                  <span class="b-dot b-green"></span>
+                  <span class="browser-url-pill">goalmate-agent.ai</span>
+                </div>
+                <div class="browser-visual-canvas">
+                  <img src="assets/images/goalmate-haikyu-auth.png" alt="GoalMate Autonomous AI Agent Authentication UI" class="showcase-cover-img">
+                </div>
+              </div>
+            </div>
+            <div class="proj-row-content-col">
+              <div class="proj-meta-badge-line">
+                <span class="proj-number-badge">02</span>
+                <span class="proj-domain-pill pill-ai">Agentic AI / Python</span>
+              </div>
+              <h3 class="proj-row-title">GoalMate — Autonomous AI Goal Tracker</h3>
+              <p class="proj-row-desc">
+                Intelligent agentic multi-agent architecture that solves goal abandonment by parsing high-level ambitions into sprint roadmaps, calendar-aware micro-tasks, and interactive habit analytics with AI coaching.
+              </p>
+              <div class="proj-tags-cluster">
+                <span class="tech-pill">Agentic AI</span>
+                <span class="tech-pill">Python Backend</span>
+                <span class="tech-pill">Autonomous Agents</span>
+                <span class="tech-pill">Analytics Dashboard</span>
+              </div>
+              <div class="proj-buttons-footer">
+                <button class="btn-case-study-hero btn-project-details" data-project-id="proj-3">
+                  <span>Explore Case Study</span>
+                  <span class="btn-arrow">↗</span>
+                </button>
+                <a href="https://github.com/s4nskrut1/AI-Agent-for-Personal-Goal-Tracking" target="_blank" rel="noopener noreferrer" class="btn-github-pill" onclick="event.stopPropagation()">
+                  <span>🐙</span> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: CrediMine Bank Loan Risk Mining Platform -->
+          <article class="project-showcase-row" data-proj-id="proj-4" data-category="Data">
+            <div class="proj-row-visual-col">
+              <div class="proj-browser-window-frame">
+                <div class="browser-dots-strip">
+                  <span class="b-dot b-red"></span>
+                  <span class="b-dot b-yellow"></span>
+                  <span class="b-dot b-green"></span>
+                  <span class="browser-url-pill">credimine-risk.analytics</span>
+                </div>
+                <div class="browser-visual-canvas">
+                  <img src="assets/images/credimine-landing.png" alt="CrediMine Bank Loan Risk Mining Platform" class="showcase-cover-img">
+                </div>
+              </div>
+            </div>
+            <div class="proj-row-content-col">
+              <div class="proj-meta-badge-line">
+                <span class="proj-number-badge">03</span>
+                <span class="proj-domain-pill pill-data">Data Science / ML Mining</span>
+              </div>
+              <h3 class="proj-row-title">CrediMine — Bank Loan Risk Mining Platform</h3>
+              <p class="proj-row-desc">
+                Financial risk assessment platform implementing complete KDD pipelines. Features interactive Exploratory Data Analysis, tri-method attribute correlation, and machine learning classification achieving 0.924 ROC-AUC.
+              </p>
+              <div class="proj-tags-cluster">
+                <span class="tech-pill">Data Mining</span>
+                <span class="tech-pill">Scikit-Learn</span>
+                <span class="tech-pill">Predictive Modeling</span>
+                <span class="tech-pill">Financial Tech</span>
+              </div>
+              <div class="proj-buttons-footer">
+                <button class="btn-case-study-hero btn-project-details" data-project-id="proj-4">
+                  <span>Explore Case Study</span>
+                  <span class="btn-arrow">↗</span>
+                </button>
+                <a href="https://github.com/s4nskrut1/bank-loan-risk-mining" target="_blank" rel="noopener noreferrer" class="btn-github-pill" onclick="event.stopPropagation()">
+                  <span>🐙</span> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: ATLAS Studio (Alternating) -->
+          <article class="project-showcase-row row-reversed" data-proj-id="proj-2" data-category="Frontend">
+            <div class="proj-row-visual-col">
+              <div class="proj-browser-window-frame">
+                <div class="browser-dots-strip">
+                  <span class="b-dot b-red"></span>
+                  <span class="b-dot b-yellow"></span>
+                  <span class="b-dot b-green"></span>
+                  <span class="browser-url-pill">atlas-studio.design</span>
+                </div>
+                <div class="browser-visual-canvas">
+                  <img src="assets/images/atlas-home.jpeg" alt="ATLAS Studio Multi-Page Website" class="showcase-cover-img">
+                </div>
+              </div>
+            </div>
+            <div class="proj-row-content-col">
+              <div class="proj-meta-badge-line">
+                <span class="proj-number-badge">04</span>
+                <span class="proj-domain-pill">Frontend / Architecture</span>
+              </div>
+              <h3 class="proj-row-title">ATLAS Studio — Design Platform</h3>
+              <p class="proj-row-desc">
+                Minimalist, image-led architecture &amp; interiors multi-page client showcase. Built with Swiss grid discipline, high-contrast negative space, and optimized spatial portfolio channels.
+              </p>
+              <div class="proj-tags-cluster">
+                <span class="tech-pill">Multi-Page Architecture</span>
+                <span class="tech-pill">Minimalist Design</span>
+                <span class="tech-pill">Spatial UI</span>
+                <span class="tech-pill">Clean CSS</span>
+              </div>
+              <div class="proj-buttons-footer">
+                <button class="btn-case-study-hero btn-project-details" data-project-id="proj-2">
+                  <span>Explore Case Study</span>
+                  <span class="btn-arrow">↗</span>
+                </button>
+                <a href="https://github.com/s4nskrut1/frontend-projects/tree/main/Multi%20Page%20Website" target="_blank" rel="noopener noreferrer" class="btn-github-pill" onclick="event.stopPropagation()">
+                  <span>🐙</span> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+
+      <!-- =====================================================================
+           7. CONTACT INFORMATION & PROFESSIONAL SOCIAL LINKS
+           ===================================================================== -->
+      <section class="portfolio-section" id="contact">
+        <div class="section-heading-header">
+          <div class="section-tag-pill">LET'S TALK 📞</div>
+          <h2 class="section-main-title">CONTACT INFORMATION &amp; PROFESSIONAL LINKS</h2>
+          <p class="section-subtitle-text">Connect for internship inquiries, project collaborations, or tech chats</p>
+        </div>
+
+        <div class="contact-split-grid">
+          <!-- Left: Professional Details & Direct Links -->
+          <div class="bento-box-card contact-info-card">
+            <h3 class="bento-heading-caps">GET IN TOUCH 📬</h3>
+            <p class="sub-heading-gray">Direct channels &amp; professional network profiles</p>
+
+            <div class="contact-direct-list">
+              <div class="contact-channel-item">
+                <div class="channel-icon-box">✉️</div>
+                <div class="channel-text">
+                  <strong>Email Address</strong>
+                  <p><a href="mailto:sanskrutigorle1@gmail.com">sanskrutigorle1@gmail.com</a></p>
+                </div>
+              </div>
+
+              <div class="contact-channel-item">
+                <div class="channel-icon-box">📍</div>
+                <div class="channel-text">
+                  <strong>Location</strong>
+                  <p>Nagpur, Maharashtra, India</p>
+                </div>
+              </div>
+
+              <div class="contact-channel-item">
+                <div class="channel-icon-box">🏛️</div>
+                <div class="channel-text">
+                  <strong>College Campus</strong>
+                  <p>Symbiosis Institute of Technology (SIT), Nagpur</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Professional Links Grid -->
+            <div class="professional-links-block">
+              <span class="links-title">Professional Profiles:</span>
+              <div class="connect-socials-row">
+                <a href="https://github.com/s4nskrut1" target="_blank" rel="noopener noreferrer" class="connect-social-link">
+                  <span>🐙</span> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/sanskruti-gorle-43597a320" target="_blank" rel="noopener noreferrer" class="connect-social-link">
+                  <span>💼</span> LinkedIn
+                </a>
+                <a href="mailto:sanskrutigorle1@gmail.com" class="connect-social-link">
+                  <span>✉</span> Email
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Let's Connect Form -->
+          <div class="bento-box-card card-connect">
+            <div class="connect-header-row">
+              <h3 class="bento-heading-caps">LET'S CONNECT ✉️</h3>
+              <p class="sub-heading-gray">Open for discussions, engineering collaborations, and opportunities.</p>
+            </div>
+
+            <form id="contact-form" class="connect-form-minimal" novalidate>
+              <!-- Name Input -->
+              <div class="form-field-wrapper" id="group-name">
+                <input type="text" id="contact-name" name="name" placeholder="Your Name" required autocomplete="name" class="pill-input">
+                <small class="field-feedback" id="feedback-name"></small>
+              </div>
+
+              <!-- Email Input -->
+              <div class="form-field-wrapper" id="group-email">
+                <input type="email" id="contact-email" name="email" placeholder="Your Email (e.g. name@domain.com)" required autocomplete="email" class="pill-input">
+                <small class="field-feedback" id="feedback-email"></small>
+              </div>
+
+              <!-- Message Input -->
+              <div class="form-field-wrapper" id="group-message">
+                <textarea id="contact-message" name="message" rows="4" placeholder="Write your message here..." required class="pill-textarea"></textarea>
+                <div class="msg-meta-line">
+                  <small class="field-feedback" id="feedback-message"></small>
+                  <span class="char-counter" id="message-char-counter">0/500</span>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="connect-submit-row">
+                <button type="submit" id="btn-submit-contact" class="btn-send-pill">
+                  <span class="btn-text">Send Message 📨</span>
+                  <span class="btn-loader" style="display: none;">Sending...</span>
+                </button>
+              </div>
+
+              <!-- Alert box -->
+              <div id="form-alert-box" class="form-alert-box" style="display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           CURVED FOOTER (Exact Mockup Match)
+           ===================================================================== -->
+      <footer class="canvas-bottom-footer">
+        <div class="footer-curved-text">
+          DESIGNED &amp; CODED BY SANSKRUTI S. &copy; 2026 ✦
+        </div>
+
+        <button id="footer-theme-toggle" class="footer-theme-pill" title="Toggle Theme" aria-label="Toggle Theme">
+          <span class="pill-circle-knob"></span>
+        </button>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       TOAST NOTIFICATIONS CONTAINER (Closure Implementation)
+       ========================================================================= -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- =========================================================================
+       GENERIC MODAL (For Document, Certificate & Project Previews)
+       ========================================================================= -->
+  <div id="app-modal" class="modal-backdrop" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Credential Preview</h3>
+        <button id="modal-close" class="modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       VIVA JAVASCRIPT CONCEPTS INSPECTOR MODAL (Evaluation Weapon!)
+       ========================================================================= -->
+  <div id="inspector-modal" class="modal-backdrop inspector-modal-backdrop" aria-hidden="true" role="dialog">
+    <div class="modal-card inspector-modal-card">
+      <div class="modal-header">
+        <div class="inspector-header-left">
+          <span class="badge-viva">CA3 VIVA EVALUATOR</span>
+          <h3 class="modal-title">⚡ Interactive JavaScript Concept Showcase</h3>
+        </div>
+        <button id="inspector-close" class="modal-close-btn" aria-label="Close inspector">✕</button>
+      </div>
+
+      <div class="inspector-body">
+        <p class="inspector-intro">
+          This interactive panel lets faculty evaluators verify and test each required JavaScript syllabus concept in real time with interactive execution logs.
+        </p>
+
+        <!-- Inspector Tabs -->
+        <div class="inspector-tabs" id="inspector-tabs">
+          <button class="insp-tab active" data-target="tab-closures">1. Closures &amp; Scope</button>
+          <button class="insp-tab" data-target="tab-regex">2. Regex &amp; Validation</button>
+          <button class="insp-tab" data-target="tab-arrays">3. Arrays &amp; Objects</button>
+          <button class="insp-tab" data-target="tab-storage">4. Storage APIs</button>
+          <button class="insp-tab" data-target="tab-events">5. Events &amp; DOM</button>
+        </div>
+
+        <!-- Tab 1: Closures & Scope -->
+        <div class="insp-panel active" id="tab-closures">
+          <div class="concept-explanation">
+            <h4>Concept: Lexical Scope, Closure &amp; Private State</h4>
+            <p>A closure gives a function access to its outer lexical scope even after the outer function has executed.</p>
+          </div>
+          <div class="demo-box">
+            <div class="demo-controls">
+              <button id="btn-closure-increment" class="btn btn-secondary">Increment Counter (+1)</button>
+              <button id="btn-closure-decrement" class="btn btn-secondary">Decrement Counter (-1)</button>
+              <button id="btn-closure-reset" class="btn btn-outline">Reset Counter</button>
+            </div>
+            <div class="demo-console" id="console-closure">
+              [Closure State]: Current private count = 0
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Regex & Validation -->
+        <div class="insp-panel" id="tab-regex">
+          <div class="concept-explanation">
+            <h4>Concept: Regular Expressions (Regex) &amp; Real-Time Sanitization</h4>
+            <p>Regex patterns evaluated: Email RFC validation, Indian 10-digit phone number, and alphabet name testing.</p>
+          </div>
+          <div class="demo-box">
+            <div class="regex-test-inputs">
+              <input type="text" id="regex-test-input" placeholder="Type an email, phone, or name to test..." class="code-input">
+              <select id="regex-pattern-select">
+                <option value="email">Email Pattern (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)</option>
+                <option value="phone">Indian Phone Pattern (/^[6-9]\d{9}$/)</option>
+                <option value="name">Name Pattern (/^[a-zA-Z\s]{3,30}$/)</option>
+              </select>
+              <button id="btn-run-regex" class="btn btn-primary">Test Regex Match</button>
+            </div>
+            <div class="demo-console" id="console-regex">
+              [Regex Engine]: Ready to evaluate test input...
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Arrays & Objects -->
+        <div class="insp-panel" id="tab-arrays">
+          <div class="concept-explanation">
+            <h4>Concept: Functional Array Methods (`.map()`, `.filter()`, `.reduce()`)</h4>
+            <p>Applied dynamically across this portfolio for project rendering, skill aggregation, and metrics.</p>
+          </div>
+          <div class="demo-box">
+            <div class="demo-controls">
+              <button id="btn-demo-map" class="btn btn-secondary">Run .map() (Extract Project Titles)</button>
+              <button id="btn-demo-filter" class="btn btn-secondary">Run .filter() (Featured Projects)</button>
+              <button id="btn-demo-reduce" class="btn btn-secondary">Run .reduce() (Calculate Cumulative Metrics)</button>
+            </div>
+            <div class="demo-console" id="console-arrays">
+              [Array Engine]: Click any button above to execute higher-order function...
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Storage APIs -->
+        <div class="insp-panel" id="tab-storage">
+          <div class="concept-explanation">
+            <h4>Concept: `localStorage` vs `sessionStorage` with `try...catch`</h4>
+            <p><strong>localStorage:</strong> Persistent (Theme preference, visitor count, contact inquiries).<br>
+               <strong>sessionStorage:</strong> Session-only (Live contact form unsaved draft auto-recovery).</p>
+          </div>
+          <div class="demo-box">
+            <div class="demo-controls">
+              <button id="btn-view-local-storage" class="btn btn-secondary">Inspect localStorage</button>
+              <button id="btn-view-session-storage" class="btn btn-secondary">Inspect sessionStorage</button>
+              <button id="btn-clear-demo-storage" class="btn btn-outline">Clear Form Draft</button>
+            </div>
+            <div class="demo-console" id="console-storage">
+              [Storage Inspector]: Click an action to view serialized JSON data...
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5: Events & DOM -->
+        <div class="insp-panel" id="tab-events">
+          <div class="concept-explanation">
+            <h4>Concept: DOM Traversal, Event Listeners (`click`, `input`, `blur`, `focus`, `change`)</h4>
+            <p>Demonstrates event bubbling, traversal via `.parentElement` and `.closest()`, and dynamic mutations.</p>
+          </div>
+          <div class="demo-box">
+            <div class="interactive-dom-playground">
+              <div class="dom-item-box" id="dom-target-box">
+                <span class="box-tag">Target Element</span>
+                <p id="dom-box-text">Watch my classList and styles mutate dynamically!</p>
+              </div>
+              <div class="demo-controls">
+                <button id="btn-mutate-dom" class="btn btn-secondary">Trigger DOM Mutation (.classList.toggle)</button>
+                <button id="btn-add-element" class="btn btn-secondary">Create Element (document.createElement)</button>
+                <button id="btn-reset-dom" class="btn btn-outline">Reset Playground</button>
+              </div>
+            </div>
+            <div class="demo-console" id="console-events">
+              [DOM Inspector]: Ready to observe DOM manipulation...
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT APPLICATION SCRIPT -->
+  <script src="app.js"></script>
+</body>
+</html>

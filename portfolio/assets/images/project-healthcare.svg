@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="100%" height="100%">
+  <!-- Window Container -->
+  <rect width="400" height="220" rx="12" fill="#ffffff" stroke="#f1f5f9" stroke-width="2"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="70" height="220" rx="12" fill="#1e293b"/>
+  <rect x="15" y="20" width="40" height="10" rx="5" fill="#38bdf8"/>
+  <rect x="15" y="45" width="30" height="6" rx="3" fill="#64748b"/>
+  <rect x="15" y="62" width="35" height="6" rx="3" fill="#64748b"/>
+  <rect x="15" y="79" width="28" height="6" rx="3" fill="#64748b"/>
+  <rect x="15" y="96" width="32" height="6" rx="3" fill="#64748b"/>
+
+  <!-- Top Navigation Bar in Dashboard -->
+  <rect x="70" y="0" width="330" height="35" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="85" y="22" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#0f172a">Healthcare Analytics</text>
+  <circle cx="375" cy="18" r="8" fill="#cbd5e1"/>
+
+  <!-- Main Chart Card (Bar Graph) -->
+  <rect x="85" y="48" width="180" height="105" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="96" y="65" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="600" fill="#475569">Patient Flow Trends</text>
+  <!-- Bar Columns -->
+  <rect x="100" y="115" width="12" height="25" rx="3" fill="#818cf8"/>
+  <rect x="118" y="95" width="12" height="45" rx="3" fill="#6366f1"/>
+  <rect x="136" y="80" width="12" height="60" rx="3" fill="#4f46e5"/>
+  <rect x="154" y="105" width="12" height="35" rx="3" fill="#818cf8"/>
+  <rect x="172" y="70" width="12" height="70" rx="3" fill="#ec4899"/>
+  <rect x="190" y="88" width="12" height="52" rx="3" fill="#6366f1"/>
+  <rect x="208" y="100" width="12" height="40" rx="3" fill="#818cf8"/>
+  <rect x="226" y="75" width="12" height="65" rx="3" fill="#ec4899"/>
+
+  <!-- Donut Chart Card -->
+  <rect x="275" y="48" width="112" height="105" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="285" y="65" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="600" fill="#475569">Case Distribution</text>
+  <!-- Donut Circle SVG -->
+  <circle cx="331" cy="108" r="28" fill="none" stroke="#f1f5f9" stroke-width="12"/>
+  <circle cx="331" cy="108" r="28" fill="none" stroke="#6366f1" stroke-width="12" stroke-dasharray="110 180" transform="rotate(-90 331 108)"/>
+  <circle cx="331" cy="108" r="28" fill="none" stroke="#ec4899" stroke-width="12" stroke-dasharray="50 180" stroke-dashoffset="-110" transform="rotate(-90 331 108)"/>
+
+  <!-- Bottom Metric Strip -->
+  <rect x="85" y="162" width="90" height="45" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="94" y="178" font-family="'Segoe UI', sans-serif" font-size="8" fill="#64748b">Total Admissions</text>
+  <text x="94" y="196" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#0f172a">1,482</text>
+
+  <rect x="185" y="162" width="90" height="45" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="194" y="178" font-family="'Segoe UI', sans-serif" font-size="8" fill="#64748b">Recovery Rate</text>
+  <text x="194" y="196" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#10b981">94.8%</text>
+
+  <rect x="285" y="162" width="102" height="45" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="294" y="178" font-family="'Segoe UI', sans-serif" font-size="8" fill="#64748b">Avg Stay</text>
+  <text x="294" y="196" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#6366f1">3.2 Days</text>
+</svg>

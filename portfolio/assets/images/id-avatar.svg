@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="100%" height="100%">
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#f43f5e" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Starburst Sticker Backdrop (Coral/Red) -->
+  <path d="M 100 15 
+           L 115 42 L 142 28 L 140 58 L 170 60 L 152 84 L 178 98 L 150 115 
+           L 168 138 L 138 142 L 145 172 L 118 160 L 110 188 L 90 162 L 72 185 
+           L 68 155 L 40 168 L 50 138 L 22 135 L 42 110 L 15 95 L 45 80 
+           L 28 55 L 58 58 L 60 28 L 84 45 Z" 
+        fill="#f43f5e" filter="url(#softShadow)"/>
+
+  <!-- Character Frame / White Circular Matting -->
+  <circle cx="100" cy="100" r="68" fill="#fff5f5" stroke="#ffe4e6" stroke-width="2"/>
+
+  <!-- Shoulders & Outfit (Coral top with white collar) -->
+  <path d="M 45 168 C 55 130, 80 125, 100 125 C 120 125, 145 130, 155 168 Z" fill="#fb7185"/>
+  <path d="M 85 125 L 100 145 L 115 125 Z" fill="#ffffff"/>
+  <circle cx="100" cy="152" r="2.5" fill="#ffffff"/>
+
+  <!-- Neck -->
+  <rect x="90" y="108" width="20" height="22" rx="4" fill="#fbcfe8"/>
+
+  <!-- Head / Face -->
+  <ellipse cx="100" cy="85" rx="36" ry="40" fill="#fce7f3"/>
+
+  <!-- Cute Rosy Cheeks -->
+  <ellipse cx="76" cy="94" rx="7" ry="4" fill="#fda4af" opacity="0.8"/>
+  <ellipse cx="124" cy="94" rx="7" ry="4" fill="#fda4af" opacity="0.8"/>
+
+  <!-- Red Bindi on Forehead -->
+  <circle cx="100" cy="68" r="2.5" fill="#be123c"/>
+
+  <!-- Big Warm Anime Eyes -->
+  <g>
+    <!-- Left Eye -->
+    <ellipse cx="82" cy="83" rx="7" ry="9" fill="#1e1b4b"/>
+    <circle cx="80" cy="80" r="3" fill="#ffffff"/>
+    <circle cx="84" cy="86" r="1.5" fill="#ffffff"/>
+    <path d="M 74 72 Q 82 69 90 73" stroke="#18181b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    
+    <!-- Right Eye -->
+    <ellipse cx="118" cy="83" rx="7" ry="9" fill="#1e1b4b"/>
+    <circle cx="116" cy="80" r="3" fill="#ffffff"/>
+    <circle cx="120" cy="86" r="1.5" fill="#ffffff"/>
+    <path d="M 110 73 Q 118 69 126 72" stroke="#18181b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Cute Round Glasses (From Reference Image) -->
+  <circle cx="81" cy="83" r="15" fill="none" stroke="#78350f" stroke-width="2.8"/>
+  <circle cx="119" cy="83" r="15" fill="none" stroke="#78350f" stroke-width="2.8"/>
+  <path d="M 96 83 L 104 83" stroke="#78350f" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M 66 81 L 58 78" stroke="#78350f" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 134 81 L 142 78" stroke="#78350f" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Cute Smile -->
+  <path d="M 94 98 Q 100 105 106 98" stroke="#e11d48" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+  <!-- Hair (Dark wavy bob with front bangs) -->
+  <g fill="#1c1917">
+    <!-- Back Hair curls -->
+    <path d="M 64 85 C 55 50, 75 35, 100 35 C 125 35, 145 50, 136 85 C 150 100, 150 145, 134 148 C 130 135, 134 105, 130 95 C 125 55, 75 55, 70 95 C 66 105, 70 135, 66 148 C 50 145, 50 100, 64 85 Z"/>
+    <!-- Front bangs framing spectacles -->
+    <path d="M 66 75 Q 85 92 92 78 Q 100 95 108 78 Q 115 92 134 75 C 128 50, 114 45, 100 45 C 86 45, 72 50, 66 75 Z"/>
+  </g>
+
+  <!-- Realistic Barcode Graphic (Underneath Photo) -->
+  <g transform="translate(30, 188)" fill="#1e293b">
+    <rect x="0" y="0" width="3" height="24"/>
+    <rect x="5" y="0" width="2" height="24"/>
+    <rect x="9" y="0" width="4" height="24"/>
+    <rect x="15" y="0" width="1" height="24"/>
+    <rect x="18" y="0" width="3" height="24"/>
+    <rect x="23" y="0" width="2" height="24"/>
+    <rect x="27" y="0" width="5" height="24"/>
+    <rect x="34" y="0" width="2" height="24"/>
+    <rect x="38" y="0" width="1" height="24"/>
+    <rect x="41" y="0" width="4" height="24"/>
+    <rect x="47" y="0" width="2" height="24"/>
+    <rect x="51" y="0" width="3" height="24"/>
+    <rect x="56" y="0" width="1" height="24"/>
+    <rect x="59" y="0" width="4" height="24"/>
+    <rect x="65" y="0" width="2" height="24"/>
+    <rect x="69" y="0" width="5" height="24"/>
+    <rect x="76" y="0" width="2" height="24"/>
+    <rect x="80" y="0" width="3" height="24"/>
+    <rect x="85" y="0" width="1" height="24"/>
+    <rect x="88" y="0" width="4" height="24"/>
+    <rect x="94" y="0" width="2" height="24"/>
+    <rect x="98" y="0" width="3" height="24"/>
+    <rect x="103" y="0" width="2" height="24"/>
+    <rect x="107" y="0" width="4" height="24"/>
+    <rect x="113" y="0" width="1" height="24"/>
+    <rect x="116" y="0" width="3" height="24"/>
+    <rect x="121" y="0" width="4" height="24"/>
+    <rect x="127" y="0" width="2" height="24"/>
+    <rect x="131" y="0" width="3" height="24"/>
+    <rect x="136" y="0" width="4" height="24"/>
+  </g>
+</svg>

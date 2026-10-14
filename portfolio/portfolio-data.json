@@ -1,0 +1,227 @@
+{
+  "profile": {
+    "name": "Sanskruti Gorle",
+    "role": "B.Tech CSE Student @ SIT Nagpur",
+    "location": "Nagpur, Maharashtra, India",
+    "email": "sanskrutigorle1@gmail.com",
+    "phone": "+91 98765 43210",
+    "github": "https://github.com/s4nskrut1",
+    "linkedin": "https://www.linkedin.com/in/sanskruti-gorle-43597a320",
+    "tags": ["Agentic AI", "Data Science", "Python & C", "Frontend Dev", "Problem Solving"],
+    "bioShort": "Passionate Computer Science undergraduate at SIT Nagpur engineering agentic AI systems, predictive data mining models, and aesthetic interactive web platforms. Driven by algorithmic problem-solving and modern software architecture.",
+    "cgpa": "8.7 CGPA"
+  },
+  "education": [
+    {
+      "degree": "SIT Nagpur",
+      "period": "B.Tech CSE (Batch 2024-2028)",
+      "score": "8.7 CGPA",
+      "hasBadge": true
+    },
+    {
+      "degree": "St. Paul Jr High School",
+      "period": "Higher Secondary (12th Board)",
+      "score": "79%",
+      "hasBadge": false
+    },
+    {
+      "degree": "Sanjuba High School CBSE",
+      "period": "Secondary School (10th CBSE)",
+      "score": "96%",
+      "hasBadge": false
+    }
+  ],
+  "technicalSkills": [
+    { "name": "Python", "icon": "🐍", "bg": "#e2ece9", "level": "92%" },
+    { "name": "Agentic AI", "icon": "🤖", "bg": "#fde2e4", "level": "90%" },
+    { "name": "JavaScript", "icon": "⚡", "bg": "#fff1c5", "level": "94%" },
+    { "name": "HTML5 & CSS3", "icon": "🌐", "bg": "#ffe5d9", "level": "95%" },
+    { "name": "Data Mining & SQL", "icon": "📊", "bg": "#d8e2dc", "level": "88%" },
+    { "name": "C / C++ & Git", "icon": "⚙️", "bg": "#fcd5ce", "level": "89%" }
+  ],
+  "careerInterests": [
+    "Agentic AI & Autonomous Systems",
+    "Data Science & Predictive Risk Mining",
+    "Creative Frontend & Modern Web Engineering"
+  ],
+  "featuredProjects": [
+    {
+      "id": "proj-1",
+      "title": "AETHER — Luxury Landing Page",
+      "subtitle": "Dark editorial luxury product showcase featuring interactive sneaker reveals, kinetic typography, and fluid micro-interactions.",
+      "category": "Frontend",
+      "tags": ["Frontend", "HTML5 & CSS3", "JavaScript", "Editorial UI"],
+      "image": "assets/images/aether-hero.png",
+      "gallery": [
+        "assets/images/aether-hero.png",
+        "assets/images/aether-showcase.png",
+        "assets/images/aether-campaign.png"
+      ],
+      "overview": "AETHER is a high-concept dark editorial luxury e-commerce showcase built to push boundaries in creative frontend development. Inspired by high-fashion street aesthetics, it incorporates custom serif typography, dynamic lookbook displays, interactive product colorway switchers, and subtle scroll-triggered layout transitions.",
+      "highlights": [
+        "Interactive editorial layout with luxury aesthetic and smooth reveal animations.",
+        "Custom lookbook grid with responsive hover states and modal previews.",
+        "Zero-dependency pure vanilla CSS & JavaScript delivering high-speed 60fps interaction."
+      ],
+      "github": "https://github.com/s4nskrut1/frontend-projects/tree/main/Responsive%20Landing%20Page",
+      "demo": "https://github.com/s4nskrut1/frontend-projects"
+    },
+    {
+      "id": "proj-2",
+      "title": "ATLAS Studio — Architecture Platform",
+      "subtitle": "Minimal, image-led multi-page platform for architecture and interior design studios with fluid client navigation.",
+      "category": "Frontend",
+      "tags": ["Frontend", "Multi-Page", "Responsive Design", "Architecture"],
+      "image": "assets/images/atlas-home.jpeg",
+      "gallery": [
+        "assets/images/atlas-home.jpeg",
+        "assets/images/atlas-about.jpeg",
+        "assets/images/atlas-contact.jpeg"
+      ],
+      "overview": "ATLAS Studio is an expansive multi-page architectural studio web application. Built for luxury interior designers and architectural practices, it features dedicated project portfolios, services breakdown, interactive inquiry forms, and an editorial gallery showcasing space planning and architectural structures.",
+      "highlights": [
+        "Multi-page architecture encompassing Home, Projects, Philosophy, and Contact endpoints.",
+        "Minimalist aesthetic with high-contrast architectural imagery and clean whitespace.",
+        "Mobile-first responsive fluid grids optimized across all screen formats."
+      ],
+      "github": "https://github.com/s4nskrut1/frontend-projects/tree/main/Multi%20Page%20Website",
+      "demo": "https://github.com/s4nskrut1/frontend-projects"
+    },
+    {
+      "id": "proj-3",
+      "title": "GoalMate — Agentic AI Goal Tracker",
+      "subtitle": "Autonomous multi-agent system that breaks down ambitious personal goals into actionable milestones, habits, and streak schedules.",
+      "category": "AI",
+      "tags": ["Agentic AI", "Python", "Autonomous LLMs", "Full-Stack"],
+      "image": "assets/images/goalmate-dash1.png",
+      "gallery": [
+        "assets/images/goalmate-banner.png",
+        "assets/images/goalmate-idea.png",
+        "assets/images/goalmate-dash1.png",
+        "assets/images/goalmate-dash2.png",
+        "assets/images/goalmate-goal.png"
+      ],
+      "overview": "GoalMate is an intelligent Agentic AI framework designed to solve self-regulation and goal abandonment. Powered by autonomous agentic task breakdown workflows, the system takes high-level user ambitions, analyzes schedule constraints, and proactively generates adaptive sub-tasks, habit tracking, and progress coaching.",
+      "highlights": [
+        "Autonomous multi-agent orchestration for hierarchical goal deconstruction.",
+        "Interactive dashboard featuring streak mechanics, habit calendars, and dynamic charts.",
+        "Full-stack architecture integrating responsive frontend with Python backend agents."
+      ],
+      "github": "https://github.com/s4nskrut1/AI-Agent-for-Personal-Goal-Tracking",
+      "demo": "https://github.com/s4nskrut1/AI-Agent-for-Personal-Goal-Tracking"
+    },
+    {
+      "id": "proj-4",
+      "title": "CrediMine — Bank Loan Risk Mining Platform",
+      "subtitle": "Predictive data mining engine assessing credit risk, debt-to-income ratios, and loan approval probabilities using ML pipelines.",
+      "category": "Data",
+      "tags": ["Data Science", "Python", "Scikit-Learn", "Risk Modeling"],
+      "image": "assets/images/credimine-landing.png",
+      "gallery": [
+        "assets/images/credimine-landing.png",
+        "assets/images/credimine-eda.png",
+        "assets/images/credimine-attr.png",
+        "assets/images/credimine-models.png",
+        "assets/images/credimine-tree.png"
+      ],
+      "overview": "A comprehensive data mining and financial technology platform that evaluates loan applicants in real time. The system executes end-to-end KDD (Knowledge Discovery in Databases) pipelines — from raw transaction ingestion and feature correlation heatmaps to supervised classification models for default rate prediction.",
+      "highlights": [
+        "End-to-end machine learning classification pipelines with cross-validated ROC-AUC metrics.",
+        "Interactive financial analytics dashboard displaying loan distributions and default rates.",
+        "Real-time applicant risk calculator with attribute relevance feedback."
+      ],
+      "github": "https://github.com/s4nskrut1/bank-loan-risk-mining",
+      "demo": "https://github.com/s4nskrut1/bank-loan-risk-mining"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "IIITN Abhyudaya Hackathon",
+      "icon": "🏅",
+      "desc": "Hackathon Finalist at IIIT Nagpur national technical sprint",
+      "issuer": "IIIT Nagpur (Indian Institute of Information Technology)"
+    },
+    {
+      "title": "Bhartiya Antariksh Hackathon",
+      "icon": "🚀",
+      "desc": "Space & Satellite Tech Innovation Hackathon Certificate",
+      "issuer": "ISRO / Bhartiya Antariksh Hackathon"
+    },
+    {
+      "title": "Academic Merit Scholar",
+      "icon": "⭐",
+      "desc": "SIT Nagpur Academic Excellence (Continuous 8.7 CGPA)",
+      "issuer": "Symbiosis Institute of Technology, Nagpur"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "IIITN Abhyudaya Hackathon Certificate",
+      "icon": "🏅",
+      "issuer": "IIIT Nagpur",
+      "badge": "National Hackathon",
+      "doc": "assets/images/cert-iiitn.jpeg"
+    },
+    {
+      "title": "Bhartiya Antariksh Hackathon Certificate",
+      "icon": "🚀",
+      "issuer": "ISRO / Space Applications",
+      "badge": "ISRO Space Hack",
+      "doc": "assets/images/cert-bhartiya-antariksh.jpg"
+    },
+    {
+      "title": "Google Cloud Generative AI Certification",
+      "icon": "☁️",
+      "issuer": "Google Cloud Skills Boost",
+      "badge": "Google Cloud",
+      "doc": "assets/images/cert-google-cloud.jpg"
+    },
+    {
+      "title": "Cyber Security Hackathon Distinction",
+      "icon": "🛡️",
+      "issuer": "National Cyber Security Hackathon",
+      "badge": "Network Security",
+      "doc": "assets/images/cert-cybersec.jpeg"
+    },
+    {
+      "title": "Data Forge Hackathon Distinction",
+      "icon": "⚡",
+      "issuer": "National Data Forge Hackathon",
+      "badge": "Data Engineering",
+      "doc": "assets/images/cert-data-forge.jpg"
+    },
+    {
+      "title": "C++ Programming Specialization (with AI)",
+      "icon": "⚙️",
+      "issuer": "Unstop",
+      "badge": "Unstop Certified",
+      "doc": "assets/images/cert-cpp-prog-ai.png"
+    }
+  ],
+  "galleryPolaroids": [
+    {
+      "id": "pol-1",
+      "title": "SIT Nagpur",
+      "tapeColor": "yellow",
+      "image": "assets/images/polaroid-sit.jpg",
+      "caption": "SIT Nagpur",
+      "description": "Active participation in computer science labs, project exhibitions, and technical symposiums at SIT Nagpur."
+    },
+    {
+      "id": "pol-2",
+      "title": "ACM & IEEE",
+      "tapeColor": "yellow",
+      "image": "assets/images/polaroid-acm.jpg",
+      "caption": "ACM & IEEE",
+      "description": "Hosting and volunteering in hands-on workshops on web technologies, Git workflows, and algorithms."
+    },
+    {
+      "id": "pol-3",
+      "title": "Collaborative Hackathons",
+      "tapeColor": "pink",
+      "image": "assets/images/polaroid-hackathon.jpg",
+      "caption": "Collaborative Hackathons",
+      "description": "Intensive 36-hour hackathon coding sprints with fellow engineers building real-world solutions under tight deadlines."
+    }
+  ]
+}

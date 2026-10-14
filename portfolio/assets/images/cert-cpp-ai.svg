@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbfc"/>
+      <stop offset="100%" stop-color="#fdf2f4"/>
+    </linearGradient>
+    <linearGradient id="rose-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Border & Paper -->
+  <rect x="20" y="20" width="760" height="520" rx="16" fill="url(#bg-grad)" stroke="#f3d9e0" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="36" y="36" width="728" height="488" rx="10" fill="none" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Corner Ornaments -->
+  <path d="M 46 66 L 46 46 L 66 46" fill="none" stroke="#e11d48" stroke-width="3"/>
+  <path d="M 754 66 L 754 46 L 734 46" fill="none" stroke="#e11d48" stroke-width="3"/>
+  <path d="M 46 494 L 46 514 L 66 514" fill="none" stroke="#e11d48" stroke-width="3"/>
+  <path d="M 754 494 L 754 514 L 734 514" fill="none" stroke="#e11d48" stroke-width="3"/>
+
+  <!-- Crest Emblem -->
+  <circle cx="400" cy="95" r="32" fill="#fff" stroke="#e11d48" stroke-width="2.5"/>
+  <text x="400" y="103" font-family="'Segoe UI Emoji', sans-serif" font-size="28" text-anchor="middle">⚙️</text>
+
+  <!-- Header -->
+  <text x="400" y="150" font-family="'Cinzel', 'Georgia', serif" font-size="14" font-weight="700" letter-spacing="4" fill="#881337" text-anchor="middle">OFFICIAL ACADEMIC CREDENTIAL</text>
+  <text x="400" y="190" font-family="'Fraunces', 'Georgia', serif" font-size="26" font-weight="700" fill="#1e122b" text-anchor="middle">CERTIFICATE OF SPECIALIZATION</text>
+  
+  <text x="400" y="222" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#71717a" text-anchor="middle">THIS IS PROUDLY PRESENTED TO</text>
+  <text x="400" y="265" font-family="'Fraunces', 'Georgia', serif" font-size="30" font-style="italic" font-weight="700" fill="#e11d48" text-anchor="middle">Sanskruti Gorle</text>
+  
+  <line x1="240" y1="282" x2="560" y2="282" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="8,4"/>
+
+  <!-- Body Text -->
+  <text x="400" y="318" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#3f3f46" text-anchor="middle">For demonstrating distinguished proficiency and engineering competence in</text>
+  <text x="400" y="348" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#1e122b" text-anchor="middle">C++ Systems Programming with AI Inference Architecture</text>
+  
+  <text x="400" y="378" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#71717a" text-anchor="middle">Covering High-Performance Memory Management, Algorithmic Optimization, Modern C++20, and Machine Learning Kernels</text>
+
+  <!-- Seal & Badges -->
+  <g transform="translate(130, 415)">
+    <circle cx="45" cy="45" r="38" fill="#fff" stroke="#f43f5e" stroke-width="2"/>
+    <text x="45" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#e11d48" text-anchor="middle">VERIFIED</text>
+    <text x="45" y="56" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="700" fill="#71717a" text-anchor="middle">HONORS</text>
+  </g>
+
+  <!-- Signatures -->
+  <g transform="translate(280, 440)">
+    <line x1="0" y1="30" x2="160" y2="30" stroke="#a1a1aa" stroke-width="1.2"/>
+    <text x="80" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#18181b" text-anchor="middle">Systems Architecture Board</text>
+    <text x="80" y="24" font-family="'Fraunces', cursive" font-size="16" fill="#e11d48" text-anchor="middle">Verified Faculty</text>
+  </g>
+
+  <g transform="translate(520, 440)">
+    <line x1="0" y1="30" x2="160" y2="30" stroke="#a1a1aa" stroke-width="1.2"/>
+    <text x="80" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#18181b" text-anchor="middle">Credential Authority</text>
+    <text x="80" y="24" font-family="'Fraunces', cursive" font-size="16" fill="#e11d48" text-anchor="middle">Academic Council</text>
+  </g>
+
+  <!-- ID Code -->
+  <text x="400" y="512" font-family="'Courier New', monospace" font-size="9" font-weight="700" fill="#a1a1aa" text-anchor="middle">CREDENTIAL ID: CPP-AI-2025-SG87 • SYMBIOSIS INSTITUTE OF TECHNOLOGY, NAGPUR</text>
+</svg>
