@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management System</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 10% 10%, #eee7ff 0, transparent 28%),
+                radial-gradient(circle at 90% 15%, #ffe5ef 0, transparent 25%),
+                radial-gradient(circle at 85% 90%, #dcf8ef 0, transparent 28%),
+                #f8f9fd;
+            color: #29263d;
+            padding: 35px;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: auto;
+        }
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .heading h1 {
+            font-size: 30px;
+            color: #302b4d;
+            margin-bottom: 6px;
+        }
+
+        .heading p {
+            color: #85819b;
+            font-size: 14px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 13px 8px 8px;
+            border: 1px solid #ebe8f3;
+            border-radius: 30px;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b7cf6, #b28df5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .profile-text {
+            font-size: 12px;
+        }
+
+        .profile-text span {
+            display: block;
+            color: #9893aa;
+            margin-top: 2px;
+        }
+
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ebe8f3;
+            border-radius: 17px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(63, 51, 92, 0.06);
+            transition: 0.25s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(63, 51, 92, 0.1);
+        }
+
+        .stat-info p {
+            color: #918ca5;
+            font-size: 12px;
+            margin-bottom: 7px;
+        }
+
+        .stat-info h2 {
+            font-size: 25px;
+            color: #302b4d;
+        }
+
+        .stat-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 19px;
+        }
+
+        .icon-purple {
+            background: #eeeaff;
+            color: #7968e8;
+        }
+
+        .icon-pink {
+            background: #ffe8f0;
+            color: #e17b9b;
+        }
+
+        .icon-mint {
+            background: #e1f8ef;
+            color: #3da988;
+        }
+
+
+        .content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 22px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid #ebe8f3;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(63, 51, 92, 0.055);
+        }
+
+        .card-title {
+            margin-bottom: 22px;
+        }
+
+        .card-title h2 {
+            font-size: 18px;
+            color: #302b4d;
+            margin-bottom: 5px;
+        }
+
+        .card-title p {
+            font-size: 12px;
+            color: #9691a8;
+        }
+
+
+        .field {
+            margin-bottom: 15px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #625d73;
+            margin-bottom: 7px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa5bb;
+            font-size: 13px;
+        }
+
+        .field input {
+            width: 100%;
+            height: 42px;
+            padding: 0 12px 0 35px;
+            border: 1px solid #e2deeb;
+            border-radius: 9px;
+            outline: none;
+            background: #fcfbfe;
+            color: #403b54;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        .field input::placeholder {
+            color: #b3afbd;
+        }
+
+        .field input:focus {
+            border-color: #9a8cf2;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(154, 140, 242, 0.12);
+        }
+
+        .add-btn {
+            width: 100%;
+            height: 43px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 9px;
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #8171e9, #a47ee9);
+            box-shadow: 0 6px 14px rgba(129, 113, 233, 0.25);
+            transition: 0.2s;
+        }
+
+        .add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 18px rgba(129, 113, 233, 0.32);
+        }
+
+
+        #employeeOutput {
+            display: none;
+            margin-top: 17px;
+            padding: 13px;
+            border-radius: 9px;
+            background: #f7f5ff;
+            border: 1px solid #e7e2ff;
+        }
+
+        .output-title {
+            font-size: 11px;
+            color: #7c72a1;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        #jsonText {
+            font-family: Consolas, monospace;
+            color: #6b5fc4;
+            font-size: 10px;
+            line-height: 1.5;
+            word-break: break-all;
+        }
+
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .table-header h2 {
+            font-size: 18px;
+            color: #302b4d;
+            margin-bottom: 5px;
+        }
+
+        .table-header p {
+            color: #9691a8;
+            font-size: 12px;
+        }
+
+        .load-btn {
+            border: none;
+            padding: 10px 16px;
+            border-radius: 9px;
+            color: white;
+            background: linear-gradient(135deg, #55b99b, #68c9aa);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 13px rgba(70, 174, 143, 0.2);
+            transition: 0.2s;
+        }
+
+        .load-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(70, 174, 143, 0.28);
+        }
+
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 12px;
+            text-align: left;
+            background: #faf9fc;
+            color: #88839a;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            border-bottom: 1px solid #ece9f2;
+        }
+
+        td {
+            padding: 15px 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #f0edf4;
+            color: #555064;
+        }
+
+        tbody tr {
+            transition: 0.2s;
+        }
+
+        tbody tr:hover {
+            background: #fcfaff;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .id {
+            color: #7969dd;
+            font-weight: 600;
+        }
+
+        .name {
+            color: #373246;
+            font-weight: 600;
+        }
+
+        .department {
+            display: inline-block;
+            background: #f0edff;
+            color: #7566d5;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .salary {
+            color: #379477;
+            font-weight: 600;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #55a485;
+            font-size: 11px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #62c49e;
+            border-radius: 50%;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 45px 20px;
+            color: #aaa5b7;
+            font-size: 13px;
+        }
+
+
+        .footer {
+            text-align: center;
+            margin-top: 22px;
+            color: #aaa5b7;
+            font-size: 11px;
+        }
+
+
+        @media (max-width: 950px) {
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                align-items: flex-start;
+            }
+
+            .profile {
+                display: none;
+            }
+
+            .heading h1 {
+                font-size: 24px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .table-header {
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <header class="header">
+
+        <div class="heading">
+
+            <h1>Employee Management</h1>
+
+            <p>
+                Manage employee information with JavaScript & JSON
+            </p>
+
+        </div>
+
+        <div class="profile">
+
+            <div class="avatar">
+                AD
+            </div>
+
+            <div class="profile-text">
+
+                <strong>Admin</strong>
+
+                <span>Administrator</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-info">
+
+                <p>Total Employees</p>
+
+                <h2 id="totalEmployees">0</h2>
+
+            </div>
+
+            <div class="stat-icon icon-purple">
+                👥
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-info">
+
+                <p>Departments</p>
+
+                <h2 id="totalDepartments">0</h2>
+
+            </div>
+
+            <div class="stat-icon icon-pink">
+                ▦
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-info">
+
+                <p>System Status</p>
+
+                <h2 style="font-size:18px;">
+                    Active
+                </h2>
+
+            </div>
+
+            <div class="stat-icon icon-mint">
+                ✓
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="content">
+
+
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <h2>Add Employee</h2>
+
+                <p>Enter the employee details below</p>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Employee ID</label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">#</span>
+
+                    <input
+                        type="text"
+                        id="employeeId"
+                        placeholder="e.g. E104"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Employee Name</label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">♙</span>
+
+                    <input
+                        type="text"
+                        id="employeeName"
+                        placeholder="Enter full name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Department</label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">▦</span>
+
+                    <input
+                        type="text"
+                        id="department"
+                        placeholder="e.g. IT"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Salary</label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">₹</span>
+
+                    <input
+                        type="number"
+                        id="salary"
+                        placeholder="Enter salary"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="add-btn"
+                onclick="createEmployee()"
+            >
+                + Add Employee
+            </button>
+
+
+            <div id="employeeOutput">
+
+                <div class="output-title">
+                    Generated JSON
+                </div>
+
+                <p id="jsonText"></p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="table-header">
+
+                <div>
+
+                    <h2>Employee Records</h2>
+
+                    <p>
+                        Records loaded from employees.json
+                    </p>
+
+                </div>
+
+                <button
+                    class="load-btn"
+                    onclick="loadEmployees()"
+                >
+                    ↻ Load Employees
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Employee ID</th>
+
+                            <th>Employee Name</th>
+
+                            <th>Department</th>
+
+                            <th>Salary</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="employeeTableBody">
+
+                        <tr>
+
+                            <td colspan="5">
+
+                                <div class="empty">
+
+                                    Click
+                                    <strong>Load Employees</strong>
+                                    to display the JSON records.
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="footer">
+
+        Employee Management System • JavaScript • JSON • Fetch API
+
+    </div>
+
+</div>
+
+
+<script>
+
+    let addedEmployees = [];
+
+
+    function createEmployee() {
+
+        let id =
+            document.getElementById("employeeId").value;
+
+        let name =
+            document.getElementById("employeeName").value;
+
+        let department =
+            document.getElementById("department").value;
+
+        let salary =
+            document.getElementById("salary").value;
+
+
+        if (
+            id === "" ||
+            name === "" ||
+            department === "" ||
+            salary === ""
+        ) {
+
+            alert("Please enter all employee details.");
+
+            return;
+        }
+
+
+        let employee = {
+
+            id: id,
+
+            name: name,
+
+            department: department,
+
+            salary: salary
+
+        };
+
+
+        let employeeJSON =
+            JSON.stringify(employee);
+
+
+        document.getElementById(
+            "employeeOutput"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "jsonText"
+        ).textContent = employeeJSON;
+
+
+        addedEmployees.push(employee);
+
+
+        displayEmployees(addedEmployees);
+
+
+        document.getElementById(
+            "totalEmployees"
+        ).textContent = addedEmployees.length;
+
+
+        let departments = new Set();
+
+        addedEmployees.forEach(function(employee) {
+            departments.add(employee.department);
+        });
+
+
+        document.getElementById(
+            "totalDepartments"
+        ).textContent = departments.size;
+
+
+        document.getElementById("employeeId").value = "";
+        document.getElementById("employeeName").value = "";
+        document.getElementById("department").value = "";
+        document.getElementById("salary").value = "";
+
+    }
+
+
+
+    function loadEmployees() {
+
+        fetch("employees.json")
+
+        .then(function(response) {
+
+            if (!response.ok) {
+                throw new Error("Unable to load employees.json");
+            }
+
+            return response.json();
+
+        })
+
+        .then(function(employees) {
+
+            addedEmployees = employees;
+
+            displayEmployees(addedEmployees);
+
+        })
+
+        .catch(function(error) {
+
+            console.log("Error:", error);
+
+            alert("Unable to load employee records.");
+
+        });
+
+    }
+
+
+
+    function displayEmployees(employees) {
+
+        let tableBody =
+            document.getElementById("employeeTableBody");
+
+
+        tableBody.innerHTML = "";
+
+
+        let departments = new Set();
+
+
+        employees.forEach(function(employee) {
+
+            departments.add(employee.department);
+
+
+            let row =
+                document.createElement("tr");
+
+
+            let idCell =
+                document.createElement("td");
+
+            idCell.innerHTML =
+                '<span class="id">' +
+                employee.id +
+                '</span>';
+
+
+            let nameCell =
+                document.createElement("td");
+
+            nameCell.innerHTML =
+                '<span class="name">' +
+                employee.name +
+                '</span>';
+
+
+            let departmentCell =
+                document.createElement("td");
+
+            departmentCell.innerHTML =
+                '<span class="department">' +
+                employee.department +
+                '</span>';
+
+
+            let salaryCell =
+                document.createElement("td");
+
+            salaryCell.innerHTML =
+                '<span class="salary">₹ ' +
+                employee.salary +
+                '</span>';
+
+
+            let statusCell =
+                document.createElement("td");
+
+            statusCell.innerHTML =
+                '<span class="status">' +
+                '<span class="status-dot"></span>' +
+                'Active' +
+                '</span>';
+
+
+            row.appendChild(idCell);
+            row.appendChild(nameCell);
+            row.appendChild(departmentCell);
+            row.appendChild(salaryCell);
+            row.appendChild(statusCell);
+
+
+            tableBody.appendChild(row);
+
+        });
+
+
+        document.getElementById(
+            "totalEmployees"
+        ).textContent = employees.length;
+
+
+        document.getElementById(
+            "totalDepartments"
+        ).textContent = departments.size;
+
+    }
+
+</script> 
+
+</body>
+
+</html>

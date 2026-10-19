@@ -1,0 +1,20 @@
+[
+    {
+        "id": "E101",
+        "name": "Rahul Sharma",
+        "department": "IT",
+        "salary": 50000
+    },
+    {
+        "id": "E102",
+        "name": "Priya Patil",
+        "department": "HR",
+        "salary": 45000
+    },
+    {
+        "id": "E103",
+        "name": "Amit Joshi",
+        "department": "Finance",
+        "salary": 55000
+    }
+] 
