@@ -1097,7 +1097,7 @@ function initCreativeWidgets() {
     const toggleFlip = () => {
       pfpFlipCard.classList.toggle('flipped');
       const isFlipped = pfpFlipCard.classList.contains('flipped');
-      toast(isFlipped ? 'Revealed: Sanskruti Gorle (Real Portrait) ✨' : 'Showing: Illustrated Pink Avatar 🌸', 'info');
+      toast(isFlipped ? 'Revealed: Illustrated Pink Avatar 🌸' : 'Showing: Sanskruti Gorle (Real Portrait) ✨', 'info');
     };
 
     pfpFlipCard.addEventListener('click', toggleFlip);
