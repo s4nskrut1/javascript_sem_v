@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f2f5fa;
+            color: #27334a;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            gap: 15px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 29px;
+            color: #243b64;
+        }
+
+        .header p {
+            margin: 0;
+            color: #7c879b;
+            font-size: 14px;
+        }
+
+        .header-icon {
+            background: #e1eaff;
+            color: #365db5;
+            padding: 15px;
+            border-radius: 14px;
+            font-size: 25px;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 22px;
+            background: white;
+            border: 1px solid #e5eaf2;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .toolbar h2 {
+            margin: 0 0 6px;
+            font-size: 18px;
+        }
+
+        .toolbar p {
+            margin: 0;
+            color: #8a94a6;
+            font-size: 12px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 7px;
+            background: #365db5;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        button:hover {
+            background: #284991;
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+
+        .table-card {
+            background: white;
+            border: 1px solid #e5eaf2;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px #253b6010;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 550px;
+        }
+
+        th {
+            padding: 16px 20px;
+            text-align: left;
+            background: #f5f7fc;
+            color: #68758c;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            border-bottom: 1px solid #e7ebf2;
+        }
+
+        td {
+            padding: 17px 20px;
+            color: #46536a;
+            font-size: 14px;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafbfe;
+        }
+
+        tbody tr:hover {
+            background: #edf3ff;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        td:first-child {
+            color: #365db5;
+            font-weight: bold;
+        }
+
+        .marks {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: #e7f6ed;
+            color: #267548;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .empty-state {
+            padding: 35px 15px;
+            text-align: center;
+            color: #929bad;
+        }
+
+        #message {
+            display: none;
+            margin: 16px 0;
+            padding: 13px 16px;
+            border-radius: 8px;
+            background: #fff0f0;
+            color: #a23535;
+            border-left: 4px solid #d95757;
+            font-size: 13px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+            padding: 18px 2px;
+            border-top: 1px solid #dfe5ee;
+            color: #8993a5;
+            font-size: 12px;
+        }
+
+        .footer strong {
+            color: #354765;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 25px 12px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .toolbar {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 18px;
+            }
+
+            th, td {
+                padding: 13px 12px;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <div>
+                <h1>Student Records</h1>
+                <p>Load and display student details using jQuery and JSON.</p>
+            </div>
+            <div class="header-icon">▤</div>
+        </header>
+
+        <section class="toolbar">
+            <div>
+                <h2>All Students</h2>
+                <p>Click below to retrieve student data.</p>
+            </div>
+
+            <button id="loadStudents">Load Students →</button>
+        </section>
+
+        <div id="message"></div>
+
+        <section class="table-card">
+            <div class="table-wrap">
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Student Name</th>
+                            <th>Department</th>
+                            <th>Marks</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="empty-state">
+                                Click "Load Students" to display records.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>Student Records | jQuery Practical</span>
+            <span>Designed by <strong>Sanskruti Gorle</strong> | PRN: <strong>24070521025</strong></span>
+        </footer>
+
+    </main>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#loadStudents").on("click", function () {
+
+                var $button = $(this);
+                var $tbody = $("#studentTable tbody");
+
+                $button.prop("disabled", true).text("Loading...");
+                $("#message").hide();
+
+                $.getJSON("students.json")
+
+                    .done(function (data) {
+
+                        $tbody.empty();
+
+                        $.each(data, function (index, student) {
+
+                            var row = $("<tr>")
+                                .append($("<td>").text(student.id))
+                                .append($("<td>").text(student.name))
+                                .append($("<td>").text(student.department))
+                                .append(
+                                    $("<td>").append(
+                                        $("<span class='marks'>").text(student.marks)
+                                    )
+                                );
+
+                            $tbody.append(row);
+                        });
+
+                        if (data.length === 0) {
+                            $tbody.html(
+                                '<tr><td colspan="4" class="empty-state">No student records found.</td></tr>'
+                            );
+                        }
+                    })
+
+                    .fail(function () {
+
+                        $tbody.html(
+                            '<tr><td colspan="4" class="empty-state">Unable to load student records.</td></tr>'
+                        );
+
+                        $("#message")
+                            .text("Could not load students.json. Check the file and try again.")
+                            .show();
+                    })
+
+                    .always(function () {
+                        $button.prop("disabled", false).text("Load Students →");
+                    });
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
