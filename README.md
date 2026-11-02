@@ -265,6 +265,125 @@ An interactive theme-preference implementation demonstrating **UI state changes 
 
 ---
 
+
+---
+
+## Practical 10 — JSON & Data Handling
+
+A set of exercises demonstrating how JavaScript works with **JSON data, external data files, and structured records**, including employee management, student records, and restaurant orders.
+
+### Part 1 — Employee & Student Records
+
+The case study builds an employee management interface with employee records and summary information. The execution exercise works with student details and displays structured student records.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2010/part%201/case%20study/Screenshot%20(808).png" alt="Practical 10 — Employee Management System" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2010/part%201/execution/Screenshot%202026-10-18%20142224.png" alt="Practical 10 — Student Details" width="82%">
+</p>
+
+### Part 2 — Restaurant Orders & Student Records
+
+The second part applies structured data handling to a restaurant order management dashboard, alongside another student-record execution exercise.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2010/part%202/case%20study/Screenshot%20(811).png" alt="Practical 10 — Restaurant Order Management" width="82%">
+</p>
+
+**Focus:** JSON · structured data · records management · data display · JavaScript objects and arrays
+
+**→ [Open Practical 10](./practical%2010/)**
+
+---
+
+## Practical 11 — Timers, Events & Interactive Websites
+
+A collection of interactive implementations covering **time-based functionality, event handling, ticket booking, and themed web experiences**.
+
+### Countdown Timer & Class Scheduler
+
+A study timer and class scheduler interface for managing countdowns and scheduled classes.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2011/basic/Screenshot%20(909).png" alt="Practical 11 — Countdown Timer and Class Scheduler" width="82%">
+</p>
+
+### TechNova — Workshop Ticket Booking
+
+A workshop landing page with event information and a ticket reservation form, designed around a technology workshop theme.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2011/case%20study%201/Screenshot%20(904).png" alt="Practical 11 — TechNova workshop booking" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2011/case%20study%201/Screenshot%20(906).png" alt="Practical 11 — Workshop ticket reservation" width="82%">
+</p>
+
+### Rakhi World — E-commerce Experience
+
+A festive storefront featuring a Rakhi collection, product cards, and cart interaction.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2011/Rakhi/Screenshot%20(914).png" alt="Practical 11 — Rakhi World storefront" width="82%">
+</p>
+
+### Smart India Hackathon — Information Website
+
+An informational website introducing the Smart India Hackathon, its objectives, benefits, and opportunities.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2011/SIH/Screenshot%20(912).png" alt="Practical 11 — Smart India Hackathon website" width="82%">
+</p>
+
+**Focus:** timers · event handling · interactive forms · booking flows · DOM manipulation · dynamic UI
+
+**→ [Open Practical 11](./practical%2011/)**
+
+---
+
+## Practical 12 — jQuery & Interactive Web Experiences
+
+A set of exercises exploring **jQuery-based DOM interaction, task management, form handling, and themed multi-section websites**.
+
+### Interactive Task Manager
+
+A task management interface supporting task creation, sample task loading, clearing tasks, and task-count updates using jQuery.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2012/basic/Screenshot%20(911).png" alt="Practical 12 — Interactive Task Manager" width="82%">
+</p>
+
+### Beats & Beyond — Music Concert Registration
+
+A music festival website with event details, artist categories, a concert registration form, pass selection, and a themed interface.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2012/case%20study%202/Screenshot%20(907).png" alt="Practical 12 — Beats and Beyond concert website" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2012/case%20study%202/Screenshot%20(908).png" alt="Practical 12 — Concert registration interface" width="82%">
+</p>
+
+### Discover Nagpur — City Website
+
+A city showcase highlighting Nagpur's identity, landmarks, heritage, and educational destinations through a multi-section website.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2012/Nagpur/Screenshot%20(917).png" alt="Practical 12 — Discover Nagpur" width="82%">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/s4nskrut1/javascript_sem_v/main/practical%2012/Nagpur/Screenshot%20(919).png" alt="Practical 12 — Discover Nagpur landmarks" width="82%">
+</p>
+
+**Focus:** jQuery · DOM traversal and manipulation · event handling · task management · interactive forms · responsive web design
+
+**→ [Open Practical 12](./practical%2012/)**
+
 ## Capstone Project — Interactive Developer Portfolio
 
 A comprehensive, production-grade **Mac Safari-themed interactive developer portfolio** engineered using vanilla semantic HTML5, modern responsive CSS bento grid, and modular ES6+ JavaScript.
@@ -298,7 +417,7 @@ JAVASCRIPT
     └── planning interfaces & user preferences
 ```
 
-The repository documents the progression from foundational JavaScript concepts to practical, browser-based implementations — now extending through advanced form validation, interactive planning interfaces, and user preference handling.
+The repository documents the progression from foundational JavaScript concepts to practical, browser-based implementations — now extending through JSON data handling, interactive timers and booking experiences, jQuery-powered task management, and themed websites.
 
 ---
 
