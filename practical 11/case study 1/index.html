@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechNova | Workshop Ticket Booking</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal JavaScript: small page-level welcome action -->
+    <script>
+        console.log("Technical Workshop Booking page is loading...");
+
+        function showWelcomeMessage() {
+            console.log("Welcome to TechNova Technical Workshop!");
+        }
+
+        showWelcomeMessage();
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <div>
+                <h2>TechNova</h2>
+                <small>Learn • Build • Innovate</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#workshop">Workshop</a>
+            <a href="#booking">Book Ticket</a>
+            <a href="#summary">Summary</a>
+
+            <button id="themeToggle" class="theme-btn" type="button">
+                🌙
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="workshop">
+
+        <div class="hero-content">
+
+            <span class="badge">🚀 TECHNICAL WORKSHOP 2026</span>
+
+            <h1>
+                Build Your Future
+                <span>With Technology.</span>
+            </h1>
+
+            <p>
+                Join industry experts for a hands-on technical workshop
+                covering AI, Web Development, Cloud and emerging technologies.
+            </p>
+
+            <div class="hero-info">
+
+                <div>
+                    <span>📅</span>
+                    <div>
+                        <small>Date</small>
+                        <strong>18 October 2026</strong>
+                    </div>
+                </div>
+
+                <div>
+                    <span>📍</span>
+                    <div>
+                        <small>Venue</small>
+                        <strong>TechNova Auditorium</strong>
+                    </div>
+                </div>
+
+                <div>
+                    <span>⏰</span>
+                    <div>
+                        <small>Duration</small>
+                        <strong>10:00 AM – 5:00 PM</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="#booking" class="primary-btn">
+                Book Your Ticket →
+            </a>
+
+        </div>
+
+        <div class="hero-visual">
+            <div class="floating-card card-one">
+                <span>🤖</span>
+                <div>
+                    <strong>AI & ML</strong>
+                    <small>Hands-on Session</small>
+                </div>
+            </div>
+
+            <div class="tech-circle">
+                <div class="circle-inner">
+                    <span>💻</span>
+                    <strong>TECH</strong>
+                    <small>WORKSHOP</small>
+                </div>
+            </div>
+
+            <div class="floating-card card-two">
+                <span>☁️</span>
+                <div>
+                    <strong>Cloud</strong>
+                    <small>Industry Experts</small>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Workshop Highlights -->
+    <section class="highlights">
+
+        <div class="section-heading">
+            <span class="mini-label">WHAT YOU'LL GET</span>
+            <h2>More Than Just a Workshop</h2>
+            <p>
+                Everything you need for a productive and practical learning experience.
+            </p>
+        </div>
+
+        <div class="highlight-grid">
+
+            <div class="highlight-card">
+                <div class="highlight-icon">🎓</div>
+                <h3>Expert Sessions</h3>
+                <p>Learn directly from professionals and experienced speakers.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">🧑‍💻</div>
+                <h3>Hands-on Labs</h3>
+                <p>Practice concepts through real-world technical activities.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">📜</div>
+                <h3>Certificate</h3>
+                <p>Receive a certificate of participation after attending.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">🤝</div>
+                <h3>Networking</h3>
+                <p>Connect with students, developers and industry professionals.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Booking Section -->
+    <main id="booking" class="booking-section">
+
+        <div class="section-heading">
+            <span class="mini-label">REGISTRATION</span>
+            <h2>Reserve Your Workshop Ticket</h2>
+            <p>Fill in your details and customize your workshop experience.</p>
+        </div>
+
+
+        <form id="bookingForm" novalidate>
+
+            <!-- Personal Details -->
+            <div class="form-card">
+
+                <div class="form-card-heading">
+                    <div class="step-number">01</div>
+                    <div>
+                        <h3>Your Details</h3>
+                        <p>Tell us who will be attending.</p>
+                    </div>
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="fullName">
+                            Full Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="e.g. Sanskruti Gorle"
+                            autocomplete="name"
+                        >
+
+                        <small class="error-message" id="fullNameError"></small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="e.g. student@gmail.com"
+                            autocomplete="email"
+                        >
+
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone Number <span>*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="10-digit mobile number"
+                            maxlength="10"
+                        >
+
+                        <small class="error-message" id="phoneError"></small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="studentId">
+                            Student ID / PRN <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentId"
+                            placeholder="e.g. 24070521025"
+                        >
+
+                        <small class="error-message" id="studentIdError"></small>
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="college">
+                            College / Organization <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="college"
+                            placeholder="Enter your college or organization"
+                        >
+
+                        <small class="error-message" id="collegeError"></small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Ticket Selection -->
+            <div class="form-card">
+
+                <div class="form-card-heading">
+                    <div class="step-number">02</div>
+
+                    <div>
+                        <h3>Choose Your Ticket</h3>
+                        <p>Select the ticket that suits your workshop experience.</p>
+                    </div>
+                </div>
+
+
+                <div class="ticket-grid">
+
+                    <label class="ticket-option">
+
+                        <input
+                            type="radio"
+                            name="ticket"
+                            value="student"
+                            data-price="499"
+                            checked
+                        >
+
+                        <div class="ticket-content">
+                            <div class="ticket-top">
+                                <span class="ticket-icon">🎓</span>
+                                <span class="recommended">POPULAR</span>
+                            </div>
+
+                            <h3>Student Pass</h3>
+
+                            <p>
+                                Full workshop access designed for students.
+                            </p>
+
+                            <strong>₹499</strong>
+                        </div>
+
+                    </label>
+
+
+                    <label class="ticket-option">
+
+                        <input
+                            type="radio"
+                            name="ticket"
+                            value="professional"
+                            data-price="999"
+                        >
+
+                        <div class="ticket-content">
+                            <div class="ticket-top">
+                                <span class="ticket-icon">💼</span>
+                            </div>
+
+                            <h3>Professional Pass</h3>
+
+                            <p>
+                                Workshop access with professional networking benefits.
+                            </p>
+
+                            <strong>₹999</strong>
+                        </div>
+
+                    </label>
+
+
+                    <label class="ticket-option">
+
+                        <input
+                            type="radio"
+                            name="ticket"
+                            value="premium"
+                            data-price="1499"
+                        >
+
+                        <div class="ticket-content">
+                            <div class="ticket-top">
+                                <span class="ticket-icon">⭐</span>
+                            </div>
+
+                            <h3>Premium Pass</h3>
+
+                            <p>
+                                Premium seating, kit and exclusive networking access.
+                            </p>
+
+                            <strong>₹1499</strong>
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <div class="small-grid">
+
+                    <div class="form-group">
+                        <label for="quantity">
+                            Number of Tickets
+                        </label>
+
+                        <select id="quantity">
+
+                            <option value="1">1 Ticket</option>
+                            <option value="2">2 Tickets</option>
+                            <option value="3">3 Tickets</option>
+                            <option value="4">4 Tickets</option>
+                            <option value="5">5 Tickets</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="session">
+                            Preferred Session <span>*</span>
+                        </label>
+
+                        <select id="session">
+
+                            <option value="">
+                                Select a session
+                            </option>
+
+                            <option value="ai">
+                                AI & Machine Learning
+                            </option>
+
+                            <option value="web">
+                                Modern Web Development
+                            </option>
+
+                            <option value="cloud">
+                                Cloud & DevOps
+                            </option>
+
+                            <option value="cyber">
+                                Cybersecurity Basics
+                            </option>
+
+                        </select>
+
+                        <small class="error-message" id="sessionError"></small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Add-ons -->
+            <div class="form-card">
+
+                <div class="form-card-heading">
+                    <div class="step-number">03</div>
+
+                    <div>
+                        <h3>Customize Your Experience</h3>
+                        <p>Add optional workshop benefits.</p>
+                    </div>
+                </div>
+
+
+                <div class="addon-list">
+
+                    <label class="addon">
+
+                        <input
+                            type="checkbox"
+                            class="addon-checkbox"
+                            value="Learning Kit"
+                            data-price="199"
+                        >
+
+                        <div class="addon-info">
+                            <span class="addon-icon">📚</span>
+
+                            <div>
+                                <strong>Learning Kit</strong>
+                                <small>Notebook, resources and workshop material</small>
+                            </div>
+                        </div>
+
+                        <strong class="addon-price">+₹199</strong>
+
+                    </label>
+
+
+                    <label class="addon">
+
+                        <input
+                            type="checkbox"
+                            class="addon-checkbox"
+                            value="Lunch"
+                            data-price="149"
+                        >
+
+                        <div class="addon-info">
+                            <span class="addon-icon">🍱</span>
+
+                            <div>
+                                <strong>Lunch</strong>
+                                <small>Vegetarian lunch and refreshments</small>
+                            </div>
+                        </div>
+
+                        <strong class="addon-price">+₹149</strong>
+
+                    </label>
+
+
+                    <label class="addon">
+
+                        <input
+                            type="checkbox"
+                            class="addon-checkbox"
+                            value="Certificate Upgrade"
+                            data-price="99"
+                        >
+
+                        <div class="addon-info">
+                            <span class="addon-icon">🏆</span>
+
+                            <div>
+                                <strong>Certificate Upgrade</strong>
+                                <small>Premium printed certificate</small>
+                            </div>
+                        </div>
+
+                        <strong class="addon-price">+₹99</strong>
+
+                    </label>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <label for="foodPreference">
+                        🍽️ Food Preference
+                    </label>
+
+                    <select id="foodPreference">
+
+                        <option value="Not Required">
+                            Not Required
+                        </option>
+
+                        <option value="Vegetarian">
+                            Vegetarian
+                        </option>
+
+                        <option value="Jain">
+                            Jain
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Additional Attendees -->
+            <div class="form-card">
+
+                <div class="form-card-heading">
+                    <div class="step-number">04</div>
+
+                    <div>
+                        <h3>Additional Attendees</h3>
+                        <p>Add companions attending with you.</p>
+                    </div>
+                </div>
+
+
+                <div class="attendee-input">
+
+                    <input
+                        type="text"
+                        id="attendeeName"
+                        placeholder="Enter attendee name"
+                    >
+
+                    <button
+                        type="button"
+                        id="addAttendee"
+                        class="secondary-btn"
+                    >
+                        + Add Attendee
+                    </button>
+
+                </div>
+
+                <small class="helper-text">
+                    You can edit or remove an attendee before confirming your booking.
+                </small>
+
+
+                <div id="attendeeList" class="attendee-list">
+                    <!-- Dynamic attendees appear here -->
+                </div>
+
+            </div>
+
+
+            <!-- Promo -->
+            <div class="form-card">
+
+                <div class="form-card-heading">
+                    <div class="step-number">05</div>
+
+                    <div>
+                        <h3>Promo Code</h3>
+                        <p>Have a workshop discount code?</p>
+                    </div>
+                </div>
+
+
+                <div class="promo-row">
+
+                    <input
+                        type="text"
+                        id="promoCode"
+                        placeholder="Enter promo code"
+                        maxlength="20"
+                    >
+
+                    <button
+                        type="button"
+                        id="applyPromo"
+                        class="secondary-btn"
+                    >
+                        Apply Code
+                    </button>
+
+                </div>
+
+                <small id="promoMessage" class="promo-message"></small>
+
+            </div>
+
+
+            <!-- Booking Summary -->
+            <div class="summary-card" id="summary">
+
+                <div class="summary-heading">
+
+                    <div>
+                        <span class="mini-label">ORDER SUMMARY</span>
+                        <h2>Your Workshop Booking</h2>
+                    </div>
+
+                    <span id="bookingStatus" class="status-badge">
+                        Draft
+                    </span>
+
+                </div>
+
+
+                <div id="selectedItems" class="selected-items">
+                    <!-- Generated dynamically -->
+                </div>
+
+
+                <div class="price-breakdown">
+
+                    <div>
+                        <span>Ticket Subtotal</span>
+                        <strong id="ticketSubtotal">₹499</strong>
+                    </div>
+
+                    <div>
+                        <span>Add-ons</span>
+                        <strong id="addonSubtotal">₹0</strong>
+                    </div>
+
+                    <div id="discountRow" class="discount-row hidden">
+                        <span>Discount</span>
+                        <strong id="discountAmount">-₹0</strong>
+                    </div>
+
+                    <div class="total-row">
+                        <span>Total</span>
+                        <strong id="grandTotal">₹499</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="terms">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                        >
+
+                        <span>
+                            I confirm that the information provided is correct and
+                            I agree to the workshop booking terms.
+                        </span>
+
+                    </label>
+
+                    <small class="error-message" id="termsError"></small>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="reset"
+                        class="reset-btn"
+                    >
+                        Reset
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Confirm Booking →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <!-- Confirmation Modal -->
+    <div
+        id="confirmationModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-modal"
+                type="button"
+            >
+                ×
+            </button>
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="mini-label">BOOKING CONFIRMED</span>
+
+            <h2>You're Registered! 🎉</h2>
+
+            <p id="confirmationMessage">
+                Your workshop ticket has been successfully booked.
+            </p>
+
+
+            <div class="registration-box">
+
+                <small>REGISTRATION ID</small>
+
+                <strong id="registrationId">
+                    TN-000000
+                </strong>
+
+            </div>
+
+
+            <div class="confirmation-details" id="confirmationDetails">
+                <!-- Dynamic confirmation details -->
+            </div>
+
+
+            <button
+                id="doneButton"
+                type="button"
+                class="primary-btn full-btn"
+            >
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div>
+            <strong>TechNova</strong>
+            <span>Technical Workshop 2026</span>
+        </div>
+
+        <p>
+            Learn. Build. Innovate.
+        </p>
+
+        <small>
+            © 2026 TechNova Workshop
+        </small>
+
+    </footer>
+
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html> 
