@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beats & Beyond | Music Concert Registration</title>
+
+    <!-- Internal JavaScript - Practical 1 -->
+    <script>
+        console.log("Beats & Beyond registration page is loading...");
+
+        function welcomeConcertVisitor() {
+            console.log("Welcome to Beats & Beyond Music Festival!");
+        }
+
+        welcomeConcertVisitor();
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">♫</span>
+            <div>
+                <h2>BEATS<span>&</span>BEYOND</h2>
+                <small>LIVE MUSIC FESTIVAL</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#event">Event</a>
+            <a href="#register">Register</a>
+            <a href="#summary">Summary</a>
+        </nav>
+
+        <button id="themeBtn" class="theme-btn" type="button">
+            🌙
+        </button>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="event">
+
+        <div class="hero-content">
+
+            <p class="event-label">THE BIGGEST MUSIC EXPERIENCE</p>
+
+            <h1>
+                BEATS
+                <span>&</span>
+                BEYOND
+            </h1>
+
+            <p class="hero-text">
+                One stage. Endless beats. One unforgettable night.
+            </p>
+
+            <div class="event-info">
+
+                <div>
+                    <span>📅</span>
+                    <strong>18 OCT 2026</strong>
+                    <small>Sunday</small>
+                </div>
+
+                <div>
+                    <span>📍</span>
+                    <strong>Riverside Arena</strong>
+                    <small>Mumbai, India</small>
+                </div>
+
+                <div>
+                    <span>⏰</span>
+                    <strong>5:00 PM onwards</strong>
+                    <small>Gates open at 4 PM</small>
+                </div>
+
+            </div>
+
+            <a href="#register" class="hero-btn">
+                Get Your Pass →
+            </a>
+
+        </div>
+
+        <div class="hero-art">
+            <div class="vinyl">
+                <div class="vinyl-center">♫</div>
+            </div>
+
+            <div class="equalizer">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= ARTISTS ================= -->
+
+    <section class="artists">
+
+        <div class="section-heading">
+            <p>FEEL THE SOUND</p>
+            <h2>One Night. Multiple Vibes.</h2>
+        </div>
+
+        <div class="artist-grid">
+
+            <div class="artist-card">
+                <div class="artist-icon">🎤</div>
+                <h3>Live Performances</h3>
+                <p>Experience powerful live performances from emerging artists.</p>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-icon">🎸</div>
+                <h3>Rock & Indie</h3>
+                <p>High-energy guitar performances for every rock lover.</p>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-icon">🎧</div>
+                <h3>EDM Nights</h3>
+                <p>Electronic beats, lights and an unforgettable dance floor.</p>
+            </div>
+
+            <div class="artist-card">
+                <div class="artist-icon">🎶</div>
+                <h3>Bollywood Beats</h3>
+                <p>Your favourite Bollywood tracks performed live.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTRATION ================= -->
+
+    <main class="main-container" id="register">
+
+        <div class="form-section">
+
+            <div class="section-heading left">
+                <p>SECURE YOUR ENTRY</p>
+                <h2>Concert Registration</h2>
+                <span>
+                    Fill in your details and customize your concert experience.
+                </span>
+            </div>
+
+
+            <form id="concertForm" novalidate>
+
+                <!-- PERSONAL DETAILS -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+                        <span>01</span>
+                        <div>
+                            <h3>Personal Details</h3>
+                            <p>Tell us who is joining the concert.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="fullName">Full Name *</label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                            >
+                            <small class="error" id="nameError"></small>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email Address *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="you@example.com"
+                            >
+                            <small class="error" id="emailError"></small>
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Mobile Number *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="10-digit mobile number"
+                                maxlength="10"
+                            >
+                            <small class="error" id="phoneError"></small>
+                        </div>
+
+                        <div class="field">
+                            <label for="age">Age *</label>
+                            <input
+                                type="number"
+                                id="age"
+                                min="16"
+                                max="80"
+                                placeholder="Enter your age"
+                            >
+                            <small class="error" id="ageError"></small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TICKET DETAILS -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+                        <span>02</span>
+                        <div>
+                            <h3>Choose Your Pass</h3>
+                            <p>Select the experience you want.</p>
+                        </div>
+                    </div>
+
+                    <div class="ticket-grid">
+
+                        <label class="ticket-card">
+
+                            <input
+                                type="radio"
+                                name="ticket"
+                                value="General Admission"
+                                data-price="799"
+                                checked
+                            >
+
+                            <div class="ticket-content">
+                                <div class="ticket-top">
+                                    <h3>General</h3>
+                                    <strong>₹799</strong>
+                                </div>
+
+                                <p>Concert entry + standard seating area</p>
+
+                                <ul>
+                                    <li>✓ Main stage access</li>
+                                    <li>✓ Food court access</li>
+                                </ul>
+                            </div>
+
+                        </label>
+
+
+                        <label class="ticket-card">
+
+                            <input
+                                type="radio"
+                                name="ticket"
+                                value="VIP Pass"
+                                data-price="1799"
+                            >
+
+                            <div class="ticket-content">
+                                <div class="ticket-top">
+                                    <h3>VIP</h3>
+                                    <strong>₹1,799</strong>
+                                </div>
+
+                                <p>Premium experience with priority access</p>
+
+                                <ul>
+                                    <li>✓ Priority entry</li>
+                                    <li>✓ VIP lounge</li>
+                                </ul>
+                            </div>
+
+                        </label>
+
+
+                        <label class="ticket-card">
+
+                            <input
+                                type="radio"
+                                name="ticket"
+                                value="Backstage Pass"
+                                data-price="2999"
+                            >
+
+                            <div class="ticket-content">
+                                <div class="ticket-top">
+                                    <h3>Backstage</h3>
+                                    <strong>₹2,999</strong>
+                                </div>
+
+                                <p>Exclusive access behind the stage</p>
+
+                                <ul>
+                                    <li>✓ Backstage access</li>
+                                    <li>✓ Artist meet & greet</li>
+                                </ul>
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                    <div class="quantity-row">
+
+                        <div class="field small-field">
+                            <label for="quantity">Number of Passes *</label>
+
+                            <select id="quantity">
+                                <option value="1">1 Pass</option>
+                                <option value="2">2 Passes</option>
+                                <option value="3">3 Passes</option>
+                                <option value="4">4 Passes</option>
+                                <option value="5">5 Passes</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="musicGenre">Favourite Music Genre *</label>
+
+                            <select id="musicGenre">
+                                <option value="">Select a genre</option>
+                                <option value="Pop">Pop</option>
+                                <option value="Rock">Rock</option>
+                                <option value="EDM">EDM</option>
+                                <option value="Bollywood">Bollywood</option>
+                                <option value="Indie">Indie</option>
+                                <option value="Hip-Hop">Hip-Hop</option>
+                            </select>
+
+                            <small class="error" id="genreError"></small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADD-ONS -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+                        <span>03</span>
+                        <div>
+                            <h3>Make It Special</h3>
+                            <p>Add something extra to your concert experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="addon-grid">
+
+                        <label class="addon">
+                            <input
+                                type="checkbox"
+                                class="addon-check"
+                                value="Concert Merchandise"
+                                data-price="499"
+                            >
+
+                            <span class="addon-icon">👕</span>
+
+                            <div>
+                                <strong>Concert Merchandise</strong>
+                                <small>₹499</small>
+                            </div>
+                        </label>
+
+
+                        <label class="addon">
+                            <input
+                                type="checkbox"
+                                class="addon-check"
+                                value="Meal Voucher"
+                                data-price="299"
+                            >
+
+                            <span class="addon-icon">🍔</span>
+
+                            <div>
+                                <strong>Meal Voucher</strong>
+                                <small>₹299</small>
+                            </div>
+                        </label>
+
+
+                        <label class="addon">
+                            <input
+                                type="checkbox"
+                                class="addon-check"
+                                value="Meet & Greet"
+                                data-price="999"
+                            >
+
+                            <span class="addon-icon">🤝</span>
+
+                            <div>
+                                <strong>Meet & Greet</strong>
+                                <small>₹999</small>
+                            </div>
+                        </label>
+
+
+                        <label class="addon">
+                            <input
+                                type="checkbox"
+                                class="addon-check"
+                                value="Photo Booth"
+                                data-price="199"
+                            >
+
+                            <span class="addon-icon">📸</span>
+
+                            <div>
+                                <strong>Photo Booth</strong>
+                                <small>₹199</small>
+                            </div>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATTENDEE DETAILS -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+                        <span>04</span>
+                        <div>
+                            <h3>Friends Joining?</h3>
+                            <p>Add the names of people attending with you.</p>
+                        </div>
+                    </div>
+
+                    <div class="attendee-input">
+
+                        <input
+                            type="text"
+                            id="attendeeName"
+                            placeholder="Enter attendee name"
+                        >
+
+                        <button
+                            type="button"
+                            id="addAttendeeBtn"
+                            class="secondary-btn"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+                    <div id="attendeeList" class="attendee-list"></div>
+
+                </div>
+
+
+                <!-- FOOD + PROMO -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+                        <span>05</span>
+                        <div>
+                            <h3>Final Preferences</h3>
+                            <p>Almost there!</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="foodPreference">Food Preference</label>
+
+                            <select id="foodPreference">
+                                <option value="No Preference">No Preference</option>
+                                <option value="Vegetarian">Vegetarian</option>
+                                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                                <option value="Vegan">Vegan</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+
+                            <label for="promoCode">
+                                Promo Code
+                            </label>
+
+                            <div class="promo-input">
+                                <input
+                                    type="text"
+                                    id="promoCode"
+                                    placeholder="Enter promo code"
+                                >
+
+                                <button
+                                    type="button"
+                                    id="applyPromoBtn"
+                                >
+                                    Apply
+                                </button>
+                            </div>
+
+                            <small id="promoMessage"></small>
+
+                        </div>
+
+                    </div>
+
+
+                    <label class="terms">
+                        <input type="checkbox" id="terms">
+                        <span>
+                            I agree to the event terms and understand that
+                            tickets are non-refundable. *
+                        </span>
+                    </label>
+
+                    <small class="error" id="termsError"></small>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="reset"
+                        class="reset-btn"
+                        id="resetBtn"
+                    >
+                        Reset
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Complete Registration →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <aside class="summary-card" id="summary">
+
+            <div class="summary-header">
+                <div>
+                    <p>YOUR EXPERIENCE</p>
+                    <h2>Booking Summary</h2>
+                </div>
+
+                <span class="summary-icon">🎵</span>
+            </div>
+
+
+            <div class="summary-event">
+                <strong>BEATS & BEYOND</strong>
+                <span>18 October 2026 • Riverside Arena</span>
+            </div>
+
+
+            <div id="summaryContent">
+
+                <div class="summary-row">
+                    <span>Pass</span>
+                    <strong id="summaryTicket">
+                        General Admission
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Quantity</span>
+                    <strong id="summaryQuantity">1</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Genre</span>
+                    <strong id="summaryGenre">Not selected</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Extras</span>
+                    <strong id="summaryAddons">None</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <strong id="summaryDiscount">₹0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="total-box">
+                <span>Total Amount</span>
+                <strong id="summaryTotal">₹799</strong>
+            </div>
+
+            <p class="secure-text">
+                🔒 Your registration details are handled securely.
+            </p>
+
+        </aside>
+
+    </main>
+
+
+    <!-- ================= CONFIRMATION MODAL ================= -->
+
+    <div class="modal-overlay" id="confirmationModal">
+
+        <div class="modal">
+
+            <button
+                class="close-modal"
+                id="closeModalBtn"
+                type="button"
+            >
+                ×
+            </button>
+
+            <div class="success-icon">✓</div>
+
+            <p class="modal-label">REGISTRATION CONFIRMED</p>
+
+            <h2>You're on the guest list! 🎉</h2>
+
+            <p id="confirmationText">
+                Your concert registration has been successfully completed.
+            </p>
+
+            <div class="registration-id">
+                <span>Registration ID</span>
+                <strong id="registrationId">BB-000001</strong>
+            </div>
+
+            <button
+                type="button"
+                class="modal-btn"
+                id="doneBtn"
+            >
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- External JavaScript - Practical 1 -->
+    <script src="script.js"></script>
+
+</body>
+</html>

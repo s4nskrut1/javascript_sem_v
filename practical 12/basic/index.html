@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>My Task Manager</h1>
+        <p class="subtitle">Organize your day, one task at a time.</p>
+
+        <div class="task-form">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a new task..."
+            >
+
+            <button id="addBtn">Add Task</button>
+        </div>
+
+        <div class="actions">
+            <button id="loadBtn">Load Sample Tasks</button>
+            <button id="clearBtn">Clear All Tasks</button>
+        </div>
+
+        <p id="message"></p>
+
+        <h2>My Tasks</h2>
+
+        <ul id="taskList"></ul>
+
+        <p id="taskCount">Total Tasks: 0</p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
